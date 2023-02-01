@@ -2,24 +2,22 @@ import AppBarMenu from "./AppBarMenu";
 import CardDescription from "./CardDescription";
 import React from "react";
 import useAccountant from "./useAccountant";
-//import { collection, getDocs } from "firebase/firestore";
-//import { useEffect } from "react";
-//import db from "./firebase-config";
-//import { async } from "@firebase/util";
-
+import { collection, getDocs } from "firebase/firestore";
+import { useEffect } from "react";
+import { db } from "../firebase-config";
 function App() {
   const { increase, decrease, count } = useAccountant(1);
 
-  // useEffect(() => {
-  //   const getUsuarios = async () => {
-  //     const datos = await getDocs(collection(db, "usuarios"));
+  useEffect(() => {
+    const getUsuarios = async () => {
+      const datos = await getDocs(collection(db, "product"));
 
-  //     datos.forEach((documento) => {
-  //       console.log(documento.data().edad);
-  //     });
-  //   };
-  //   getUsuarios();
-  // }, []);
+      datos.forEach((document) => {
+        console.log(document.data());
+      });
+    };
+    getUsuarios();
+  }, []);
 
   return (
     <>
