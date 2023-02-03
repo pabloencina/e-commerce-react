@@ -1,12 +1,16 @@
 import { Button } from "@mui/material";
 import React from "react";
 
-const ItemCount = ({ increase, decrease, count }) => {
+const ItemCount = ({ increase, decrease, count, stock }) => {
   return (
     <>
-      <Button onClick={decrease}>-</Button>
+      <Button disabled={count <= 1} onClick={decrease}>
+        -
+      </Button>
       {count}
-      <Button onClick={increase}>+</Button>
+      <Button disabled={count >= stock} onClick={increase}>
+        +
+      </Button>
     </>
   );
 };

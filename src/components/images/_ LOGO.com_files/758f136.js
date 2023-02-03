@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[344],{1134:function(e){e.exports=JSON.parse('{"label":"Template Alignment","tippy":"Change the direction of background elements in your logo"}')}}]);
+//# sourceMappingURL=758f136.js.map

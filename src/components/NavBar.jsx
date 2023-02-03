@@ -4,19 +4,26 @@ import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-//import Menu from "@mui/material/menu";
 import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MenuComponent from "@mui/material/Menu";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
+import logo from "../components/images/logo.jpeg";
+import CartWidget from "./CartWidget";
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = ["Productos", "Locales", "Nosotros"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-function AppBarMenu({ count }) {
+const styles = {
+  imagenLogo: {
+    width: "150px",
+    height: "100px",
+  },
+};
+
+function NavBar({ count }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -39,7 +46,13 @@ function AppBarMenu({ count }) {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
+          <img
+            src={logo}
+            alt="logo"
+            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+            style={styles.imagenLogo}
+          />
           <Typography
             variant="h6"
             noWrap
@@ -54,9 +67,7 @@ function AppBarMenu({ count }) {
               color: "inherit",
               textDecoration: "none",
             }}
-          >
-            LOGO
-          </Typography>
+          ></Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -125,10 +136,11 @@ function AppBarMenu({ count }) {
             ))}
           </Box>
 
-          <Button variant="contained">
+          {/* <Button variant="contained">
             <ShoppingCartOutlinedIcon />
           </Button>
-          <div>{count}</div>
+          <span>{count}</span> */}
+          <CartWidget count={count} />
           <Box sx={{ flexGrow: 0 }}>
             <Button variant="contained">Registrarse</Button>
             <Button variant="contained">Iniciar sesión</Button>
@@ -161,4 +173,4 @@ function AppBarMenu({ count }) {
     </AppBar>
   );
 }
-export default AppBarMenu;
+export default NavBar;

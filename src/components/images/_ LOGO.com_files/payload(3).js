@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/flow/colors", {data:[{}],fetch:{},mutations:[]});

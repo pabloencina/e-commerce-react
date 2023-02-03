@@ -3,12 +3,12 @@ import { useState } from "react";
 const useAccountant = (initial) => {
   const [count, setCount] = useState(initial);
 
-  const increase = () => {
-    return setCount(count + 1);
+  const increase = (quantity = 1) => {
+    return setCount(count + quantity);
   };
 
-  const decrease = () => {
-    return setCount(count - 1);
+  const decrease = (quantity = 1) => {
+    return setCount(count - quantity);
   };
   return { increase, decrease, setCount, count };
 };

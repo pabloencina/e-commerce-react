@@ -1,23 +1,18 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
 import Snackbar from "@mui/material/Snackbar";
-//import IconButton from "@mui/material/IconButton";
 import { Close } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 
-export default function AddToCart({ count }) {
+export default function AddToCart({ count, onProductAdded, stock }) {
   const [open, setOpen] = React.useState(false);
 
-  const messageProducto = `Usted tiene ${count} producto en el carrito`;
-  const messageProductos = `Usted tiene ${count} productos en el carrito`;
-
-  const addCount = () => {
-    return count;
-  };
+  const messageProducto = `Se agrego ${count} producto al carrito`;
+  const messageProductos = `Se agregaron ${count} productos al carrito`;
 
   const handleClick = () => {
     setOpen(true);
-    addCount();
+    onProductAdded(count);
   };
 
   const handleClose = (event, reason) => {
@@ -45,8 +40,10 @@ export default function AddToCart({ count }) {
   );
 
   return (
-    <div>
-      <Button onClick={handleClick}>Add to cart</Button>
+    <>
+      <Button disabled={stock <= 0} onClick={handleClick}>
+        Add to cart
+      </Button>
       <Snackbar
         open={open}
         autoHideDuration={6000}
@@ -54,6 +51,6 @@ export default function AddToCart({ count }) {
         message={count === 1 ? messageProducto : messageProductos}
         action={action}
       />
-    </div>
+    </>
   );
 }

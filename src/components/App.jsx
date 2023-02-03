@@ -1,14 +1,21 @@
-import AppBarMenu from "./AppBarMenu";
-import CardDescription from "./CardDescription";
+import NavBar from "./NavBar";
+import ProductCard from "./ProductCard";
 import React from "react";
 import useAccountant from "./useAccountant";
+import MainImage from "./MainImage";
+import Footer from "./Footer";
+import ItemListContainer from "./ItemListContainer";
 //import { collection, getDocs } from "firebase/firestore";
 //import { useEffect } from "react";
 //import db from "./firebase-config";
 //import { async } from "@firebase/util";
 
 function App() {
-  const { increase, decrease, count } = useAccountant(1);
+  const { count, increase } = useAccountant(0);
+
+  const onProductAdded = (quantity) => {
+    increase(quantity);
+  };
 
   // useEffect(() => {
   //   const getUsuarios = async () => {
@@ -23,8 +30,11 @@ function App() {
 
   return (
     <>
-      <AppBarMenu count={count} />
-      <CardDescription increase={increase} decrease={decrease} count={count} />
+      <NavBar count={count} />
+      <MainImage />
+      <ItemListContainer greeting={"La página se encuentra en reparación"} />
+      <ProductCard onProductAdded={onProductAdded} />
+      <Footer />
     </>
   );
 }
