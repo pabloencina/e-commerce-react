@@ -1,22 +1,19 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import ItemCount from "./ItemCount";
-import AddToCart from "./AddToCart";
-import imageCard1 from "../components/images/card-image.jpg";
-import { Grid } from "@mui/material";
-import useAccountant from "./hooks/useAccountant";
+import cardIndumentaria from "../components/images/card-indumentaria.jpg";
+import { Button, Grid } from "@mui/material";
+import ProductCardPrice from "./ProductCardPrice";
+import { Box } from "@mui/system";
+
 //import useAccountant from "./components/useAccountant";
 // https://unsplash.com/es/t/food-drink
 // https://www.freepik.es/search?format=search&query=comida&type=photo
 // https://storyset.com/food
 //https://www.youtube.com/watch?v=s_Txhh-clVk&t=999s
 export default function ProductCard({ onProductAdded }) {
-  const { increase, decrease, count } = useAccountant(1);
-
   return (
     <Grid container spacing={4}>
       {/* //aca va el map.................................................. */}
@@ -34,8 +31,8 @@ export default function ProductCard({ onProductAdded }) {
         >
           <CardMedia
             sx={{ height: 140 }}
-            image={imageCard1}
-            title="green iguana"
+            image={cardIndumentaria}
+            title="card indumentaria"
           />
           <CardContent sx={{ flexGrow: 1 }}>
             <Typography
@@ -44,29 +41,29 @@ export default function ProductCard({ onProductAdded }) {
               component="div"
               sx={{ justifyContent: "center", display: "flex" }}
             >
-              Spaghetti veganos
+              Calza mujer
             </Typography>
             <Typography
               variant="body2"
               //color="text.secondary"
               sx={{ justifyContent: "center", display: "flex" }}
             >
-              Fideos veganos con salsa a elección
+              Calza larga mujer, talle M, color celeste.
             </Typography>
           </CardContent>
-          <CardActions sx={{ justifyContent: "center", display: "flex" }}>
-            <ItemCount
-              increase={() => {
-                increase();
+          <Box m={4} style={{ display: "flex", justifyContent: "center" }}>
+            <Button
+              style={{
+                width: "50%",
+                backgroundColor: "#564592",
+                color: "white",
               }}
-              decrease={() => {
-                decrease();
-              }}
-              count={count}
-              stock={15}
-            />
-            <AddToCart count={count} onProductAdded={onProductAdded} />
-          </CardActions>
+            >
+              Ver Detalle
+            </Button>
+          </Box>
+
+          {/* <ProductCardPrice onProductAdded={onProductAdded} /> */}
         </Card>
       </Grid>
     </Grid>

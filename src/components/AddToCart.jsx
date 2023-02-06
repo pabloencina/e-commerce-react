@@ -41,7 +41,14 @@ export default function AddToCart({ count, onProductAdded, stock }) {
 
   return (
     <>
-      <Button disabled={stock <= 0} onClick={handleClick}>
+      <Button
+        disabled={stock <= 0}
+        onClick={handleClick}
+        style={{
+          backgroundColor: "#564592",
+          color: "white",
+        }}
+      >
         Add to cart
       </Button>
       <Snackbar
