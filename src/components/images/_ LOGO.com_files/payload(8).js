@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/editor/colors", (function(a){return {data:[{},{asyncContentReady:true,page:{meta:{title:a,description:""},title:a,color_options:{title:"Color Options"},custom_palette:{title:"Custom Color Palette"},color_presets:{title:"Choose a new color pallete",subtitle:"Filter Color Themes"}}}],fetch:{},mutations:[]}}("Colors")));

@@ -1,10 +1,9 @@
-import NavBar from "./NavBar";
+import NavBar from "./navbar/NavBar";
 import ProductCard from "./ProductCard";
 import React from "react";
-import useAccountant from "./useAccountant";
-import MainImage from "./MainImage";
+import useAccountant from "./hooks/useAccountant";
 import Footer from "./Footer";
-import ItemListContainer from "./ItemListContainer";
+import CarouselImages from "./carousel/CarouselImages";
 //import { collection, getDocs } from "firebase/firestore";
 //import { useEffect } from "react";
 //import db from "./firebase-config";
@@ -31,8 +30,10 @@ function App() {
   return (
     <>
       <NavBar count={count} />
-      <MainImage />
-      <ItemListContainer greeting={"La página se encuentra en reparación"} />
+      {/* <MainImage /> */}
+
+      <CarouselImages />
+      {/* <ItemListContainer greeting={"La página se encuentra en reparación"} /> */}
       <ProductCard onProductAdded={onProductAdded} />
       <Footer />
     </>

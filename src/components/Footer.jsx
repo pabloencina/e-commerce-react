@@ -6,7 +6,7 @@ import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import logo from "../components/images/logo.jpeg";
+import logo from "../components/images/logo-color.svg";
 
 const Footer = () => {
   return (
@@ -15,31 +15,33 @@ const Footer = () => {
       style={{
         height: "200px",
         variant: "contained",
-        backgroundColor: "",
+        backgroundColor: "#564592 ",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
       }}
     >
-      <Grid container spacing={1}>
+      <Grid container spacing={3} style={{ marginTop: "10px" }}>
         <Grid item xs>
           <Button>
-            <FacebookOutlinedIcon></FacebookOutlinedIcon>
+            <FacebookOutlinedIcon
+              style={{ color: " #EDF67D " }}
+            ></FacebookOutlinedIcon>
           </Button>
         </Grid>
         <Grid item xs>
           <Button>
-            <YouTubeIcon></YouTubeIcon>
+            <YouTubeIcon style={{ color: " #EDF67D " }}></YouTubeIcon>
           </Button>
         </Grid>
         <Grid item xs>
           <Button>
-            <InstagramIcon></InstagramIcon>
+            <InstagramIcon style={{ color: " #EDF67D " }}></InstagramIcon>
           </Button>
         </Grid>
         <Grid item xs>
           <Button>
-            <TwitterIcon></TwitterIcon>
+            <TwitterIcon style={{ color: " #EDF67D " }}></TwitterIcon>
           </Button>
         </Grid>
         <Grid item xs>
@@ -67,14 +69,26 @@ const Footer = () => {
             mr: 5,
           }}
         >
-          <Grid>
-            <img
-              src={logo}
-              alt="logo"
-              style={{ height: "20px", marginRight: "10px" }}
-            />
-          </Grid>
-          <Grid>Natural Food 2023</Grid>
+          <Box
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Grid>
+              <img src={logo} alt="logo" style={{ height: "80px" }} />
+            </Grid>
+            <Grid
+              style={{
+                fontFamily: "OooH baby",
+                fontSize: "20px",
+                color: "white",
+              }}
+            >
+              Abrazar el presente 2023
+            </Grid>
+          </Box>
         </Grid>
       </Grid>
     </Box>

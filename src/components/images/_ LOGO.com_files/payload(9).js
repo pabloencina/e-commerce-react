@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/editor/templates", (function(a){return {data:[{},{asyncContentReady:true,page:{meta:{title:a,description:""},title:a,design_selection:{title:"Select a new Design"}}}],fetch:{},mutations:[]}}("Designs")));

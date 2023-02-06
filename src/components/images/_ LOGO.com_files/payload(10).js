@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/editor/ideas", {data:[{},{}],fetch:{},mutations:[]});

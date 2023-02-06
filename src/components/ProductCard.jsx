@@ -8,7 +8,7 @@ import ItemCount from "./ItemCount";
 import AddToCart from "./AddToCart";
 import imageCard1 from "../components/images/card-image.jpg";
 import { Grid } from "@mui/material";
-import useAccountant from "./useAccountant";
+import useAccountant from "./hooks/useAccountant";
 //import useAccountant from "./components/useAccountant";
 // https://unsplash.com/es/t/food-drink
 // https://www.freepik.es/search?format=search&query=comida&type=photo
