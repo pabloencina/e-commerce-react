@@ -4,6 +4,7 @@ import React from "react";
 import useAccountant from "./hooks/useAccountant";
 import Footer from "./Footer";
 import CarouselImages from "./carousel/CarouselImages";
+import Nosotros from "./Nosotros";
 //import { collection, getDocs } from "firebase/firestore";
 //import { useEffect } from "react";
 //import db from "./firebase-config";
@@ -30,7 +31,7 @@ function App() {
   return (
     <>
       <NavBar count={count} />
-      {/* <MainImage /> */}
+      {/* <Nosotros /> */}
 
       <CarouselImages />
       {/* <ItemListContainer greeting={"La página se encuentra en reparación"} /> */}

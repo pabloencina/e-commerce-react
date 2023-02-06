@@ -4,6 +4,8 @@ import Snackbar from "@mui/material/Snackbar";
 import { Close } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 
+import { Box } from "@mui/system";
+
 export default function AddToCart({ count, onProductAdded, stock }) {
   const [open, setOpen] = React.useState(false);
 
@@ -41,16 +43,20 @@ export default function AddToCart({ count, onProductAdded, stock }) {
 
   return (
     <>
-      <Button
-        disabled={stock <= 0}
-        onClick={handleClick}
-        style={{
-          backgroundColor: "#564592",
-          color: "white",
-        }}
-      >
-        Add to cart
-      </Button>
+      <Box style={{ display: "flex", justifyContent: "center" }}>
+        {" "}
+        <Button
+          disabled={stock <= 0}
+          onClick={handleClick}
+          style={{
+            backgroundColor: "#564592",
+            color: "white",
+          }}
+        >
+          Agregar al carrito
+        </Button>
+      </Box>
+
       <Snackbar
         open={open}
         autoHideDuration={6000}

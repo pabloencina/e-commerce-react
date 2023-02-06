@@ -2,9 +2,10 @@ import React from "react";
 import useAccountant from "./hooks/useAccountant";
 import ItemCount from "./ItemCount";
 import AddToCart from "./AddToCart";
-import CardActions from "@mui/material/CardActions";
+import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
+
 import { Box } from "@mui/system";
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 
 const ProductCardPrice = ({ onProductAdded }) => {
   const { increase, decrease, count } = useAccountant(1);
@@ -19,7 +20,7 @@ const ProductCardPrice = ({ onProductAdded }) => {
           {`$${1500 * count}`}
         </Typography>
       </Box>
-      <CardActions sx={{ justifyContent: "center", display: "flex" }}>
+      <Box m={2} sx={{ justifyContent: "center", display: "flex" }}>
         <ItemCount
           increase={() => {
             increase();
@@ -30,8 +31,22 @@ const ProductCardPrice = ({ onProductAdded }) => {
           count={count}
           stock={15}
         />
+      </Box>
+
+      <Box m={2} sx={{ justifyContent: "center", display: "flex" }}>
+        {" "}
         <AddToCart count={count} onProductAdded={onProductAdded} />
-      </CardActions>
+      </Box>
+      <Box m={2} style={{ display: "flex", justifyContent: "center" }}>
+        <Button
+          style={{
+            backgroundColor: "#564592",
+            color: "white",
+          }}
+        >
+          <ReplyOutlinedIcon />
+        </Button>
+      </Box>
     </>
   );
 };

@@ -12,7 +12,7 @@ export default function SearchAutocomplete() {
       id="combo-box-demo"
       options={top100Films}
       sx={{ width: 250, marginLeft: -70 }}
-      renderInput={(params) => <TextField {...params} label="Productos" />}
+      renderInput={(params) => <TextField {...params} label="Búsqueda" />}
     />
   );
 }

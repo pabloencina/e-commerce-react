@@ -25,23 +25,23 @@ const Footer = () => {
         <Grid item xs>
           <Button>
             <FacebookOutlinedIcon
-              style={{ color: " #EDF67D " }}
+              style={{ color: "white" }}
             ></FacebookOutlinedIcon>
           </Button>
         </Grid>
         <Grid item xs>
           <Button>
-            <YouTubeIcon style={{ color: " #EDF67D " }}></YouTubeIcon>
+            <YouTubeIcon style={{ color: "white" }}></YouTubeIcon>
           </Button>
         </Grid>
         <Grid item xs>
           <Button>
-            <InstagramIcon style={{ color: " #EDF67D " }}></InstagramIcon>
+            <InstagramIcon style={{ color: "white" }}></InstagramIcon>
           </Button>
         </Grid>
         <Grid item xs>
           <Button>
-            <TwitterIcon style={{ color: " #EDF67D " }}></TwitterIcon>
+            <TwitterIcon style={{ color: "white" }}></TwitterIcon>
           </Button>
         </Grid>
         <Grid item xs>

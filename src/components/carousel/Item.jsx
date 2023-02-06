@@ -14,7 +14,7 @@ const Item = ({ item }) => {
         src={item.image}
         alt={item.title}
         style={{
-          width: "50%",
+          width: "60%",
           height: "60vh",
           display: "flex",
           justifyContent: "center",
