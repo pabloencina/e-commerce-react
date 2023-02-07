@@ -12,9 +12,8 @@ import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "../images/logo-color.svg";
 import CartWidget from "../navbar/CartWidget";
-import SearchAutocomplete from "../navbar/Autocomplete";
 
-const pages = ["Productos", "Nosotros"];
+const pages = ["Nosotros", "mats", "Elementos yoga", "Elementos meditación"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const styles = {
@@ -112,7 +111,7 @@ function NavBar({ count }) {
             </MenuComponent>
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
+          {/* <Typography
             variant="h5"
             noWrap
             component="a"
@@ -129,7 +128,7 @@ function NavBar({ count }) {
             }}
           >
             LOGO
-          </Typography>
+          </Typography> */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
@@ -141,15 +140,14 @@ function NavBar({ count }) {
               </Button>
             ))}
           </Box>
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <SearchAutocomplete />
-          </Box>
+          {/* <Box sx={{ display: "flex", justifyContent: "center" }}></Box> */}
 
           <CartWidget count={count} />
           <Box sx={{ flexGrow: 0 }}>
             <Button
               style={{
                 backgroundColor: "#564592",
+                marginLeft: "10Px",
               }}
               variant="contained"
             >
@@ -158,6 +156,7 @@ function NavBar({ count }) {
             <Button
               style={{
                 backgroundColor: "#564592",
+                marginLeft: "10Px",
               }}
               variant="contained"
             >

@@ -1,5 +1,5 @@
 import React from "react";
-import useAccountant from "./hooks/useAccountant";
+import useAccountant from "../hooks/useAccountant";
 import ItemCount from "./ItemCount";
 import AddToCart from "./AddToCart";
 import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";

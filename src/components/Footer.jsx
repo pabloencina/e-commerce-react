@@ -84,9 +84,19 @@ const Footer = () => {
                 fontFamily: "OooH baby",
                 fontSize: "20px",
                 color: "white",
+                marginRight: "100px",
               }}
             >
               Abrazar el presente 2023
+            </Grid>
+            <Grid
+              style={{
+                fontFamily: "OooH baby",
+                fontSize: "20px",
+                color: "white",
+              }}
+            >
+              Copyright ©
             </Grid>
           </Box>
         </Grid>

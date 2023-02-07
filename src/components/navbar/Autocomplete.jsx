@@ -4,16 +4,17 @@ import Autocomplete from "@mui/material/Autocomplete";
 
 export default function SearchAutocomplete() {
   return (
-    <Autocomplete
-      //disablePortal
-      style={{}}
-      openOnFocus
-      borderColor="white"
-      id="combo-box-demo"
-      options={top100Films}
-      sx={{ width: 250, marginLeft: -70 }}
-      renderInput={(params) => <TextField {...params} label="Búsqueda" />}
-    />
+    <>
+      <Autocomplete
+        disablePortal
+        openOnFocus
+        borderColor="white"
+        id="combo-box-demo"
+        options={top100Films}
+        sx={{ width: 400 }}
+        renderInput={(params) => <TextField {...params} label="Búsqueda" />}
+      />
+    </>
   );
 }
 
