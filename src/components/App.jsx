@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import CarouselImages from "./carousel/CarouselImages";
 import { Box } from "@mui/system";
 import SearchAutocomplete from "./navbar/Autocomplete";
+import dataArray from "./ejemplo";
 //import Nosotros from "./Nosotros";
 //import { collection, getDocs } from "firebase/firestore";
 //import { useEffect } from "react";
@@ -13,12 +14,6 @@ import SearchAutocomplete from "./navbar/Autocomplete";
 //import { async } from "@firebase/util";
 
 function App() {
-  const { count, increase } = useAccountant(0);
-
-  const onProductAdded = (quantity) => {
-    increase(quantity);
-  };
-
   // useEffect(() => {
   //   const getUsuarios = async () => {
   //     const datos = await getDocs(collection(db, "usuarios"));
@@ -29,6 +24,13 @@ function App() {
   //   };
   //   getUsuarios();
   // }, []);
+  const { count, increase } = useAccountant(0);
+
+  const onProductAdded = (quantity) => {
+    increase(quantity);
+  };
+
+  const productsToShow = dataArray.filter((card) => card.sale);
 
   return (
     <Box>
@@ -42,12 +44,17 @@ function App() {
       >
         <SearchAutocomplete />
       </Box>
-
-      {/* <Nosotros /> */}
-
       <CarouselImages />
-      {/* <ItemListContainer greeting={"La página se encuentra en reparación"} /> */}
-      <ProductCard onProductAdded={onProductAdded} />
+      {/* <ProductCard onProductAdded={onProductAdded} /> */}
+      {productsToShow.map((product) => {
+        return (
+          <ProductCard
+            product={product}
+            key={product.id}
+            onProductAdded={onProductAdded}
+          />
+        );
+      })}
 
       <Footer />
     </Box>

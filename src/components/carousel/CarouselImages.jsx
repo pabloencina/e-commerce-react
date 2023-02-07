@@ -5,7 +5,6 @@ import images from "../helper/images";
 import { Box } from "@mui/system";
 
 function CarouselImages() {
-  console.log(images);
   return (
     <Box m={3}>
       <Carousel>

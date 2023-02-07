@@ -10,6 +10,7 @@ const dataArray = [
     description: "Stylist apartment in center of the city",
     price: 5200,
     image: cardIndumentaria,
+    stock: 2,
   },
   {
     id: uuidv4(),
@@ -19,6 +20,7 @@ const dataArray = [
     description: "Nice apartment in center of Helsinki",
     price: 8000,
     image: cardIndumentaria,
+    stock: 2,
   },
   {
     id: uuidv4(),
@@ -28,6 +30,7 @@ const dataArray = [
     sale: true,
     description: "Arty interior in 1900 wooden house",
     image: cardIndumentaria,
+    stock: 2,
   },
 ];
 
