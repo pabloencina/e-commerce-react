@@ -7,6 +7,7 @@ import CarouselImages from "./carousel/CarouselImages";
 import { Box } from "@mui/system";
 import SearchAutocomplete from "./navbar/Autocomplete";
 import dataArray from "./ejemplo";
+import { Grid } from "@mui/material";
 //import Nosotros from "./Nosotros";
 //import { collection, getDocs } from "firebase/firestore";
 //import { useEffect } from "react";
@@ -24,6 +25,7 @@ function App() {
   //   };
   //   getUsuarios();
   // }, []);
+
   const { count, increase } = useAccountant(0);
 
   const onProductAdded = (quantity) => {
@@ -45,16 +47,29 @@ function App() {
         <SearchAutocomplete />
       </Box>
       <CarouselImages />
-      {/* <ProductCard onProductAdded={onProductAdded} /> */}
-      {productsToShow.map((product) => {
-        return (
-          <ProductCard
-            product={product}
-            key={product.id}
-            onProductAdded={onProductAdded}
-          />
-        );
-      })}
+      {/* <Grid container spacing={2}>
+        {dataArray.map((product) => {
+          return (
+            <Grid item xs={12} sm={6} md={4}>
+              <ProductCard product={product} onProductAdded={onProductAdded} />
+            </Grid>
+          );
+        })}
+      </Grid> */}
+
+      <Grid container spacing={2}>
+        {productsToShow.map((product) => {
+          return (
+            <Grid item xs={12} sm={6} md={4}>
+              <ProductCard
+                product={product}
+                key={product.id}
+                onProductAdded={onProductAdded}
+              />
+            </Grid>
+          );
+        })}
+      </Grid>
 
       <Footer />
     </Box>

@@ -8,7 +8,6 @@ export default function SearchAutocomplete() {
       <Autocomplete
         disablePortal
         openOnFocus
-        borderColor="white"
         id="combo-box-demo"
         options={top100Films}
         sx={{ width: 400 }}
