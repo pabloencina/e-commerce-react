@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, Grid } from "@mui/material";
+import { Button } from "@mui/material";
 import { Box } from "@mui/system";
 import LoyaltyIcon from "@mui/icons-material/Loyalty";
 
@@ -14,67 +14,83 @@ import LoyaltyIcon from "@mui/icons-material/Loyalty";
 export default function ProductCard({ product, onProductAdded }) {
   const { name, image, description, sale, offerPrice } = product;
 
-  return (
-    <Box>
-      <Card
-        sx={{
-          maxWidth: 345,
-          m: 5,
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        <CardMedia
-          sx={{ height: 140 }}
-          image={image}
-          title="card indumentaria"
-        />
-        {sale ? (
-          <Box
-            style={{
-              marginTop: "10px",
-              marginLeft: "70%",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: "#EDF67D",
-            }}
-          >
-            <p>{sale ? "- " + offerPrice + " %" : ""}</p>
-            {sale ? <LoyaltyIcon style={{ color: "red" }} /> : ""}
-          </Box>
-        ) : (
-          ""
-        )}
+  const [isHover, setIsHover] = React.useState(false);
 
-        <CardContent sx={{ flexGrow: 1 }}>
-          <Typography
-            gutterBottom
-            variant="h5"
-            component="div"
-            sx={{ justifyContent: "center", display: "flex" }}
+  const buttonStyle = {
+    backgroundColor: isHover ? "white" : "#564592",
+    color: isHover ? "#564592" : "white",
+    //textDecoration: "line-through",
+  };
+
+  const handleMouseEnter = () => {
+    setIsHover(true);
+  };
+  const handleMouseLeave = () => {
+    setIsHover(false);
+  };
+
+  return (
+    <>
+      <Box>
+        <Card
+          sx={{
+            maxWidth: 345,
+            m: 5,
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <CardMedia
+            sx={{ height: 140 }}
+            image={image}
+            title="card indumentaria"
           >
-            {name}
-          </Typography>
-          <Typography
-            variant="body2"
-            sx={{ justifyContent: "center", display: "flex" }}
-          >
-            {description}
-          </Typography>
-        </CardContent>
-        <Box m={4} style={{ display: "flex", justifyContent: "center" }}>
-          <Button
-            style={{
-              width: "50%",
-              backgroundColor: "#564592",
-              color: "white",
-            }}
-          >
-            Ver Detalle
-          </Button>
-        </Box>
-      </Card>
-    </Box>
+            {sale ? (
+              <Box
+                style={{
+                  marginTop: "110px",
+                  marginLeft: "70%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: "#EDF67D",
+                }}
+              >
+                <p>{"- " + offerPrice + " %"}</p>
+                {<LoyaltyIcon style={{ color: "red" }} />}
+              </Box>
+            ) : (
+              ""
+            )}
+          </CardMedia>
+
+          <CardContent sx={{ flexGrow: 1 }}>
+            <Typography
+              gutterBottom
+              variant="h5"
+              component="div"
+              sx={{ justifyContent: "center", display: "flex" }}
+            >
+              {name}
+            </Typography>
+            <Typography
+              variant="body2"
+              sx={{ justifyContent: "center", display: "flex" }}
+            >
+              {description}
+            </Typography>
+          </CardContent>
+          <Box m={4} style={{ display: "flex", justifyContent: "center" }}>
+            <Button
+              style={buttonStyle}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              Ver Detalle
+            </Button>
+          </Box>
+        </Card>
+      </Box>
+    </>
   );
 }

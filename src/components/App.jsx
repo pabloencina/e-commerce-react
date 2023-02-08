@@ -8,6 +8,7 @@ import { Box } from "@mui/system";
 import SearchAutocomplete from "./navbar/Autocomplete";
 import dataArray from "./ejemplo";
 import { Grid } from "@mui/material";
+//import Login from "./login/Login";
 //import Nosotros from "./Nosotros";
 //import { collection, getDocs } from "firebase/firestore";
 //import { useEffect } from "react";
@@ -47,6 +48,7 @@ function App() {
         <SearchAutocomplete />
       </Box>
       <CarouselImages />
+
       {/* <Grid container spacing={2}>
         {dataArray.map((product) => {
           return (
