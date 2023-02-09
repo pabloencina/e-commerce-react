@@ -28,8 +28,6 @@ const Nosotros = () => {
         style={{
           display: "flex",
           justifyContent: "center",
-
-          //backgroundColor: "red ",
         }}
       >
         <Grid>

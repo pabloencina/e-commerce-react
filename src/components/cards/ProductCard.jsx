@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
 import { Box } from "@mui/system";
 import LoyaltyIcon from "@mui/icons-material/Loyalty";
+import useHoverButtons from "../hooks/useHoverButtons";
 
 // https://unsplash.com/es/t/food-drink
 // https://www.freepik.es/search?format=search&query=comida&type=photo
@@ -14,20 +15,11 @@ import LoyaltyIcon from "@mui/icons-material/Loyalty";
 export default function ProductCard({ product, onProductAdded }) {
   const { name, image, description, sale, offerPrice } = product;
 
-  const [isHover, setIsHover] = React.useState(false);
-
-  const buttonStyle = {
-    backgroundColor: isHover ? "white" : "#564592",
-    color: isHover ? "#564592" : "white",
-    //textDecoration: "line-through",
-  };
-
-  const handleMouseEnter = () => {
-    setIsHover(true);
-  };
-  const handleMouseLeave = () => {
-    setIsHover(false);
-  };
+  const {
+    buttonVerDetalle,
+    handleMouseEnterVerDetalle,
+    handleMouseLeaveVerDetalle,
+  } = useHoverButtons(false);
 
   return (
     <>
@@ -82,9 +74,9 @@ export default function ProductCard({ product, onProductAdded }) {
           </CardContent>
           <Box m={4} style={{ display: "flex", justifyContent: "center" }}>
             <Button
-              style={buttonStyle}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
+              style={buttonVerDetalle}
+              onMouseEnter={handleMouseEnterVerDetalle}
+              onMouseLeave={handleMouseLeaveVerDetalle}
             >
               Ver Detalle
             </Button>

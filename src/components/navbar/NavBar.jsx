@@ -12,27 +12,21 @@ import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "../images/logo-color.svg";
 import CartWidget from "../navbar/CartWidget";
+import useHoverButtons from "../hooks/useHoverButtons";
 
 const pages = ["Nosotros", "mats", "Elementos yoga", "Elementos meditación"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
-const styles = {
-  imagenLogo: {
-    width: "100px",
-    //height: "200px",
-  },
-};
 
 function NavBar({ count }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
+  const { isHover, handleMouseEnter, handleMouseLeave, buttonLogo } =
+    useHoverButtons(false);
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  //   const handleOpenUserMenu = (event) => {
-  //     setAnchorElUser(event.currentTarget);
-  //   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
@@ -40,6 +34,14 @@ function NavBar({ count }) {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+
+  const styles = {
+    imagenLogo: {
+      width: "100px",
+      //height: "200px",
+      backgroundColor: isHover ? "#EDF67D" : "#564592",
+    },
   };
 
   return (
@@ -51,13 +53,19 @@ function NavBar({ count }) {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} /> */}
-          <img
-            src={logo}
-            alt="logo"
-            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
-            style={styles.imagenLogo}
-          />
+          <Button
+            style={buttonLogo}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <img
+              src={logo}
+              alt="logo"
+              sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+              style={styles.imagenLogo}
+            />
+          </Button>
+
           <Typography
             variant="h6"
             noWrap
@@ -111,24 +119,7 @@ function NavBar({ count }) {
             </MenuComponent>
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          {/* <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography> */}
+
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
@@ -140,7 +131,6 @@ function NavBar({ count }) {
               </Button>
             ))}
           </Box>
-          {/* <Box sx={{ display: "flex", justifyContent: "center" }}></Box> */}
 
           <CartWidget count={count} />
           <Box sx={{ flexGrow: 0 }}>
