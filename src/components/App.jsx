@@ -8,6 +8,7 @@ import { Box } from "@mui/system";
 import SearchAutocomplete from "./navbar/Autocomplete";
 import dataArray from "./ejemplo";
 import { Grid } from "@mui/material";
+import Información from "./Informacion";
 //import Login from "./login/Login";
 //import Nosotros from "./Nosotros";
 //import { collection, getDocs } from "firebase/firestore";
@@ -37,6 +38,7 @@ function App() {
 
   return (
     <Box>
+      <Información />
       <NavBar count={count} />
       <Box
         m={3}
