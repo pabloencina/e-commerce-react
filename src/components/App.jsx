@@ -9,7 +9,8 @@ import SearchAutocomplete from "./navbar/Autocomplete";
 import dataArray from "./ejemplo";
 import { Grid } from "@mui/material";
 import Información from "./Informacion";
-//import Login from "./login/Login";
+import Register from "./register/Register";
+import Login from "./login/Login";
 //import Nosotros from "./Nosotros";
 //import { collection, getDocs } from "firebase/firestore";
 //import { useEffect } from "react";
@@ -74,7 +75,8 @@ function App() {
           );
         })}
       </Grid>
-
+      <Login />
+      <Register />
       <Footer />
     </Box>
   );

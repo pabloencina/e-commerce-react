@@ -1,13 +1,24 @@
-import { Box, Button, Container, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  //Card,
+  // CardContent,
+  // CardHeader,
+  Container,
+  //DialogTitle,
+  TextField,
+  Typography,
+} from "@mui/material";
+//import Autocomplete from "@mui/material/Autocomplete";
+import React from "react";
 import useHoverButtons from "../hooks/useHoverButtons";
 
-const Login = () => {
+const Register = () => {
   const {
     buttonVerDetalle,
     handleMouseEnterVerDetalle,
     handleMouseLeaveVerDetalle,
   } = useHoverButtons(false);
-
   return (
     <Box
       m={6}
@@ -17,8 +28,8 @@ const Login = () => {
         display: "flex",
         flexGrow: 1,
         minHeight: "100%",
-        backgroundColor: "#EDF67D",
         justifyContent: "center",
+        backgroundColor: "#EDF67D",
       }}
     >
       <Container maxWidth="sm">
@@ -46,16 +57,17 @@ const Login = () => {
                 justifyContent: "center",
               }}
             >
-              INICIAR SESIÓN
+              REGISTRO
             </Typography>
           </Box>
           <TextField
             // error={Boolean(formik.touched.email && formik.errors.email)}
             fullWidth
             // helperText={formik.touched.email && formik.errors.email}
-            label="Email Address"
+            label="Name"
             margin="normal"
-            name="email"
+            name="name"
+            required
             // onBlur={formik.handleBlur}
             // onChange={formik.handleChange}
             type="email"
@@ -66,15 +78,30 @@ const Login = () => {
             // error={Boolean(formik.touched.password && formik.errors.password)}
             fullWidth
             // helperText={formik.touched.password && formik.errors.password}
-            label="Password"
+            label="Surname"
+            name="surname"
             margin="normal"
-            name="password"
             // onBlur={formik.handleBlur}
             // onChange={formik.handleChange}
-            type="password"
+
             // value={formik.values.password}
             variant="outlined"
           />
+          <TextField
+            // error={Boolean(formik.touched.password && formik.errors.password)}
+            fullWidth
+            // helperText={formik.touched.password && formik.errors.password}
+            label="Email"
+            name="email"
+            type="email"
+            margin="normal"
+            // onBlur={formik.handleBlur}
+            // onChange={formik.handleChange}
+
+            // value={formik.values.password}
+            variant="outlined"
+          />
+
           <Box
             sx={{ py: 2 }}
             style={{ display: "flex", justifyContent: "center" }}
@@ -90,16 +117,16 @@ const Login = () => {
               onMouseEnter={handleMouseEnterVerDetalle}
               onMouseLeave={handleMouseLeaveVerDetalle}
             >
-              iNICIAR SESIÓN
+              REGISTRARSE
             </Button>
           </Box>
           {/* {state.formError ? (
-            <Alert severity="error">{state.errorMessage}</Alert>
-          ) : null} */}
+          <Alert severity="error">{state.errorMessage}</Alert>
+        ) : null} */}
         </form>
       </Container>
     </Box>
   );
 };
 
-export default Login;
+export default Register;
