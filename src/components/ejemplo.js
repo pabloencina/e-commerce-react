@@ -33,7 +33,7 @@ const dataArray = [
     offerPrice: 10,
     description: "Arty interior in 1900 wooden house",
     image: cardIndumentaria,
-    stock: 2,
+    stock: 3,
   },
   {
     id: uuidv4(),
@@ -44,7 +44,7 @@ const dataArray = [
     price: 10000,
     offerPrice: 25,
     image: cardIndumentaria,
-    stock: 2,
+    stock: 4,
   },
   {
     id: uuidv4(),

@@ -4,18 +4,17 @@ import ItemCount from "./ItemCount";
 import AddToCart from "./AddToCart";
 
 import { Box } from "@mui/system";
-import { Typography } from "@mui/material";
+import { Alert, Typography } from "@mui/material";
 
 const ProductCardPrice = ({ onProductAdded, product }) => {
   const { increase, decrease, count } = useAccountant(1);
-  const { price, offerPrice } = product;
+  const { price, offerPrice, stock } = product;
   return (
     <>
       <Box sx={{ justifyContent: "center", display: "flex" }}>
         <Box m={2}>
           <Typography
             variant="p"
-            //color="text.secondary"
             sx={{
               justifyContent: "center",
               display: "flex",
@@ -45,7 +44,7 @@ const ProductCardPrice = ({ onProductAdded, product }) => {
             decrease();
           }}
           count={count}
-          stock={15}
+          stock={stock}
         />
       </Box>
 
@@ -53,6 +52,13 @@ const ProductCardPrice = ({ onProductAdded, product }) => {
         {" "}
         <AddToCart count={count} onProductAdded={onProductAdded} />
       </Box>
+      {stock <= 2 ? (
+        <Alert severity="warning">
+          Solo quedan los últimos {stock} productos
+        </Alert>
+      ) : (
+        ""
+      )}
     </>
   );
 };

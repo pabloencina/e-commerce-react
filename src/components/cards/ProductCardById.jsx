@@ -29,22 +29,22 @@ const ProductCardById = ({ product, onProductAdded }) => {
       <Box>
         <Card
           sx={{
-            width: 545,
+            width: 900,
             m: 5,
             display: "flex",
             //backgroundColor: "#EDF67D",
-            flexDirection: "column",
+            flexDirection: "row",
           }}
         >
           <CardMedia
-            sx={{ height: 340 }}
+            sx={{ height: 340, width: "500px" }}
             image={image}
             title="card indumentaria"
           >
             {sale ? (
               <Box
                 style={{
-                  marginTop: "310px",
+                  marginTop: "280px",
                   marginLeft: "70%",
                   display: "flex",
                   justifyContent: "center",
@@ -60,23 +60,45 @@ const ProductCardById = ({ product, onProductAdded }) => {
             )}
           </CardMedia>
 
-          <CardContent sx={{ flexGrow: 1 }}>
+          <CardContent
+            sx={{
+              flexGrow: 1,
+              //justifyContent: "center",
+              display: "block",
+              //alignItems: "center",
+            }}
+          >
             <Typography
               gutterBottom
               variant="h5"
               component="div"
-              sx={{ justifyContent: "center", display: "flex" }}
+              sx={{
+                justifyContent: "center",
+                display: "flex",
+                alignItems: "center",
+              }}
             >
               {name}
             </Typography>
             <Typography
               variant="body2"
-              sx={{ justifyContent: "center", display: "flex" }}
+              sx={{
+                justifyContent: "center",
+                display: "flex",
+                alignItems: "center",
+              }}
             >
               {description}
             </Typography>
           </CardContent>
-          <Box m={4} style={{ display: "flex", justifyContent: "center" }}>
+          <Box
+            m={4}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <Box>
               {" "}
               <ProductCardPrice
