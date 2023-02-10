@@ -78,7 +78,7 @@ function App() {
         })}
       </Grid>
 
-      <Grid container spacing={2}>
+      <Grid>
         {productsToShow.map((product) => {
           return (
             <Grid item>

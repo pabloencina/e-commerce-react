@@ -51,13 +51,14 @@ export default function AddToCart({ count, onProductAdded, stock }) {
       <Box style={{ display: "flex", justifyContent: "center" }}>
         {" "}
         <Button
+          sx={{ width: "200px", height: "45px" }}
           disabled={stock <= 0}
           onClick={handleClick}
           style={buttonVerDetalle}
           onMouseEnter={handleMouseEnterVerDetalle}
           onMouseLeave={handleMouseLeaveVerDetalle}
         >
-          Agregar al carrito
+          <p style={{ fontFamily: " Hind Madurai" }}>Agregar al carrito</p>
         </Button>
       </Box>
 

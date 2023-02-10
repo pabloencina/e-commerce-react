@@ -26,7 +26,7 @@ const dataArray = [
   },
   {
     id: uuidv4(),
-    name: "Helsinki",
+    name: "Calza",
     price: 11500,
     category: "",
     sale: true,
@@ -125,7 +125,7 @@ const dataArray = [
   },
   {
     id: uuidv4(),
-    name: "Helsinki",
+    name: "Calza larga",
     category: "",
     sale: true,
     description: "Stylist apartment in center of the city",

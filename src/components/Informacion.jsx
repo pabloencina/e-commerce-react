@@ -16,13 +16,17 @@ const Información = () => {
           height: "50px",
           alignItems: "center",
           color: "red",
+          fontFamily: " Hind Madurai",
         }}
       >
         Consulte por clases de yoga, meditación guiada y coaching nutricional.
         <Button>
           <FontAwesomeIcon
             icon={faWhatsapp}
-            style={{ color: "green", fontSize: "30px" }}
+            style={{
+              color: "green",
+              fontSize: "30px",
+            }}
           />
         </Button>
       </Box>

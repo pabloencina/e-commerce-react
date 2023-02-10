@@ -2,13 +2,12 @@ import React from "react";
 import useAccountant from "../hooks/useAccountant";
 import ItemCount from "./ItemCount";
 import AddToCart from "./AddToCart";
-
 import { Box } from "@mui/system";
 import { Alert, Typography } from "@mui/material";
 
 const ProductCardPrice = ({ onProductAdded, product }) => {
   const { increase, decrease, count } = useAccountant(1);
-  const { price, offerPrice, stock } = product;
+  const { price, offerPrice, stock, name } = product;
   return (
     <>
       <Box sx={{ justifyContent: "center", display: "flex" }}>
@@ -53,8 +52,8 @@ const ProductCardPrice = ({ onProductAdded, product }) => {
         <AddToCart count={count} onProductAdded={onProductAdded} />
       </Box>
       {stock <= 2 ? (
-        <Alert severity="warning">
-          Solo quedan los últimos {stock} productos
+        <Alert severity="warning" style={{ fontFamily: " Hind Madurai" }}>
+          Solo quedan disponibles {stock} {name}.
         </Alert>
       ) : (
         ""

@@ -74,11 +74,12 @@ export default function ProductCard({ product, onProductAdded }) {
           </CardContent>
           <Box m={4} style={{ display: "flex", justifyContent: "center" }}>
             <Button
+              sx={{ width: "300px", height: "45px" }}
               style={buttonVerDetalle}
               onMouseEnter={handleMouseEnterVerDetalle}
               onMouseLeave={handleMouseLeaveVerDetalle}
             >
-              Ver Detalle
+              <p style={{ fontFamily: " Hind Madurai" }}>Ver detalle</p>
             </Button>
           </Box>
         </Card>

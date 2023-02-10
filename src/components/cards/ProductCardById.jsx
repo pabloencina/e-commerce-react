@@ -25,103 +25,123 @@ const ProductCardById = ({ product, onProductAdded }) => {
   } = useHoverButtons(false);
 
   return (
-    <Box m={5}>
-      <Box>
-        <Card
-          sx={{
-            width: 900,
-            m: 5,
+    <Box>
+      <Box m={5}>
+        <Box
+          style={{
             display: "flex",
-            //backgroundColor: "#EDF67D",
-            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          <CardMedia
-            sx={{ height: 340, width: "500px" }}
-            image={image}
-            title="card indumentaria"
+          <Card
+            sx={{
+              width: "70%",
+              m: 5,
+              display: "flex",
+              //backgroundColor: "#EDF67D",
+              flexDirection: "row",
+            }}
           >
-            {sale ? (
-              <Box
-                style={{
-                  marginTop: "280px",
-                  marginLeft: "70%",
-                  display: "flex",
+            <CardMedia
+              sx={{ height: 340, width: "500px" }}
+              image={image}
+              title="card indumentaria"
+            >
+              {sale ? (
+                <Box
+                  style={{
+                    marginTop: "280px",
+                    marginLeft: "70%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    backgroundColor: "#EDF67D",
+                  }}
+                >
+                  <p>{"- " + offerPrice + " %"}</p>
+                  {<LoyaltyIcon style={{ color: "red" }} />}
+                </Box>
+              ) : (
+                ""
+              )}
+            </CardMedia>
+            <Box
+              sx={{
+                flexGrow: 1,
+                justifyContent: "center",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <CardContent
+                sx={{
+                  flexGrow: 1,
                   justifyContent: "center",
+                  display: "block",
                   alignItems: "center",
-                  backgroundColor: "#EDF67D",
                 }}
               >
-                <p>{"- " + offerPrice + " %"}</p>
-                {<LoyaltyIcon style={{ color: "red" }} />}
-              </Box>
-            ) : (
-              ""
-            )}
-          </CardMedia>
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  component="div"
+                  sx={{
+                    justifyContent: "center",
+                    display: "flex",
+                    alignItems: "center",
+                    fontFamily: " Hind Madurai",
+                  }}
+                >
+                  {name}
+                </Typography>
+                <Typography
+                  //variant="body2"
+                  sx={{
+                    justifyContent: "center",
+                    display: "flex",
+                    alignItems: "center",
+                    fontFamily: " Hind Madurai",
+                  }}
+                >
+                  {description}
+                </Typography>
+              </CardContent>
+            </Box>
 
-          <CardContent
-            sx={{
-              flexGrow: 1,
-              //justifyContent: "center",
-              display: "block",
-              //alignItems: "center",
-            }}
-          >
-            <Typography
-              gutterBottom
-              variant="h5"
-              component="div"
-              sx={{
-                justifyContent: "center",
+            <Box
+              m={4}
+              style={{
                 display: "flex",
+                justifyContent: "center",
                 alignItems: "center",
               }}
             >
-              {name}
-            </Typography>
-            <Typography
-              variant="body2"
-              sx={{
-                justifyContent: "center",
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              {description}
-            </Typography>
-          </CardContent>
-          <Box
-            m={4}
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
+              <Box>
+                {" "}
+                <ProductCardPrice
+                  onProductAdded={onProductAdded}
+                  product={product}
+                />
+              </Box>
+              <Box>
+                {/* <ItemCount increase={increase} decrease={decrease} count={count} /> */}
+              </Box>
+            </Box>
+          </Card>
+        </Box>
+        <Divider />
+        <Box m={2} style={{ display: "flex", justifyContent: "center" }}>
+          <Button
+            sx={{ width: "300px", height: "45px" }}
+            style={buttonVerDetalle}
+            onMouseEnter={handleMouseEnterVerDetalle}
+            onMouseLeave={handleMouseLeaveVerDetalle}
           >
-            <Box>
-              {" "}
-              <ProductCardPrice
-                onProductAdded={onProductAdded}
-                product={product}
-              />
-            </Box>
-            <Box>
-              {/* <ItemCount increase={increase} decrease={decrease} count={count} /> */}
-            </Box>
-          </Box>
-        </Card>
-      </Box>
-      <Divider />
-      <Box m={2} style={{ display: "flex", justifyContent: "center" }}>
-        <Button
-          style={buttonVerDetalle}
-          onMouseEnter={handleMouseEnterVerDetalle}
-          onMouseLeave={handleMouseLeaveVerDetalle}
-        >
-          <ReplyOutlinedIcon />
-          Volver
-        </Button>
+            <ReplyOutlinedIcon />
+            <p style={{ fontFamily: " Hind Madurai" }}>Volver</p>
+          </Button>
+        </Box>
       </Box>
     </Box>
   );

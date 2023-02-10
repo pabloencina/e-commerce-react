@@ -74,7 +74,7 @@ function NavBar({ count }) {
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
+              fontFamily: " Hind Madurai",
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
@@ -113,7 +113,9 @@ function NavBar({ count }) {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center" fontFamily=" Hind Madurai">
+                    {page}
+                  </Typography>
                 </MenuItem>
               ))}
             </MenuComponent>
@@ -125,7 +127,12 @@ function NavBar({ count }) {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  fontFamily: " Hind Madurai",
+                }}
               >
                 {page}
               </Button>
@@ -138,6 +145,7 @@ function NavBar({ count }) {
               style={{
                 backgroundColor: "#564592",
                 marginLeft: "10Px",
+                fontFamily: " Hind Madurai",
               }}
               variant="contained"
             >
@@ -147,6 +155,7 @@ function NavBar({ count }) {
               style={{
                 backgroundColor: "#564592",
                 marginLeft: "10Px",
+                fontFamily: " Hind Madurai",
               }}
               variant="contained"
             >
