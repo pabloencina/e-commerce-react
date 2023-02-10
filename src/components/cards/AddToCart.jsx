@@ -3,14 +3,19 @@ import Button from "@mui/material/Button";
 import Snackbar from "@mui/material/Snackbar";
 import { Close } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
-
 import { Box } from "@mui/system";
+import useHoverButtons from "../hooks/useHoverButtons";
 
 export default function AddToCart({ count, onProductAdded, stock }) {
   const [open, setOpen] = React.useState(false);
 
   const messageProducto = `Se agrego ${count} producto al carrito`;
   const messageProductos = `Se agregaron ${count} productos al carrito`;
+  const {
+    buttonVerDetalle,
+    handleMouseEnterVerDetalle,
+    handleMouseLeaveVerDetalle,
+  } = useHoverButtons(false);
 
   const handleClick = () => {
     setOpen(true);
@@ -48,10 +53,9 @@ export default function AddToCart({ count, onProductAdded, stock }) {
         <Button
           disabled={stock <= 0}
           onClick={handleClick}
-          style={{
-            backgroundColor: "#564592",
-            color: "white",
-          }}
+          style={buttonVerDetalle}
+          onMouseEnter={handleMouseEnterVerDetalle}
+          onMouseLeave={handleMouseLeaveVerDetalle}
         >
           Agregar al carrito
         </Button>

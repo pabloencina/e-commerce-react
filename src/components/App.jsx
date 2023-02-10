@@ -9,8 +9,10 @@ import SearchAutocomplete from "./navbar/Autocomplete";
 import dataArray from "./ejemplo";
 import { Grid } from "@mui/material";
 import Información from "./Informacion";
-import Register from "./register/Register";
-import Login from "./login/Login";
+import ProductCardById from "./cards/ProductCardById";
+//import ItemCount from "./cards/ItemCount";
+// import Register from "./register/Register";
+// import Login from "./login/Login";
 //import Nosotros from "./Nosotros";
 //import { collection, getDocs } from "firebase/firestore";
 //import { useEffect } from "react";
@@ -75,8 +77,23 @@ function App() {
           );
         })}
       </Grid>
-      <Login />
-      <Register />
+
+      <Grid container spacing={2}>
+        {productsToShow.map((product) => {
+          return (
+            <Grid item>
+              <ProductCardById
+                product={product}
+                key={product.id}
+                onProductAdded={onProductAdded}
+              />
+            </Grid>
+          );
+        })}
+      </Grid>
+
+      {/* <Login />
+      <Register /> */}
       <Footer />
     </Box>
   );
