@@ -8,6 +8,7 @@ import { Alert, Typography } from "@mui/material";
 const ProductCardPrice = ({ onProductAdded, product }) => {
   const { increase, decrease, count } = useAccountant(1);
   const { price, offerPrice, stock, name } = product;
+
   return (
     <>
       <Box sx={{ justifyContent: "center", display: "flex" }}>
@@ -51,9 +52,9 @@ const ProductCardPrice = ({ onProductAdded, product }) => {
         {" "}
         <AddToCart count={count} onProductAdded={onProductAdded} />
       </Box>
-      {stock <= 2 ? (
+      {stock <= 1 ? (
         <Alert severity="warning" style={{ fontFamily: " Hind Madurai" }}>
-          Solo quedan disponibles {stock} {name}.
+          Solo queda disponible {count} {name}
         </Alert>
       ) : (
         ""

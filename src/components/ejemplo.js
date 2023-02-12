@@ -132,7 +132,7 @@ const dataArray = [
     price: 5200,
     offerPrice: 10,
     image: cardIndumentaria,
-    stock: 2,
+    stock: 1,
   },
 ];
 

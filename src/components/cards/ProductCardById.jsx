@@ -110,11 +110,12 @@ const ProductCardById = ({ product, onProductAdded }) => {
             </Box>
 
             <Box
-              m={4}
+              m={5}
               style={{
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                width: "150px",
               }}
             >
               <Box>

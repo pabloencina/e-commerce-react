@@ -13,6 +13,7 @@ import MenuItem from "@mui/material/MenuItem";
 import logo from "../images/logo-color.svg";
 import CartWidget from "../navbar/CartWidget";
 import useHoverButtons from "../hooks/useHoverButtons";
+//import { Link } from "react-router-dom";
 
 const pages = ["Nosotros", "mats", "Elementos yoga", "Elementos meditación"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -156,8 +157,10 @@ function NavBar({ count }) {
                 backgroundColor: "#564592",
                 marginLeft: "10Px",
                 fontFamily: " Hind Madurai",
+                cursor: "move",
               }}
               variant="contained"
+              //onClick={}
             >
               Iniciar sesión
             </Button>

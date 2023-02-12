@@ -13,7 +13,7 @@ import ProductCardById from "./cards/ProductCardById";
 //import ItemCount from "./cards/ItemCount";
 // import Register from "./register/Register";
 // import Login from "./login/Login";
-//import Nosotros from "./Nosotros";
+// import Nosotros from "./Nosotros";
 //import { collection, getDocs } from "firebase/firestore";
 //import { useEffect } from "react";
 //import db from "./firebase-config";
@@ -53,7 +53,7 @@ function App() {
         <SearchAutocomplete />
       </Box>
       <CarouselImages />
-
+      {/* <Nosotros /> */}
       {/* <Grid container spacing={2}>
         {dataArray.map((product) => {
           return (
