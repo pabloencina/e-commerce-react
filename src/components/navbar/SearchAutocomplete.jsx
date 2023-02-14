@@ -5,18 +5,23 @@ import dataArray from "../ejemplo";
 
 export default function SearchAutocomplete() {
   return (
-    <>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "80px",
+      }}
+    >
       <Autocomplete
         disablePortal
         openOnFocus
         id="combo-box-demo"
         options={dataArray.map((array) => array.name)}
-        sx={{ width: 400, color: "red" }}
-        renderInput={(params) => (
-          <TextField fontFamily=" Hind Madurai" {...params} label="Búsqueda" />
-        )}
+        sx={{ width: 400, display: "flex", justifyContent: "center" }}
+        renderInput={(params) => <TextField {...params} label="Búsqueda" />}
       />
-    </>
+    </div>
   );
 }
 

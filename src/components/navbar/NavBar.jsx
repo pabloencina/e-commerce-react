@@ -11,9 +11,10 @@ import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "../images/logo-color.svg";
-import CartWidget from "../navbar/CartWidget";
+//import CartWidget from "../navbar/CartWidget";
 import useHoverButtons from "../hooks/useHoverButtons";
-//import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import ModalCartWidget from "./ModalCartWidget";
 
 const pages = ["Nosotros", "mats", "Elementos yoga", "Elementos meditación"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -140,7 +141,8 @@ function NavBar({ count }) {
             ))}
           </Box>
 
-          <CartWidget count={count} />
+          {/* <CartWidget count={count} /> */}
+          <ModalCartWidget count={count} />
           <Box sx={{ flexGrow: 0 }}>
             <Button
               style={{
@@ -150,19 +152,40 @@ function NavBar({ count }) {
               }}
               variant="contained"
             >
-              Registrarse
+              <NavLink
+                to={"/register"}
+                style={{
+                  backgroundColor: "#564592",
+                  color: "white",
+                  marginLeft: "10Px",
+                  fontFamily: " Hind Madurai",
+                  textDecoration: "none",
+                }}
+              >
+                Registrarse
+              </NavLink>
             </Button>
             <Button
               style={{
                 backgroundColor: "#564592",
                 marginLeft: "10Px",
                 fontFamily: " Hind Madurai",
-                cursor: "move",
               }}
               variant="contained"
               //onClick={}
             >
-              Iniciar sesión
+              <Link
+                to={"/login"}
+                style={{
+                  backgroundColor: "#564592",
+                  color: "white",
+                  marginLeft: "10Px",
+                  fontFamily: " Hind Madurai",
+                  textDecoration: "none",
+                }}
+              >
+                Iniciar sesión
+              </Link>
             </Button>
 
             <MenuComponent

@@ -57,6 +57,7 @@ const ProductCardById = ({ product, onProductAdded }) => {
                     justifyContent: "center",
                     alignItems: "center",
                     backgroundColor: "#EDF67D",
+                    fontFamily: " Hind Madurai",
                   }}
                 >
                   <p>{"- " + offerPrice + " %"}</p>

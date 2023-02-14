@@ -9,6 +9,12 @@ const useHoverButtons = () => {
     //textDecoration: "line-through",
   };
 
+  const buttonVolver = {
+    backgroundColor: isHover ? "white" : "#564592",
+    color: isHover ? "#564592" : "white",
+    //textDecoration: "line-through",
+  };
+
   const buttonLogo = {
     imagenLogo: {
       width: "100px",
@@ -35,6 +41,13 @@ const useHoverButtons = () => {
   const handleMouseLeaveVerDetalle = () => {
     setIsHover(false);
   };
+
+  const handleMouseEnterVolver = () => {
+    setIsHover(true);
+  };
+  const handleMouseLeaveVolver = () => {
+    setIsHover(false);
+  };
   return {
     isHover,
     setIsHover,
@@ -42,9 +55,12 @@ const useHoverButtons = () => {
     handleMouseLeave,
     handleMouseEnterVerDetalle,
     handleMouseLeaveVerDetalle,
+    handleMouseEnterVolver,
+    handleMouseLeaveVolver,
     buttonVerDetalle,
     buttonLogo,
     buttonNavBar,
+    buttonVolver,
   };
 };
 

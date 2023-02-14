@@ -5,14 +5,15 @@ import useAccountant from "./hooks/useAccountant";
 import Footer from "./Footer";
 import CarouselImages from "./carousel/CarouselImages";
 import { Box } from "@mui/system";
-import SearchAutocomplete from "./navbar/Autocomplete";
+import SearchAutocomplete from "./navbar/SearchAutocomplete";
 import dataArray from "./ejemplo";
 import { Grid } from "@mui/material";
 import Información from "./Informacion";
-import ProductCardById from "./cards/ProductCardById";
+//import ProductCardById from "./cards/ProductCardById";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 //import ItemCount from "./cards/ItemCount";
-// import Register from "./register/Register";
-// import Login from "./login/Login";
+import Register from "./register/Register";
+import Login from "./login/Login";
 // import Nosotros from "./Nosotros";
 //import { collection, getDocs } from "firebase/firestore";
 //import { useEffect } from "react";
@@ -40,63 +41,62 @@ function App() {
   const productsToShow = dataArray.filter((card) => card.sale);
 
   return (
-    <Box>
-      <Información />
-      <NavBar count={count} />
-      <Box
-        m={3}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
+    <BrowserRouter>
+      <Box>
+        <Información />
+
+        <NavBar count={count} />
+
         <SearchAutocomplete />
+
+        <CarouselImages />
+
+        <Grid container spacing={2}>
+          {productsToShow.map((product) => {
+            return (
+              <Grid item xs={12} sm={6} md={4}>
+                <ProductCard
+                  product={product}
+                  key={product.id}
+                  onProductAdded={onProductAdded}
+                />
+              </Grid>
+            );
+          })}
+        </Grid>
+        <Routes>
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+        </Routes>
+        <Footer />
       </Box>
-      <CarouselImages />
-      {/* <Nosotros /> */}
-      {/* <Grid container spacing={2}>
-        {dataArray.map((product) => {
-          return (
-            <Grid item xs={12} sm={6} md={4}>
-              <ProductCard product={product} onProductAdded={onProductAdded} />
-            </Grid>
-          );
-        })}
-      </Grid> */}
-
-      <Grid container spacing={2}>
-        {productsToShow.map((product) => {
-          return (
-            <Grid item xs={12} sm={6} md={4}>
-              <ProductCard
-                product={product}
-                key={product.id}
-                onProductAdded={onProductAdded}
-              />
-            </Grid>
-          );
-        })}
-      </Grid>
-
-      <Grid>
-        {productsToShow.map((product) => {
-          return (
-            <Grid item>
-              <ProductCardById
-                product={product}
-                key={product.id}
-                onProductAdded={onProductAdded}
-              />
-            </Grid>
-          );
-        })}
-      </Grid>
-
-      {/* <Login />
-      <Register /> */}
-      <Footer />
-    </Box>
+    </BrowserRouter>
   );
 }
 
 export default App;
+
+//  {/* <Nosotros /> */}
+//         {/* <Grid container spacing={2}>
+//         {dataArray.map((product) => {
+//           return (
+//             <Grid item xs={12} sm={6} md={4}>
+//               <ProductCard product={product} onProductAdded={onProductAdded} />
+//             </Grid>
+//           );
+//         })}
+//       </Grid> */}
+
+// {/* <Grid>
+//           {productsToShow.map((product) => {
+//             return (
+//               <Grid item>
+//                 <ProductCardById
+//                   product={product}
+//                   key={product.id}
+//                   onProductAdded={onProductAdded}
+//                 />
+//               </Grid>
+//             );
+//           })}
+//         </Grid> */}
