@@ -2,7 +2,7 @@ import { Grid } from "@mui/material";
 import React from "react";
 import dataArray from "../ejemplo";
 import useAccountant from "../hooks/useAccountant";
-import ProductCard from "./ProductCard";
+import ItemList from "./ItemList";
 
 const ProductsToShowOnSale = () => {
   const productsToShow = dataArray.filter((card) => card.sale);
@@ -16,7 +16,7 @@ const ProductsToShowOnSale = () => {
       {productsToShow.map((product) => {
         return (
           <Grid item xs={12} sm={6} md={4}>
-            <ProductCard
+            <ItemList
               product={product}
               key={product.id}
               onProductAdded={onProductAdded}

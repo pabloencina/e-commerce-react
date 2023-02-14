@@ -4,7 +4,7 @@ import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import AdbIcon from "@mui/icons-material/Adb";
+//import AdbIcon from "@mui/icons-material/Adb";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuComponent from "@mui/material/Menu";
 import Button from "@mui/material/Button";
@@ -16,7 +16,7 @@ import useHoverButtons from "../hooks/useHoverButtons";
 import { Link, NavLink } from "react-router-dom";
 import ModalCartWidget from "./ModalCartWidget";
 
-const pages = ["Nosotros", "mats", "Elementos yoga", "Elementos meditación"];
+const pages = ["NOSOTROS", "MATS", "ELEMENTOS YOGA", "ELEMENTOS MEDITACION"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function NavBar({ count }) {
@@ -41,7 +41,6 @@ function NavBar({ count }) {
   const styles = {
     imagenLogo: {
       width: "100px",
-      //height: "200px",
       backgroundColor: isHover ? "#EDF67D" : "#564592",
     },
   };
@@ -122,22 +121,26 @@ function NavBar({ count }) {
               ))}
             </MenuComponent>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button
+              <NavLink
+                to={"/nosotros"}
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{
+                style={{
                   my: 2,
                   color: "white",
                   display: "block",
                   fontFamily: " Hind Madurai",
+                  marginLeft: "20Px",
+                  textDecoration: "none",
+                  backgroundColor: "#564592",
                 }}
               >
                 {page}
-              </Button>
+              </NavLink>
             ))}
           </Box>
 

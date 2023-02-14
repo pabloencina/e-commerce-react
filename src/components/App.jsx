@@ -14,8 +14,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 //import ItemCount from "./cards/ItemCount";
 import Register from "./register/Register";
 import Login from "./login/Login";
+//import ProductsToShowOnSale from "./cards/ProductsToShowOnSale";
+import ItemListContainer from "./cards/ItemListContainer";
 import ProductsToShowOnSale from "./cards/ProductsToShowOnSale";
-// import Nosotros from "./Nosotros";
+import Nosotros from "./Nosotros";
 //import { collection, getDocs } from "firebase/firestore";
 //import { useEffect } from "react";
 //import db from "./firebase-config";
@@ -33,21 +35,22 @@ function App() {
   //   getUsuarios();
   // }, []);
 
-  const { count } = useAccountant(0);
+  const { count, onProductAdded } = useAccountant(0);
 
   return (
     <BrowserRouter>
       <Box>
         <Información />
-
         <NavBar count={count} />
-
         <SearchAutocomplete />
-
         <CarouselImages />
-
         <ProductsToShowOnSale />
+        <Nosotros />
         <Routes>
+          <Route
+            path="products"
+            element={<ItemListContainer onProductAdded={onProductAdded} />}
+          />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
         </Routes>

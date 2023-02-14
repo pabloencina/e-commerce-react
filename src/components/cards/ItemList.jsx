@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import LoyaltyIcon from "@mui/icons-material/Loyalty";
 import useHoverButtons from "../hooks/useHoverButtons";
@@ -12,7 +12,7 @@ import useHoverButtons from "../hooks/useHoverButtons";
 // https://www.freepik.es/search?format=search&query=comida&type=photo
 // https://storyset.com/food
 //https://www.youtube.com/watch?v=s_Txhh-clVk&t=999s
-export default function ProductCard({ product, onProductAdded }) {
+export default function ItemList({ product, onProductAdded, items }) {
   const { name, image, description, sale, offerPrice } = product;
 
   const {
@@ -22,7 +22,7 @@ export default function ProductCard({ product, onProductAdded }) {
   } = useHoverButtons(false);
 
   return (
-    <>
+    <Grid container spacing={2}>
       <Box>
         <Card
           sx={{
@@ -84,6 +84,6 @@ export default function ProductCard({ product, onProductAdded }) {
           </Box>
         </Card>
       </Box>
-    </>
+    </Grid>
   );
 }

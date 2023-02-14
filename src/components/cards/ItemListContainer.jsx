@@ -1,17 +1,32 @@
-import { Alert } from "@mui/material";
-import { Box } from "@mui/system";
-import React from "react";
+import { Grid } from "@mui/material";
+import React, { useEffect } from "react";
+import { useState } from "react";
+import dataArray from "../ejemplo";
+import ItemList from "./ItemList";
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const promise = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(dataArray);
+      }, 2000);
+    });
+    promise.then((request) => {
+      setItems(request);
+    });
+  }, []);
   return (
-    <Box m={3}>
-      <Alert
-        sx={{ display: "flex", justifyContent: "center" }}
-        severity="error"
-      >
-        {greeting}
-      </Alert>
-    </Box>
+    <Grid container spacing={2}>
+      {items.map((product) => {
+        return (
+          <Grid item xs={12} sm={6} md={4}>
+            <ItemList product={product} items={items} />
+          </Grid>
+        );
+      })}
+    </Grid>
   );
 };
 
