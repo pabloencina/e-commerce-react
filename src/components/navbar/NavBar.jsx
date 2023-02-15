@@ -128,7 +128,7 @@ function NavBar({ count }) {
             {pages.map((page) => (
               <NavLink
                 to={"/nosotros"}
-                key={page[0]}
+                key={page}
                 onClick={handleCloseNavMenu}
                 style={{
                   my: 2,

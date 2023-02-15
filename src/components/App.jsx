@@ -17,6 +17,7 @@ import ItemListContainer from "./cards/ItemListContainer";
 import Nosotros from "./Nosotros";
 import Home from "./Home";
 import ProductCardByIdItem from "./cards/ProductCardByIdItem";
+import ItemsListContainerMats from "./cards/ItemsListContainerMats";
 
 //import { collection, getDocs } from "firebase/firestore";
 //import { useEffect } from "react";
@@ -56,7 +57,7 @@ function App() {
           />
           <Route
             path={"/category/:categoryId"}
-            element={<ItemListContainer onProductAdded={onProductAdded} />}
+            element={<ItemsListContainerMats />}
           />
           <Route
             path={"/product/:productId"}

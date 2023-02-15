@@ -28,7 +28,7 @@ const dataArray = [
     id: uuidv4(),
     name: "Calza",
     price: 11500,
-    category: "elementos-meditacion",
+    category: "mats",
     sale: true,
     offerPrice: 10,
     description: "Arty interior in 1900 wooden house",
