@@ -3,21 +3,21 @@ import NavBar from "./navbar/NavBar";
 import React from "react";
 import useAccountant from "./hooks/useAccountant";
 import Footer from "./Footer";
-import CarouselImages from "./carousel/CarouselImages";
+//import CarouselImages from "./carousel/CarouselImages";
 import { Box } from "@mui/system";
-import SearchAutocomplete from "./navbar/SearchAutocomplete";
+//import SearchAutocomplete from "./navbar/SearchAutocomplete";
 //import dataArray from "./ejemplo";
 //import { Grid } from "@mui/material";
 import Información from "./Informacion";
-//import ProductCardById from "./cards/ProductCardById";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-//import ItemCount from "./cards/ItemCount";
 import Register from "./register/Register";
 import Login from "./login/Login";
-//import ProductsToShowOnSale from "./cards/ProductsToShowOnSale";
 import ItemListContainer from "./cards/ItemListContainer";
-import ProductsToShowOnSale from "./cards/ProductsToShowOnSale";
+//import ProductsToShowOnSale from "./cards/ProductsToShowOnSale";
 import Nosotros from "./Nosotros";
+import Home from "./Home";
+import ProductCardByIdItem from "./cards/ProductCardByIdItem";
+
 //import { collection, getDocs } from "firebase/firestore";
 //import { useEffect } from "react";
 //import db from "./firebase-config";
@@ -37,23 +37,28 @@ function App() {
 
   const { count, onProductAdded } = useAccountant(0);
 
+  //const { name } = product;
+
   return (
     <BrowserRouter>
       <Box>
         <Información />
         <NavBar count={count} />
-        <SearchAutocomplete />
-        <CarouselImages />
-        <ProductsToShowOnSale />
-        <Nosotros />
+
         <Routes>
+          <Route path="nosotros" element={<Nosotros />} />
+          <Route path="/" element={<Home />} />
+
           <Route
             path="products"
             element={<ItemListContainer onProductAdded={onProductAdded} />}
           />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
+          <Route path="category" element={<ItemListContainer />} />
+          <Route path="product/:productId" element={<ProductCardByIdItem />} />
         </Routes>
+
         <Footer />
       </Box>
     </BrowserRouter>

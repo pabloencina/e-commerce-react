@@ -54,7 +54,8 @@ function NavBar({ count }) {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Button
+          <Link
+            to="/"
             style={buttonLogo}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -65,7 +66,7 @@ function NavBar({ count }) {
               sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
               style={styles.imagenLogo}
             />
-          </Button>
+          </Link>
 
           <Typography
             variant="h6"
@@ -127,7 +128,7 @@ function NavBar({ count }) {
             {pages.map((page) => (
               <NavLink
                 to={"/nosotros"}
-                key={page}
+                key={page[0]}
                 onClick={handleCloseNavMenu}
                 style={{
                   my: 2,

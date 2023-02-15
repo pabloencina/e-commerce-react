@@ -7,6 +7,7 @@ import { Button, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import LoyaltyIcon from "@mui/icons-material/Loyalty";
 import useHoverButtons from "../hooks/useHoverButtons";
+import { useNavigate } from "react-router-dom";
 
 // https://unsplash.com/es/t/food-drink
 // https://www.freepik.es/search?format=search&query=comida&type=photo
@@ -15,11 +16,18 @@ import useHoverButtons from "../hooks/useHoverButtons";
 export default function ItemList({ product, onProductAdded, items }) {
   const { name, image, description, sale, offerPrice } = product;
 
+  const navigate = useNavigate();
+
   const {
     buttonVerDetalle,
     handleMouseEnterVerDetalle,
     handleMouseLeaveVerDetalle,
   } = useHoverButtons(false);
+
+  const handleOnClick = (e) => {
+    const url = "/product/" + product.id;
+    navigate(url);
+  };
 
   return (
     <Grid container spacing={2}>
@@ -78,6 +86,7 @@ export default function ItemList({ product, onProductAdded, items }) {
               style={buttonVerDetalle}
               onMouseEnter={handleMouseEnterVerDetalle}
               onMouseLeave={handleMouseLeaveVerDetalle}
+              onClick={handleOnClick}
             >
               <p style={{ fontFamily: " Hind Madurai" }}>Ver detalle</p>
             </Button>

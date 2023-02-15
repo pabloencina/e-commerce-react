@@ -15,6 +15,7 @@ import LoyaltyIcon from "@mui/icons-material/Loyalty";
 import ProductCardPrice from "./ProductCardPrice";
 import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 import useHoverButtons from "../hooks/useHoverButtons";
+import { Link } from "react-router-dom";
 
 const ProductCardById = ({ product, onProductAdded }) => {
   const { name, image, description, sale, offerPrice } = product;
@@ -134,15 +135,23 @@ const ProductCardById = ({ product, onProductAdded }) => {
         </Box>
         <Divider />
         <Box m={2} style={{ display: "flex", justifyContent: "center" }}>
-          <Button
-            sx={{ width: "300px", height: "45px" }}
-            style={buttonVerDetalle}
-            onMouseEnter={handleMouseEnterVerDetalle}
-            onMouseLeave={handleMouseLeaveVerDetalle}
-          >
-            <ReplyOutlinedIcon />
-            <p style={{ fontFamily: " Hind Madurai" }}>Volver</p>
-          </Button>
+          <Link to={"/category"} style={{ textDecoration: "none" }}>
+            <Button
+              to={"/category"}
+              sx={{
+                width: "300px",
+                height: "45px",
+
+                backgroundColor: "#564592",
+              }}
+              style={buttonVerDetalle}
+              onMouseEnter={handleMouseEnterVerDetalle}
+              onMouseLeave={handleMouseLeaveVerDetalle}
+            >
+              <ReplyOutlinedIcon />
+              <p style={{ fontFamily: " Hind Madurai" }}>Volver</p>
+            </Button>
+          </Link>
         </Box>
       </Box>
     </Box>
