@@ -5,7 +5,7 @@ const dataArray = [
   {
     id: uuidv4(),
     name: "Helsinki",
-    category: "",
+    category: "mats",
     sale: false,
     offerPrice: 15,
     description: "Stylist apartment in center of the city",
@@ -16,7 +16,7 @@ const dataArray = [
   {
     id: uuidv4(),
     name: "Turku",
-    category: "",
+    category: "mats",
     sale: false,
     offerPrice: 15,
     description: "Nice apartment in center of Helsinki",
@@ -28,7 +28,7 @@ const dataArray = [
     id: uuidv4(),
     name: "Calza",
     price: 11500,
-    category: "",
+    category: "elementos-meditacion",
     sale: true,
     offerPrice: 10,
     description: "Arty interior in 1900 wooden house",
@@ -38,7 +38,7 @@ const dataArray = [
   {
     id: uuidv4(),
     name: "Helsinki",
-    category: "",
+    category: "elementos-meditacion",
     sale: true,
     description: "Stylist apartment in center of the city",
     price: 10000,
@@ -49,7 +49,7 @@ const dataArray = [
   {
     id: uuidv4(),
     name: "Helsinki",
-    category: "",
+    category: "elementos-yoga",
     sale: false,
     description: "Stylist apartment in center of the city",
     price: 5200,
@@ -60,7 +60,7 @@ const dataArray = [
   {
     id: uuidv4(),
     name: "Helsinki",
-    category: "",
+    category: "elementos-yoga",
     sale: false,
     description: "Stylist apartment in center of the city",
     price: 5200,
@@ -71,7 +71,7 @@ const dataArray = [
   {
     id: uuidv4(),
     name: "Helsinki",
-    category: "",
+    category: "elementos-yoga",
     sale: false,
     description: "Stylist apartment in center of the city",
     price: 5200,
@@ -82,7 +82,7 @@ const dataArray = [
   {
     id: uuidv4(),
     name: "Helsinki",
-    category: "",
+    category: "elementos-yoga",
     sale: false,
     description: "Stylist apartment in center of the city",
     price: 5200,
@@ -93,7 +93,7 @@ const dataArray = [
   {
     id: uuidv4(),
     name: "Helsinki",
-    category: "",
+    category: "elementos-yoga",
     sale: false,
     description: "Stylist apartment in center of the city",
     price: 5200,
@@ -104,7 +104,7 @@ const dataArray = [
   {
     id: uuidv4(),
     name: "Helsinki",
-    category: "",
+    category: "elementos-yoga",
     sale: false,
     description: "Stylist apartment in center of the city",
     price: 5200,
@@ -115,7 +115,7 @@ const dataArray = [
   {
     id: uuidv4(),
     name: "Helsinki",
-    category: "",
+    category: "elementos-yoga",
     sale: false,
     description: "Stylist apartment in center of the city",
     price: 5200,
@@ -126,7 +126,7 @@ const dataArray = [
   {
     id: uuidv4(),
     name: "Calza larga",
-    category: "",
+    category: "elementos-yoga",
     sale: true,
     description: "Stylist apartment in center of the city",
     price: 5200,

@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 // https://www.freepik.es/search?format=search&query=comida&type=photo
 // https://storyset.com/food
 //https://www.youtube.com/watch?v=s_Txhh-clVk&t=999s
-export default function ItemList({ product, onProductAdded, items }) {
+export default function ItemList({ product }) {
   const { name, image, description, sale, offerPrice } = product;
 
   const navigate = useNavigate();

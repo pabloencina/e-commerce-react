@@ -7,7 +7,7 @@ import ItemList from "./ItemList";
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
 
-  useEffect(() => {
+  const getAllCard = () => {
     const promise = new Promise((resolve) => {
       setTimeout(() => {
         resolve(dataArray);
@@ -16,7 +16,12 @@ const ItemListContainer = () => {
     promise.then((request) => {
       setItems(request);
     });
+  };
+
+  useEffect(() => {
+    getAllCard();
   }, []);
+
   return (
     <Grid container spacing={2}>
       {items.map((product) => {
