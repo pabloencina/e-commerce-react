@@ -3,16 +3,18 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 //import { useParams } from "react-router-dom";
 import dataArray from "../ejemplo";
+import Spinner from "../Spinner";
 import ItemList from "./ItemList";
 
 const ItemsListContainerCategory = () => {
   const [products, setProducts] = useState([]);
-  console.log(products);
 
+  const [isLoading, setIsLoading] = useState(false);
   const { categoryId } = useParams();
 
   const getCardByCategory = () => {
     const promise = new Promise((resolve) => {
+      setIsLoading(true);
       setTimeout(() => {
         resolve(
           dataArray.filter((product) => {
@@ -21,6 +23,7 @@ const ItemsListContainerCategory = () => {
             // como obtener el query param de la url
           })
         );
+        setIsLoading(false);
       }, 2000);
     });
     promise.then((request) => {
@@ -30,9 +33,11 @@ const ItemsListContainerCategory = () => {
 
   useEffect(() => {
     getCardByCategory();
-  });
+  }, []);
 
-  return (
+  return isLoading ? (
+    <Spinner />
+  ) : (
     <Grid container spacing={2}>
       {products.map((product) => {
         return (

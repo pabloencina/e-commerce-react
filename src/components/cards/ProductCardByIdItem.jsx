@@ -2,15 +2,17 @@ import { Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import dataArray from "../ejemplo";
+import Spinner from "../Spinner";
 import ProductCardById from "./ProductCardById";
 
 const ProductCardByIdItem = () => {
   const [product, setProduct] = useState({});
-
+  const [isLoading, setIsLoading] = useState(false);
   const { productId } = useParams();
 
   const getCardById = () => {
     const promise = new Promise((resolve) => {
+      setIsLoading(true);
       setTimeout(() => {
         resolve(
           dataArray.find((product) => {
@@ -18,6 +20,7 @@ const ProductCardByIdItem = () => {
             // como obtener el query param de la url
           })
         );
+        setIsLoading(false);
       }, 2000);
     });
     promise.then((request) => {
@@ -29,7 +32,9 @@ const ProductCardByIdItem = () => {
     getCardById();
   }, []);
 
-  return (
+  return isLoading ? (
+    <Spinner />
+  ) : (
     <Grid>
       <ProductCardById product={product} />
     </Grid>

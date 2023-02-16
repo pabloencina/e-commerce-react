@@ -2,15 +2,19 @@ import { Grid } from "@mui/material";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import dataArray from "../ejemplo";
+import Spinner from "../Spinner";
 import ItemList from "./ItemList";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const getAllCard = () => {
     const promise = new Promise((resolve) => {
+      setIsLoading(true);
       setTimeout(() => {
         resolve(dataArray);
+        setIsLoading(false);
       }, 2000);
     });
     promise.then((request) => {
@@ -22,7 +26,9 @@ const ItemListContainer = () => {
     getAllCard();
   }, []);
 
-  return (
+  return isLoading ? (
+    <Spinner />
+  ) : (
     <Grid container spacing={2}>
       {items.map((product) => {
         return (
