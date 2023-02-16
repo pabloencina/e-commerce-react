@@ -135,9 +135,8 @@ const ProductCardById = ({ product, onProductAdded }) => {
         </Box>
         <Divider />
         <Box m={2} style={{ display: "flex", justifyContent: "center" }}>
-          <Link to={"/category"} style={{ textDecoration: "none" }}>
+          <Link to={"/products"} style={{ textDecoration: "none" }}>
             <Button
-              to={"/category"}
               sx={{
                 width: "300px",
                 height: "45px",

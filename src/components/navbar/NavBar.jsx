@@ -19,6 +19,9 @@ import ModalCartWidget from "./ModalCartWidget";
 const pages = ["NOSOTROS", "MATS", "ELEMENTOS YOGA", "ELEMENTOS MEDITACION"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
+const objectPages = Object.assign({}, pages);
+console.log(objectPages[0]);
+
 function NavBar({ count }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -114,16 +117,27 @@ function NavBar({ count }) {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" fontFamily=" Hind Madurai">
-                    {page}
-                  </Typography>
-                </MenuItem>
+                <NavLink
+                  to={"/nosotros"}
+                  style={{
+                    my: 2,
+                    color: "#564592",
+                    display: "block",
+                    fontFamily: " Hind Madurai",
+                    marginLeft: "20Px",
+                    textDecoration: "none",
+                    //backgroundColor: "#564592",
+                  }}
+                >
+                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center" fontFamily=" Hind Madurai">
+                      {page}
+                    </Typography>
+                  </MenuItem>
+                </NavLink>
               ))}
             </MenuComponent>
           </Box>
-          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
-
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <NavLink

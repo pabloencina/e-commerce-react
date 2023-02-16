@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import dataArray from "../ejemplo";
 import ItemList from "./ItemList";
 
-const ItemsListContainerMats = () => {
+const ItemsListContainerCategory = () => {
   const [products, setProducts] = useState([]);
   console.log(products);
 
@@ -30,7 +30,7 @@ const ItemsListContainerMats = () => {
 
   useEffect(() => {
     getCardByCategory();
-  }, []);
+  });
 
   return (
     <Grid container spacing={2}>
@@ -45,4 +45,4 @@ const ItemsListContainerMats = () => {
   );
 };
 
-export default ItemsListContainerMats;
+export default ItemsListContainerCategory;

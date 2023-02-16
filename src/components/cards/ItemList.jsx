@@ -34,8 +34,8 @@ export default function ItemList({ product }) {
       <Box>
         <Card
           sx={{
-            maxWidth: 345,
-            m: 5,
+            maxWidth: 450,
+            m: 3,
             display: "flex",
             flexDirection: "column",
           }}
