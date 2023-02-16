@@ -127,9 +127,6 @@ const ProductCardById = ({ product, onProductAdded }) => {
                   product={product}
                 />
               </Box>
-              <Box>
-                {/* <ItemCount increase={increase} decrease={decrease} count={count} /> */}
-              </Box>
             </Box>
           </Card>
         </Box>

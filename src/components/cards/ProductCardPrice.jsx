@@ -8,9 +8,19 @@ import { Alert, Typography } from "@mui/material";
 const ProductCardPrice = ({ onProductAdded, product }) => {
   const { increase, decrease, count } = useAccountant(1);
   const { price, offerPrice, stock, name } = product;
+  console.log(stock === count);
 
   return (
     <>
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        {stock === count ? (
+          <Alert severity="error" style={{ fontFamily: " Hind Madurai" }}>
+            No hay más stock de {name}s
+          </Alert>
+        ) : (
+          ""
+        )}
+      </Box>
       <Box sx={{ justifyContent: "center", display: "flex" }}>
         <Box m={2}>
           <Typography

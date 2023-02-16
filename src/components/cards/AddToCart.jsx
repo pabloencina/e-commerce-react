@@ -11,6 +11,7 @@ export default function AddToCart({ count, onProductAdded, stock }) {
 
   const messageProducto = `Se agrego ${count} producto al carrito`;
   const messageProductos = `Se agregaron ${count} productos al carrito`;
+
   const {
     buttonVerDetalle,
     handleMouseEnterVerDetalle,

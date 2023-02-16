@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Alert, Button } from "@mui/material";
 import React from "react";
 
 const ItemCount = ({ increase, decrease, count, stock }) => {
@@ -21,7 +21,7 @@ const ItemCount = ({ increase, decrease, count, stock }) => {
           color: "#564592",
         }}
       >
-        +
+        +{" "}
       </Button>
     </>
   );
