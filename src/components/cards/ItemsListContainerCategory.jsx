@@ -18,7 +18,6 @@ const ItemsListContainerCategory = () => {
       setTimeout(() => {
         resolve(
           dataArray.filter((product) => {
-            console.log(product.category === categoryId);
             return product.category === categoryId; //url[param].id
             // como obtener el query param de la url
           })

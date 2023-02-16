@@ -1,11 +1,11 @@
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
+//import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 //import AdbIcon from "@mui/icons-material/Adb";
-import MenuIcon from "@mui/icons-material/Menu";
+//import MenuIcon from "@mui/icons-material/Menu";
 import MenuComponent from "@mui/material/Menu";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
@@ -16,26 +16,33 @@ import useHoverButtons from "../hooks/useHoverButtons";
 import { Link, NavLink } from "react-router-dom";
 import ModalCartWidget from "./ModalCartWidget";
 
-const pages = ["NOSOTROS", "MATS", "ELEMENTOS YOGA", "ELEMENTOS MEDITACION"];
+//const pages = ["NOSOTROS", "MATS", "ELEMENTOS YOGA", "ELEMENTOS MEDITACION"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-const objectPages = Object.assign({}, pages);
-console.log(objectPages[0]);
+//const objectPages = Object.assign({}, pages);
+//console.log(objectPages[0]);
 
 function NavBar({ count }) {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  //const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const { isHover, handleMouseEnter, handleMouseLeave, buttonLogo } =
-    useHoverButtons(false);
+  const {
+    isHover,
+    handleMouseEnter,
+    handleMouseLeave,
+    buttonLogo,
+    //buttonNavBarElementos,
+    //handleMouseLeaveVolver,
+    //handleMouseEnterVolver,
+  } = useHoverButtons(false);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
+  // const handleOpenNavMenu = (event) => {
+  //   setAnchorElNav(event.currentTarget);
+  // };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+  // const handleCloseNavMenu = () => {
+  //   setAnchorElNav(null);
+  // };
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
@@ -87,81 +94,89 @@ function NavBar({ count }) {
             }}
           ></Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <MenuComponent
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
+          <Box
+            style={{ display: "flex", justifyContent: "start", width: "100%" }}
+          >
+            <Button
+              style={{
+                backgroundColor: "#564592",
+                marginLeft: "10Px",
+                fontFamily: " Hind Madurai",
               }}
             >
-              {pages.map((page) => (
-                <NavLink
-                  to={"/nosotros"}
-                  style={{
-                    my: 2,
-                    color: "#564592",
-                    display: "block",
-                    fontFamily: " Hind Madurai",
-                    marginLeft: "20Px",
-                    textDecoration: "none",
-                    //backgroundColor: "#564592",
-                  }}
-                >
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center" fontFamily=" Hind Madurai">
-                      {page}
-                    </Typography>
-                  </MenuItem>
-                </NavLink>
-              ))}
-            </MenuComponent>
-          </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <NavLink
+              <Link
                 to={"/nosotros"}
-                key={page}
-                onClick={handleCloseNavMenu}
                 style={{
                   my: 2,
                   color: "white",
-                  display: "block",
+                  //display: "block",
                   fontFamily: " Hind Madurai",
-                  marginLeft: "20Px",
+                  //marginLeft: "20Px",
                   textDecoration: "none",
                   backgroundColor: "#564592",
                 }}
+                variant="contained"
               >
-                {page}
-              </NavLink>
-            ))}
+                NOSOTROS
+              </Link>
+            </Button>
+            <Button>
+              <Link
+                to={"/category/mats"}
+                style={{
+                  my: 2,
+                  color: "white",
+                  //display: "block",
+                  fontFamily: " Hind Madurai",
+                  //marginLeft: "20Px",
+                  textDecoration: "none",
+                  backgroundColor: "#564592",
+                }}
+                variant="contained"
+              >
+                MATS
+              </Link>
+            </Button>
+            <Button>
+              <Link
+                to={"/category/elementos-yoga"}
+                style={{
+                  my: 2,
+                  color: "white",
+                  //display: "block",
+                  fontFamily: " Hind Madurai",
+                  //marginLeft: "20Px",
+                  textDecoration: "none",
+                  backgroundColor: "#564592",
+                }}
+                variant="contained"
+              >
+                ELEMENTOS YOGA
+              </Link>
+            </Button>
+            <Button>
+              <Link
+                To={"/category/elementos-meditacion"}
+                style={{
+                  my: 2,
+                  color: "white",
+                  //display: "block",
+                  fontFamily: " Hind Madurai",
+                  //marginLeft: "20Px",
+                  textDecoration: "none",
+                  //backgroundColor: "#564592",
+                }}
+                variant="contained"
+              >
+                ELEMENTOS MEDITACIÓN
+              </Link>
+            </Button>
           </Box>
 
-          {/* <CartWidget count={count} /> */}
-          <ModalCartWidget count={count} />
-          <Box sx={{ flexGrow: 0 }}>
+          <Box
+            style={{ display: "flex", justifyContent: "end", width: "100%" }}
+          >
+            <ModalCartWidget count={count} />
             <Button
               style={{
                 backgroundColor: "#564592",
@@ -235,3 +250,77 @@ function NavBar({ count }) {
   );
 }
 export default NavBar;
+
+// <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+//           <IconButton
+//             size="large"
+//             aria-label="account of current user"
+//             aria-controls="menu-appbar"
+//             aria-haspopup="true"
+//             onClick={handleOpenNavMenu}
+//             color="inherit"
+//           >
+//             <MenuIcon />
+//           </IconButton>
+//           <MenuComponent
+//             id="menu-appbar"
+//             anchorEl={anchorElNav}
+//             anchorOrigin={{
+//               vertical: "bottom",
+//               horizontal: "left",
+//             }}
+//             keepMounted
+//             transformOrigin={{
+//               vertical: "top",
+//               horizontal: "left",
+//             }}
+//             open={Boolean(anchorElNav)}
+//             onClose={handleCloseNavMenu}
+//             sx={{
+//               display: { xs: "block", md: "none" },
+//             }}
+//           >
+//             {pages.map((page) => (
+//               <NavLink
+//                 to={"/nosotros"}
+//                 style={{
+//                   my: 2,
+//                   color: "#564592",
+//                   display: "block",
+//                   fontFamily: " Hind Madurai",
+//                   marginLeft: "20Px",
+//                   textDecoration: "none",
+//                   //backgroundColor: "#564592",
+//                 }}
+//               >
+//                 <MenuItem key={page} onClick={handleCloseNavMenu}>
+//                   <Typography textAlign="center" fontFamily=" Hind Madurai">
+//                     {page}
+//                   </Typography>
+//                 </MenuItem>
+//               </NavLink>
+//             ))}
+//           </MenuComponent>
+//         </Box>
+//         <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+//           {pages.map((page) => (
+//             <NavLink
+//               to={"/nosotros"}
+//               key={page}
+//               onClick={handleCloseNavMenu}
+//               style={{
+//                 my: 2,
+//                 color: "white",
+//                 display: "block",
+//                 fontFamily: " Hind Madurai",
+//                 marginLeft: "20Px",
+//                 textDecoration: "none",
+//                 backgroundColor: "#564592",
+//               }}
+//             >
+//               {page}
+//             </NavLink>
+//           ))}
+//         </Box>
+
+//        <CartWidget count={count} />

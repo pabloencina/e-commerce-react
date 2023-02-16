@@ -28,6 +28,10 @@ const useHoverButtons = () => {
     color: isHover ? "black" : "white",
   };
 
+  const buttonNavBarElementos = {
+    backgroundColor: isHover ? "#EDF67D" : "#564592",
+    color: isHover ? "black" : "white",
+  };
   const handleMouseEnter = () => {
     setIsHover(true);
   };
@@ -61,6 +65,7 @@ const useHoverButtons = () => {
     buttonLogo,
     buttonNavBar,
     buttonVolver,
+    buttonNavBarElementos,
   };
 };
 
