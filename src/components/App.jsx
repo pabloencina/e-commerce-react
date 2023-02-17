@@ -48,23 +48,20 @@ function App() {
         <NavBar count={count} />
 
         <Routes>
-          <Route path={"/login"} element={<Login />} />
-          <Route path={"/register"} element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="nosotros" element={<Nosotros />} />
           <Route path="/" element={<Home />} />
           <Route path="*" element={<Error404 />}></Route>
           <Route
-            path={"products"}
+            path="/products"
             element={<ItemListContainer onProductAdded={onProductAdded} />}
           />
           <Route
-            path={"/category/:categoryId"}
+            path="/category/:categoryId"
             element={<ItemsListContainerCategory />}
           />
-          <Route
-            path={"/product/:productId"}
-            element={<ProductCardByIdItem />}
-          />
+          <Route path="/product/:productId" element={<ProductCardByIdItem />} />
         </Routes>
 
         <Footer />

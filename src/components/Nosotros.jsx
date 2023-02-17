@@ -16,11 +16,11 @@ const Nosotros = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          fontSize: "30px",
+          fontSize: "20px",
         }}
       >
         <h1 style={{ fontFamily: "OooH baby", color: "white" }}>
-          Abrazar el presente
+          ABRAZAR EL PRESENTE, Tienda online
         </h1>
       </Box>
       <Box

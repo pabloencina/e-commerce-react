@@ -74,7 +74,7 @@ const ItemsListContainerCategory = () => {
         >
           <h1
             style={{
-              fontFamily: " Hind Madurai",
+              fontFamily: "oooh baby",
               color: "#724cf9",
             }}
           >

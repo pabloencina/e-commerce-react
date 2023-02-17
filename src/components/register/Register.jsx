@@ -18,12 +18,10 @@ import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 const Register = () => {
   const {
     buttonVerDetalle,
-    //buttonVolver,
     handleMouseEnterVerDetalle,
     handleMouseLeaveVerDetalle,
-    //handleMouseEnterVolver,
-    //handleMouseLeaveVolver,
   } = useHoverButtons(false);
+
   return (
     <Box>
       <Box
@@ -39,19 +37,6 @@ const Register = () => {
         }}
       >
         <Container maxWidth="sm">
-          {/* <Box sx={{ my: 3 }}>
-          <Typography
-            color="textPrimary"
-            variant="h3"
-            style={{
-              fontFamily: " Hind Madurai",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            TIENDA ONLINE
-          </Typography>
-        </Box> */}
           <form>
             <Box sx={{ my: 3 }}>
               <Typography

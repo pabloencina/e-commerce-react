@@ -26,15 +26,8 @@ function NavBar({ count }) {
   //const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const {
-    isHover,
-    handleMouseEnter,
-    handleMouseLeave,
-    buttonLogo,
-    //buttonNavBarElementos,
-    //handleMouseLeaveVolver,
-    //handleMouseEnterVolver,
-  } = useHoverButtons(false);
+  const { isHover, handleMouseEnter, handleMouseLeave, buttonLogo } =
+    useHoverButtons(false);
 
   // const handleOpenNavMenu = (event) => {
   //   setAnchorElNav(event.currentTarget);
@@ -103,70 +96,76 @@ function NavBar({ count }) {
                 marginLeft: "10Px",
                 fontFamily: " Hind Madurai",
               }}
+              variant="contained"
             >
               <Link
                 to={"/nosotros"}
-                style={{
-                  my: 2,
-                  color: "white",
-                  //display: "block",
-                  fontFamily: " Hind Madurai",
-                  //marginLeft: "20Px",
-                  textDecoration: "none",
-                  backgroundColor: "#564592",
-                }}
                 variant="contained"
+                style={{ textDecoration: "none", color: "white" }}
               >
                 NOSOTROS
               </Link>
             </Button>
-            <Button>
+            <Button
+              style={{
+                backgroundColor: "#564592",
+                marginLeft: "10Px",
+                fontFamily: " Hind Madurai",
+              }}
+              variant="contained"
+            >
+              <Link
+                to={"/products"}
+                variant="contained"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                PRODUCTOS
+              </Link>
+            </Button>
+            <Button
+              style={{
+                backgroundColor: "#564592",
+                marginLeft: "10Px",
+                fontFamily: " Hind Madurai",
+              }}
+              variant="contained"
+            >
               <Link
                 to={"/category/mats"}
-                style={{
-                  my: 2,
-                  color: "white",
-                  //display: "block",
-                  fontFamily: " Hind Madurai",
-                  //marginLeft: "20Px",
-                  textDecoration: "none",
-                  backgroundColor: "#564592",
-                }}
                 variant="contained"
+                style={{ textDecoration: "none", color: "white" }}
               >
                 MATS
               </Link>
             </Button>
-            <Button>
+            <Button
+              style={{
+                backgroundColor: "#564592",
+                marginLeft: "10Px",
+                fontFamily: " Hind Madurai",
+              }}
+              variant="contained"
+            >
               <Link
                 to={"/category/elementos-yoga"}
-                style={{
-                  my: 2,
-                  color: "white",
-                  //display: "block",
-                  fontFamily: " Hind Madurai",
-                  //marginLeft: "20Px",
-                  textDecoration: "none",
-                  backgroundColor: "#564592",
-                }}
                 variant="contained"
+                style={{ textDecoration: "none", color: "white" }}
               >
                 ELEMENTOS YOGA
               </Link>
             </Button>
-            <Button>
+            <Button
+              style={{
+                backgroundColor: "#564592",
+                marginLeft: "10Px",
+                fontFamily: " Hind Madurai",
+              }}
+              variant="contained"
+            >
               <Link
                 To={"/category/elementos-meditacion"}
-                style={{
-                  my: 2,
-                  color: "white",
-                  //display: "block",
-                  fontFamily: " Hind Madurai",
-                  //marginLeft: "20Px",
-                  textDecoration: "none",
-                  backgroundColor: "#564592",
-                }}
                 variant="contained"
+                style={{ textDecoration: "none", color: "white" }}
               >
                 ELEMENTOS MEDITACIÓN
               </Link>
