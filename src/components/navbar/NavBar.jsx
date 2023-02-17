@@ -164,7 +164,7 @@ function NavBar({ count }) {
                   fontFamily: " Hind Madurai",
                   //marginLeft: "20Px",
                   textDecoration: "none",
-                  //backgroundColor: "#564592",
+                  backgroundColor: "#564592",
                 }}
                 variant="contained"
               >

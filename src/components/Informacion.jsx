@@ -15,8 +15,10 @@ const Información = () => {
           justifyContent: "center",
           height: "50px",
           alignItems: "center",
-          color: "red",
-          fontFamily: " Hind Madurai",
+          color: "#724cf9",
+          fontFamily: "oooh baby",
+          backgroundColor: "white",
+          fontSize: "30px",
         }}
       >
         Consulte por clases de yoga, meditación guiada y coaching nutricional.

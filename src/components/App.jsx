@@ -18,6 +18,7 @@ import Nosotros from "./Nosotros";
 import Home from "./Home";
 import ProductCardByIdItem from "./cards/ProductCardByIdItem";
 import ItemsListContainerCategory from "./cards/ItemsListContainerCategory";
+import Error404 from "./Error404";
 
 //import { collection, getDocs } from "firebase/firestore";
 //import { useEffect } from "react";
@@ -51,6 +52,7 @@ function App() {
           <Route path={"/register"} element={<Register />} />
           <Route path="nosotros" element={<Nosotros />} />
           <Route path="/" element={<Home />} />
+          <Route path="*" element={<Error404 />}></Route>
           <Route
             path={"products"}
             element={<ItemListContainer onProductAdded={onProductAdded} />}
@@ -64,6 +66,7 @@ function App() {
             element={<ProductCardByIdItem />}
           />
         </Routes>
+
         <Footer />
       </Box>
     </BrowserRouter>
