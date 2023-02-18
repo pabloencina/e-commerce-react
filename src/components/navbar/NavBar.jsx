@@ -79,7 +79,7 @@ function NavBar({ count }) {
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: " Hind Madurai",
+              fontFamily: "Montserrat",
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
@@ -88,101 +88,114 @@ function NavBar({ count }) {
           ></Typography>
 
           <Box
-            style={{ display: "flex", justifyContent: "start", width: "100%" }}
+            style={{
+              display: "flex",
+              justifyContent: "start",
+              //width: "100%",
+            }}
           >
             <Button
               style={{
                 backgroundColor: "#564592",
                 marginLeft: "10Px",
-                fontFamily: " Hind Madurai",
+                fontFamily: "Montserrat",
               }}
-              variant="contained"
+              variant="text"
             >
               <Link
                 to={"/nosotros"}
                 variant="contained"
-                style={{ textDecoration: "none", color: "white" }}
+                style={{
+                  textDecoration: "none",
+                  color: "white",
+                  backgroundColor: "#564592",
+                  marginLeft: "10Px",
+                  fontFamily: "Montserrat",
+                }}
               >
-                NOSOTROS
+                Nosotros
               </Link>
             </Button>
             <Button
               style={{
                 backgroundColor: "#564592",
                 marginLeft: "10Px",
-                fontFamily: " Hind Madurai",
+                fontFamily: "Montserrat",
               }}
-              variant="contained"
+              variant="text"
             >
               <Link
                 to={"/products"}
-                variant="contained"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                PRODUCTOS
+                Productos
               </Link>
             </Button>
             <Button
               style={{
                 backgroundColor: "#564592",
                 marginLeft: "10Px",
-                fontFamily: " Hind Madurai",
+                fontFamily: "Montserrat",
               }}
-              variant="contained"
+              variant="text"
             >
               <Link
                 to={"/category/mats"}
                 variant="contained"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                MATS
+                Mats
               </Link>
             </Button>
             <Button
               style={{
                 backgroundColor: "#564592",
                 marginLeft: "10Px",
-                fontFamily: " Hind Madurai",
+                fontFamily: "Montserrat",
               }}
-              variant="contained"
+              variant="text"
             >
               <Link
                 to={"/category/elementos-yoga"}
                 variant="contained"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                ELEMENTOS YOGA
+                Elementos de yoga
               </Link>
             </Button>
             <Button
               style={{
                 backgroundColor: "#564592",
                 marginLeft: "10Px",
-                fontFamily: " Hind Madurai",
+                fontFamily: "Montserrat",
               }}
-              variant="contained"
+              variant="text"
             >
               <Link
                 To={"/category/elementos-meditacion"}
                 variant="contained"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                ELEMENTOS MEDITACIÓN
+                Elementos de meditación
               </Link>
             </Button>
           </Box>
 
           <Box
-            style={{ display: "flex", justifyContent: "end", width: "100%" }}
+            style={{
+              display: "flex",
+              justifyContent: "end",
+              width: "40%",
+            }}
           >
             <ModalCartWidget count={count} />
             <Button
               style={{
                 backgroundColor: "#564592",
                 marginLeft: "10Px",
-                fontFamily: " Hind Madurai",
+                fontFamily: "Montserrat",
               }}
-              variant="contained"
+              variant="text"
             >
               <NavLink
                 to={"/register"}
@@ -190,8 +203,9 @@ function NavBar({ count }) {
                   backgroundColor: "#564592",
                   color: "white",
                   marginLeft: "10Px",
-                  fontFamily: " Hind Madurai",
+                  fontFamily: "Montserrat",
                   textDecoration: "none",
+                  //ration: "none",
                 }}
               >
                 Registrarse
@@ -201,9 +215,9 @@ function NavBar({ count }) {
               style={{
                 backgroundColor: "#564592",
                 marginLeft: "10Px",
-                fontFamily: " Hind Madurai",
+                fontFamily: "Montserrat",
               }}
-              variant="contained"
+              variant="text"
               //onClick={}
             >
               <Link
@@ -212,7 +226,7 @@ function NavBar({ count }) {
                   backgroundColor: "#564592",
                   color: "white",
                   marginLeft: "10Px",
-                  fontFamily: " Hind Madurai",
+                  fontFamily: "Montserrat",
                   textDecoration: "none",
                 }}
               >

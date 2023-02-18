@@ -7,7 +7,7 @@ const useHoverBtnNavbar = () => {
     backgroundColor: isHover ? "white" : "#564592",
     color: isHover ? "#564592" : "white",
     textDecoration: "none",
-    fontFamily: " Hind Madurai",
+    fontFamily: "Montserrat",
     borderRadius: "5%",
   };
   const handleMouseEnterBtnNavbar = () => {

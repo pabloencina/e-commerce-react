@@ -59,7 +59,7 @@ export default function AddToCart({ count, onProductAdded, stock }) {
           onMouseEnter={handleMouseEnterVerDetalle}
           onMouseLeave={handleMouseLeaveVerDetalle}
         >
-          <p style={{ fontFamily: " Hind Madurai" }}>Agregar al carrito</p>
+          <p style={{ fontFamily: "Montserrat" }}>Agregar al carrito</p>
         </Button>
       </Box>
 

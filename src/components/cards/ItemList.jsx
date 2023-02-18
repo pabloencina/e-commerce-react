@@ -69,13 +69,21 @@ export default function ItemList({ product }) {
               gutterBottom
               variant="h5"
               component="div"
-              sx={{ justifyContent: "center", display: "flex" }}
+              sx={{
+                justifyContent: "center",
+                display: "flex",
+                fontFamily: "montserrat",
+              }}
             >
               {name}
             </Typography>
             <Typography
               variant="body2"
-              sx={{ justifyContent: "center", display: "flex" }}
+              sx={{
+                justifyContent: "center",
+                display: "flex",
+                fontFamily: "montserrat",
+              }}
             >
               {description}
             </Typography>
@@ -88,7 +96,7 @@ export default function ItemList({ product }) {
               onMouseLeave={handleMouseLeaveVerDetalle}
               onClick={handleOnClick}
             >
-              <p style={{ fontFamily: " Hind Madurai" }}>Ver detalle</p>
+              <p style={{ fontFamily: "Montserrat" }}>Ver detalle</p>
             </Button>
           </Box>
         </Card>

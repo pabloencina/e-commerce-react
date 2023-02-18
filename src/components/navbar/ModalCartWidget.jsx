@@ -30,7 +30,7 @@ export default function ModalCartWidget({ count }) {
         style={{
           backgroundColor: "#564592",
         }}
-        variant="contained"
+        variant="contaitextned"
       >
         <ShoppingCartOutlinedIcon />
         <span>{count}</span>
@@ -46,7 +46,7 @@ export default function ModalCartWidget({ count }) {
             id="modal-modal-title"
             variant="h6"
             component="h2"
-            sx={{ fontFamily: " Hind Madurai" }}
+            sx={{ fontFamily: "Montserrat" }}
           >
             Text in a modal
           </Typography>

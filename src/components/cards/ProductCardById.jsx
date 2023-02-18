@@ -58,7 +58,7 @@ const ProductCardById = ({ product, onProductAdded }) => {
                     justifyContent: "center",
                     alignItems: "center",
                     backgroundColor: "#EDF67D",
-                    fontFamily: " Hind Madurai",
+                    fontFamily: "Montserrat",
                   }}
                 >
                   <p>{"- " + offerPrice + " %"}</p>
@@ -92,7 +92,7 @@ const ProductCardById = ({ product, onProductAdded }) => {
                     justifyContent: "center",
                     display: "flex",
                     alignItems: "center",
-                    fontFamily: " Hind Madurai",
+                    fontFamily: "Montserrat",
                   }}
                 >
                   {name}
@@ -103,7 +103,7 @@ const ProductCardById = ({ product, onProductAdded }) => {
                     justifyContent: "center",
                     display: "flex",
                     alignItems: "center",
-                    fontFamily: " Hind Madurai",
+                    fontFamily: "Montserrat",
                   }}
                 >
                   {description}
@@ -145,7 +145,7 @@ const ProductCardById = ({ product, onProductAdded }) => {
               onMouseLeave={handleMouseLeaveVerDetalle}
             >
               <ReplyOutlinedIcon />
-              <p style={{ fontFamily: " Hind Madurai" }}>Volver</p>
+              <p style={{ fontFamily: "Montserrat" }}>Volver</p>
             </Button>
           </Link>
         </Box>

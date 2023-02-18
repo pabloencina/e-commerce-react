@@ -14,7 +14,7 @@ const ProductCardPrice = ({ onProductAdded, product }) => {
     <>
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         {stock === count ? (
-          <Alert severity="error" style={{ fontFamily: " Hind Madurai" }}>
+          <Alert severity="error" style={{ fontFamily: "Montserrat" }}>
             No hay más stock de {name}s
           </Alert>
         ) : (
@@ -63,7 +63,7 @@ const ProductCardPrice = ({ onProductAdded, product }) => {
         <AddToCart count={count} onProductAdded={onProductAdded} />
       </Box>
       {stock <= 1 ? (
-        <Alert severity="warning" style={{ fontFamily: " Hind Madurai" }}>
+        <Alert severity="warning" style={{ fontFamily: "Montserrat" }}>
           Solo queda disponible {count} {name}
         </Alert>
       ) : (

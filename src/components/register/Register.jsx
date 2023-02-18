@@ -43,7 +43,7 @@ const Register = () => {
                 color="#564592"
                 variant="h5"
                 style={{
-                  fontFamily: " Hind Madurai",
+                  fontFamily: "Montserrat",
                   display: "flex",
                   justifyContent: "center",
                 }}
@@ -125,7 +125,7 @@ const Register = () => {
             height: "45px",
             backgroundColor: "#564592",
             color: "white",
-            fontFamily: " Hind Madurai",
+            fontFamily: "Montserrat",
           }}
         >
           <ReplyOutlinedIcon />

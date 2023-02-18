@@ -9,7 +9,7 @@ const CartWidget = ({ count }) => {
         style={{
           backgroundColor: "#564592",
         }}
-        variant="contained"
+        variant="text"
       >
         <ShoppingCartOutlinedIcon />
         <span>{count}</span>

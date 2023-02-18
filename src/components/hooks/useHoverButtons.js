@@ -6,6 +6,7 @@ const useHoverButtons = () => {
   const buttonVerDetalle = {
     backgroundColor: isHover ? "white" : "#564592",
     color: isHover ? "#564592" : "white",
+    fontFamily: "Montserrat",
     //textDecoration: "line-through",
   };
 

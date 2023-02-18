@@ -50,7 +50,7 @@ const Login = () => {
                 color="#564592"
                 variant="h5"
                 style={{
-                  fontFamily: " Hind Madurai",
+                  fontFamily: "Montserrat",
                   display: "flex",
                   justifyContent: "center",
                 }}
@@ -114,7 +114,7 @@ const Login = () => {
           sx={{
             width: "300px",
             height: "45px",
-            fontFamily: " Hind Madurai",
+            fontFamily: "Montserrat",
             backgroundColor: "#564592",
             color: "white",
           }}

@@ -16,11 +16,11 @@ const Nosotros = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          fontSize: "20px",
+          fontSize: "24px",
         }}
       >
         <h1 style={{ fontFamily: "OooH baby", color: "white" }}>
-          ABRAZAR EL PRESENTE, Tienda online
+          Abrazar el presente, Tienda online
         </h1>
       </Box>
       <Box
@@ -38,7 +38,7 @@ const Nosotros = () => {
             style={{
               marginLeft: "40%",
               //color: "white",
-              fontFamily: " Hind Madurai",
+              fontFamily: "Montserrat",
             }}
           >
             Misión y Visión
@@ -46,15 +46,16 @@ const Nosotros = () => {
           <p
             style={{
               marginTop: "5%",
-              fontFamily: " Hind Madurai",
               //color: "white",
               letterSpacing: "1px",
               textAlign: "center",
-              lineHeight: "30px",
-              fontSize: "18px",
+              // lineHeight: "30px",
+              fontSize: "16px",
+              fontWeight: "300",
+              fontFamily: "'Montserrat', sans-serif",
             }}
           >
-            'Abrazar el presente Tienda' es una tienda Online de productos de
+            'Abrazar el presente Tienda Online' es una tienda de productos de
             yoga, meditación integrado con clases personalizadas, coaching
             nutricional, nuestros productos son de una calidad única trabajadas
             con telas veganas sin contaminación ambiental.Nuestro misión es
@@ -86,20 +87,19 @@ const Nosotros = () => {
             alignItems: "center",
           }}
         >
-          <h1 style={{ fontFamily: " Hind Madurai" }}>Valores</h1>
-          <Box m={1}>
-            <ul style={{ fontFamily: " Hind Madurai", fontSize: "20px" }}>
-              Responsabilidad.
-            </ul>
-            <ul style={{ fontFamily: " Hind Madurai", fontSize: "20px" }}>
-              Conectarse con el cliente cien por ciento.
-            </ul>
-            <ul style={{ fontFamily: " Hind Madurai", fontSize: "20px" }}>
-              Escucha activa.
-            </ul>
-            <ul style={{ fontFamily: " Hind Madurai", fontSize: "20px" }}>
-              Empatía.
-            </ul>
+          <h1 style={{ fontFamily: "Montserrat" }}>Valores</h1>
+          <Box
+            m={1}
+            style={{
+              fontFamily: "Montserrat",
+              fontSize: "16px",
+              fontWeight: "300",
+            }}
+          >
+            <ul>Responsabilidad.</ul>
+            <ul>Conectarse con el cliente cien por ciento.</ul>
+            <ul>Escucha activa.</ul>
+            <ul>Empatía.</ul>
           </Box>
         </Grid>
         <Grid style={{ display: "flex", justifyContent: "center" }}>
@@ -117,7 +117,7 @@ const Nosotros = () => {
           display: "flex",
           justifyContent: "center",
           marginTop: "5%",
-          height: "400px",
+          height: "500px",
           //backgroundColor: "red",
         }}
       >
@@ -128,11 +128,11 @@ const Nosotros = () => {
             //style={{ width: "90%" }}
           />
         </Grid>
-        <Grid m={3}>
+        <Grid>
           <h1
             style={{
               //color: "white",
-              fontFamily: " Hind Madurai",
+              fontFamily: "Montserrat",
               textAlign: "center",
             }}
           >
@@ -141,12 +141,12 @@ const Nosotros = () => {
           <p
             style={{
               marginTop: "5%",
-              fontFamily: " Hind Madurai",
-              //color: "white",
               letterSpacing: "1px",
               textAlign: "center",
               lineHeight: "30px",
-              fontSize: "18px",
+              fontSize: "16px",
+              fontWeight: "300",
+              fontFamily: "'Montserrat', sans-serif",
             }}
           >
             “ Abrazar el presente ” nace de la necesidad de un aporte a la
