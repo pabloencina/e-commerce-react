@@ -1,5 +1,17 @@
 import { v4 as uuidv4 } from "uuid";
 import cardIndumentaria from "./images/card-indumentaria.jpg";
+import matVerdeAgua from "./images/Imagenes Productos/matVerdeAgua.jpg";
+import matNaranja from "./images/Imagenes Productos/matNaranja.jpg";
+import matVioleta from "./images/Imagenes Productos/matVioleta.jpg";
+import matsEstampado from "./images/Imagenes Productos/matsEstampado.jpg";
+import matsColores from "./images/Imagenes Productos/matsColores.jpg";
+import kitMats from "./images/Imagenes Productos/kitMats.jpg";
+import matNegro from "./images/Imagenes Productos/matNegro.jpg";
+import matRosado from "./images/Imagenes Productos/matRosado.jpg";
+import tacoYoga from "./images/Imagenes Productos/tacoYoga.jpg";
+import bolsoYoga from "./images/Imagenes Productos/bolsoYoga.jpg";
+import cintoYoga from "./images/Imagenes Productos/cintoYoga.jpg";
+import bandaYoga from "./images/Imagenes Productos/bandaYoga.jpg";
 
 const dataArray = [
   {
@@ -11,7 +23,7 @@ const dataArray = [
     description:
       "MAT DE YOGA PILATES 5MM CORCHO + CAUCHO TPE ADHERENTE ECOLÓGICO CON GUÍA DE POSICIONES",
     price: 12390,
-    image: cardIndumentaria,
+    image: matVerdeAgua,
     stock: 2,
   },
   {
@@ -23,7 +35,7 @@ const dataArray = [
     description:
       "MAT YOGA UNNIC PVC 6mm Antideslizante,Pilates Fitness Gym 6mm .",
     price: 3399,
-    image: cardIndumentaria,
+    image: matNaranja,
     stock: 2,
   },
   {
@@ -34,7 +46,7 @@ const dataArray = [
     sale: true,
     offerPrice: 10,
     description: " Fitness Gym,MAT YOGA NBR BALBOAFIT 10 MM",
-    image: cardIndumentaria,
+    image: matVioleta,
     stock: 3,
   },
   {
@@ -46,19 +58,18 @@ const dataArray = [
       "Colchoneta para hacer ejercicios de Fitness, Crossfit, Pilates, Rehabilitación, Gimnasia y Yoga",
     price: 5090,
     offerPrice: 25,
-    image: cardIndumentaria,
+    image: matsEstampado,
     stock: 4,
   },
   {
     id: uuidv4(),
-    name: "Bolster Yoga Almohadón",
+    name: "Banda de yoga ",
     category: "yoga",
     sale: false,
-    description:
-      "Medidas 70cm X 24cm - Doble funda - Funda exterior de tropical y funda interior de lienzo.",
+    description: "Medidas 70cm, banda de lienzo.",
     price: 4099,
     offerPrice: 15,
-    image: cardIndumentaria,
+    image: bandaYoga,
     stock: 2,
   },
   {
@@ -70,19 +81,18 @@ const dataArray = [
       " sus puntas son redondeadas y además cuentan con una terminación en barniz no tóxicos (según el fabricante). Sus medidas son 7cm X 14cm X 24.5cm.",
     price: 1120,
     offerPrice: 15,
-    image: cardIndumentaria,
+    image: tacoYoga,
     stock: 2,
   },
   {
     id: uuidv4(),
-    name: "Bolster Cervical",
+    name: "Cinto de yoga",
     category: "yoga",
     sale: false,
-    description:
-      "Medidas 30cm x 15cm de diámetro. Rellenos de estopa premium de algodón",
+    description: "Medidas 30cm . Fibra vegetal color morado",
     price: 1450,
     offerPrice: 15,
-    image: cardIndumentaria,
+    image: cintoYoga,
     stock: 2,
   },
   {
@@ -94,7 +104,7 @@ const dataArray = [
       "Confeccionado en gabardina super resistente, muy amplio, ideal para llevar tu mat y demás elementos, o solo lucirlo en tu paseo .",
     price: 6588,
     offerPrice: 15,
-    image: cardIndumentaria,
+    image: bolsoYoga,
     stock: 2,
   },
   {
@@ -188,7 +198,7 @@ const dataArray = [
     offerPrice: 15,
     description: "PVC Suave, 173 x 61 cm (largo x ancho), 6 mm de espesor",
     price: 2990,
-    image: cardIndumentaria,
+    image: matsColores,
     stock: 2,
   },
   {
@@ -199,7 +209,7 @@ const dataArray = [
     offerPrice: 15,
     description: "Kit yoga set mat- ladrillo- correa",
     price: 5200,
-    image: cardIndumentaria,
+    image: kitMats,
     stock: 2,
   },
   {
@@ -211,7 +221,7 @@ const dataArray = [
     description:
       "Mat de yoga pilates 5mm corcho + caucho tpe adherente ecologico.",
     price: 12500,
-    image: cardIndumentaria,
+    image: matNegro,
     stock: 2,
   },
   {
@@ -223,7 +233,7 @@ const dataArray = [
     description:
       "Mat de yoga impreso / Hecho con materiales ecológicos sin ftalatos peligrosos, más saludable para el usuario y el planeta / Libre de látex / Antideslizante",
     price: 14650,
-    image: cardIndumentaria,
+    image: matRosado,
     stock: 2,
   },
 ];
