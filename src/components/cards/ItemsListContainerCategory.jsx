@@ -7,7 +7,9 @@ import dataArray from "../ejemplo";
 import Spinner from "../Spinner";
 import ItemList from "./ItemList";
 import categoryMats from "../images/category-mats.jpg";
+import categoryYoga from "../images/velas.jpg";
 import categoryMeditacion from "../images/mujer-que-medita-relaja-montanas.jpg";
+import Show from "../Show";
 
 const ItemsListContainerCategory = () => {
   const [products, setProducts] = useState([]);
@@ -15,7 +17,7 @@ const ItemsListContainerCategory = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { categoryId } = useParams();
 
-  const getCardByCategory = () => {
+  const getProductsByCategory = () => {
     const promise = new Promise((resolve) => {
       setIsLoading(true);
       setTimeout(() => {
@@ -34,8 +36,8 @@ const ItemsListContainerCategory = () => {
   };
 
   useEffect(() => {
-    getCardByCategory();
-  }, []);
+    getProductsByCategory();
+  }, [categoryId]);
 
   return isLoading ? (
     <Spinner />
@@ -49,19 +51,29 @@ const ItemsListContainerCategory = () => {
             alignItems: "center",
           }}
         >
-          {categoryId === "mats" ? (
+          <Show when={categoryId === "mats"}>
             <img
               src={categoryMats}
               alt="category-mats"
               style={{ width: "80%", height: "100%" }}
             ></img>
-          ) : (
+          </Show>
+
+          <Show when={categoryId === "yoga"}>
+            <img
+              src={categoryYoga}
+              alt="category-yoga"
+              style={{ width: "80%", height: "70%" }}
+            ></img>
+          </Show>
+
+          <Show when={categoryId === "meditation"}>
             <img
               src={categoryMeditacion}
               alt="category-meditation"
               style={{ width: "80%", height: "70%" }}
             ></img>
-          )}
+          </Show>
 
           <Divider />
         </Box>

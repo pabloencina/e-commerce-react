@@ -131,6 +131,7 @@ function NavBar({ count }) {
                 Productos
               </Link>
             </Button>
+
             <Button
               style={{
                 backgroundColor: "#564592",
@@ -156,7 +157,7 @@ function NavBar({ count }) {
               variant="text"
             >
               <Link
-                to={"/category/elementos-yoga"}
+                to={"/category/yoga"}
                 variant="contained"
                 style={{ textDecoration: "none", color: "white" }}
               >
@@ -172,11 +173,11 @@ function NavBar({ count }) {
               variant="text"
             >
               <Link
-                To={"/category/elementos-meditacion"}
+                to={"/category/meditation"}
                 variant="contained"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                Elementos de meditación
+                Elementos de Meditación
               </Link>
             </Button>
           </Box>

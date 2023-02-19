@@ -49,7 +49,7 @@ const ProductsToShowOnSale = () => {
         <img
           src={ofertas}
           alt="ofertas"
-          style={{ width: "60%", height: "400px" }}
+          style={{ width: "60%", height: "600px" }}
         ></img>
       </Box>
 

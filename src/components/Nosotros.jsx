@@ -7,7 +7,7 @@ import yogaRio from "../components/images/yoga-en-el-rio.jpg";
 
 const Nosotros = () => {
   return (
-    <Box m={3} style={{ backgroundColor: "#EDF67D" }}>
+    <Box m={3} style={{ backgroundColor: "#EDF67D", height: "1800px" }}>
       <Box
         m={5}
         style={{
@@ -33,40 +33,53 @@ const Nosotros = () => {
         <Grid>
           <img src={logo} alt="logo" />
         </Grid>
-        <Grid m={3}>
-          <h1
-            style={{
-              marginLeft: "40%",
-              //color: "white",
-              fontFamily: "Montserrat",
-            }}
-          >
-            Misión y Visión
-          </h1>
-          <p
-            style={{
-              marginTop: "5%",
-              //color: "white",
-              letterSpacing: "1px",
-              textAlign: "center",
-              // lineHeight: "30px",
-              fontSize: "16px",
-              fontWeight: "300",
-              fontFamily: "'Montserrat', sans-serif",
-            }}
-          >
-            'Abrazar el presente Tienda Online' es una tienda de productos de
-            yoga, meditación integrado con clases personalizadas, coaching
-            nutricional, nuestros productos son de una calidad única trabajadas
-            con telas veganas sin contaminación ambiental.Nuestro misión es
-            Lograr una transformación de las personas para crear más conciencia
-            de lo que necesita su cuerpo. Ayudándolas a conectar desde su
-            interior hacia su alimentación. Integrar coaching con alimentación
-            consciente, yoga. Proporcionar la responsabilidad a cada persona a
-            tomar las riendas de su salud y confiar en el potencial que tiene
-            para lograrlo. Expandir el servicio a más personas.
-          </p>
-        </Grid>
+        <Box
+          m={3}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {" "}
+          <Grid m={3}>
+            <h1
+              style={{
+                marginLeft: "40%",
+                //color: "white",
+                fontFamily: "Montserrat",
+              }}
+            >
+              Misión y Visión
+            </h1>
+            <p
+              style={{
+                marginTop: "5%",
+                //color: "white",
+                letterSpacing: "1px",
+                textAlign: "center",
+                lineHeight: "30px",
+                fontSize: "16px",
+                fontWeight: "300",
+                fontFamily: "'Montserrat', sans-serif",
+                width: "80%",
+                marginLeft: "10%",
+              }}
+            >
+              'Abrazar el presente Tienda Online' es una tienda de productos de
+              yoga, meditación integrado con clases personalizadas, coaching
+              nutricional, nuestros productos son de una calidad única
+              trabajadas con telas veganas sin contaminación ambiental.Nuestro
+              misión es Lograr una transformación de las personas para crear más
+              conciencia de lo que necesita su cuerpo. Ayudándolas a conectar
+              desde su interior hacia su alimentación. Integrar coaching con
+              alimentación consciente, yoga. Proporcionar la responsabilidad a
+              cada persona a tomar las riendas de su salud y confiar en el
+              potencial que tiene para lograrlo. Expandir el servicio a más
+              personas.
+            </p>
+          </Grid>
+        </Box>
       </Box>
       <Box
         m={3}
@@ -128,36 +141,45 @@ const Nosotros = () => {
             //style={{ width: "90%" }}
           />
         </Grid>
-        <Grid>
-          <h1
-            style={{
-              //color: "white",
-              fontFamily: "Montserrat",
-              textAlign: "center",
-            }}
-          >
-            ¿Que viene a resolver en la sociedad este emprendimiento?
-          </h1>
-          <p
-            style={{
-              marginTop: "5%",
-              letterSpacing: "1px",
-              textAlign: "center",
-              lineHeight: "30px",
-              fontSize: "16px",
-              fontWeight: "300",
-              fontFamily: "'Montserrat', sans-serif",
-            }}
-          >
-            “ Abrazar el presente ” nace de la necesidad de un aporte a la
-            comunidad para que las personas tomen conciencia de su alimentación,
-            la falta de conocimiento que se tiene con los alimentos que se
-            consume habitualmente y la aceleración rutinaria, las personas dejan
-            de lado uno de los aspectos fundamentales de la vida que es el
-            alimento que ingresa en nuestro interior nutriéndonos o
-            desencadenando muchos problemas a nivel físico y emocional.
-          </p>
-        </Grid>
+        <Box
+          m={3}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Grid m={3} style={{ height: "600px" }}>
+            <h1
+              style={{
+                //color: "white",
+                fontFamily: "Montserrat",
+                textAlign: "center",
+              }}
+            >
+              ¿Que viene a resolver en la sociedad este emprendimiento?
+            </h1>
+            <p
+              style={{
+                marginTop: "5%",
+                letterSpacing: "1px",
+                textAlign: "center",
+                lineHeight: "30px",
+                fontSize: "16px",
+                fontWeight: "300",
+                fontFamily: "'Montserrat', sans-serif",
+              }}
+            >
+              “ Abrazar el presente ” nace de la necesidad de un aporte a la
+              comunidad para que las personas tomen conciencia de su
+              alimentación, la falta de conocimiento que se tiene con los
+              alimentos que se consume habitualmente y la aceleración rutinaria,
+              las personas dejan de lado uno de los aspectos fundamentales de la
+              vida que es el alimento que ingresa en nuestro interior
+              nutriéndonos o desencadenando muchos problemas a nivel físico y
+              emocional.
+            </p>
+          </Grid>
+        </Box>
       </Box>
     </Box>
   );
