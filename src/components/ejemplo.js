@@ -1,17 +1,23 @@
 import { v4 as uuidv4 } from "uuid";
 import cardIndumentaria from "./images/card-indumentaria.jpg";
-import matVerdeAgua from "./images/Imagenes Productos/matVerdeAgua.jpg";
-import matNaranja from "./images/Imagenes Productos/matNaranja.jpg";
-import matVioleta from "./images/Imagenes Productos/matVioleta.jpg";
-import matsEstampado from "./images/Imagenes Productos/matsEstampado.jpg";
-import matsColores from "./images/Imagenes Productos/matsColores.jpg";
-import kitMats from "./images/Imagenes Productos/kitMats.jpg";
-import matNegro from "./images/Imagenes Productos/matNegro.jpg";
-import matRosado from "./images/Imagenes Productos/matRosado.jpg";
-import tacoYoga from "./images/Imagenes Productos/tacoYoga.jpg";
-import bolsoYoga from "./images/Imagenes Productos/bolsoYoga.jpg";
-import cintoYoga from "./images/Imagenes Productos/cintoYoga.jpg";
-import bandaYoga from "./images/Imagenes Productos/bandaYoga.jpg";
+import matVerdeAgua from "./images/ImagesProducts/matVerdeAgua.jpg";
+import matNaranja from "./images/ImagesProducts/matNaranja.jpg";
+import matVioleta from "./images/ImagesProducts/matVioleta.jpg";
+import matsEstampado from "./images/ImagesProducts/matsEstampado.jpg";
+import matsColores from "./images/ImagesProducts/matsColores.jpg";
+import kitMats from "./images/ImagesProducts/kitMats.jpg";
+import matNegro from "./images/ImagesProducts/matNegro.jpg";
+import matRosado from "./images/ImagesProducts/matRosado.jpg";
+import tacoYoga from "./images/ImagesProducts/tacoYoga.jpg";
+import bolsoYoga from "./images/ImagesProducts/bolsoYoga.jpg";
+import cintoYoga from "./images/ImagesProducts/cintoYoga.jpg";
+import bandaYoga from "./images/ImagesProducts/bandaYoga.jpg";
+import cuenco from "../components/images/ImagesProducts/cuenco.jpg";
+import velas from "../components/images/ImagesProducts/velas.jpg";
+import sahumerios from "../components/images/ImagesProducts/sahumerio.jpg";
+import portavela from "../components/images/ImagesProducts/portavela.jpg";
+import cuencoCuarzoMeditacion from "../components/images/ImagesProducts/cuencoCuarzoMeditacion.jpg";
+import jardinZen from "../components/images/ImagesProducts/jardinZen.jpg";
 
 const dataArray = [
   {
@@ -109,26 +115,26 @@ const dataArray = [
   },
   {
     id: uuidv4(),
-    name: "Zafu almohadón",
+    name: "Velas",
     category: "meditation",
     sale: false,
     description:
       "Medida: 15x28 cm. Funda: Loneta de algodón. Es un tejido robusto y resistente.",
     price: 1990,
     offerPrice: 15,
-    image: cardIndumentaria,
+    image: velas,
     stock: 2,
   },
   {
     id: uuidv4(),
-    name: "Zafu de jean",
+    name: "Porta velas",
     category: "meditation",
     sale: false,
     description:
       "Está relleno con cáscara de semillas de trigo sarraceno y posee doble funda con cierre para facilitar su lavado o cambio.",
     price: 7500,
     offerPrice: 15,
-    image: cardIndumentaria,
+    image: portavela,
     stock: 2,
   },
   {
@@ -137,10 +143,10 @@ const dataArray = [
     category: "meditation",
     sale: false,
     description:
-      "Base Rectangular de Madera de 20cm x 40cm ( color Negro)-Piedras de Base Blancas-Porta velas triple -c/Velas aromáticas-Piedra Zen-Rastrillo Zen-Arena de Cuarzo Blanco + 1 Buda Color Dorado.",
+      "Base Rectangular de Madera de 20cm x 40cm-Piedras de Base Blancas-Porta velas triple -c/Velas aromáticas-Piedra Zen-Rastrillo Zen-Arena de Cuarzo Blanco + 1 Buda Color Dorado.",
     price: 5400,
     offerPrice: 15,
-    image: cardIndumentaria,
+    image: jardinZen,
     stock: 2,
   },
   {
@@ -152,7 +158,7 @@ const dataArray = [
       "Este es un cuenco Jambati de rango agudo, que se caracteriza por tener un sonido de largo tiempo de duración, en el que se perciben muchos tonos y sobre tonos muy claros y con un dulce y parejo batimento.",
     price: 29870,
     offerPrice: 10,
-    image: cardIndumentaria,
+    image: cuenco,
     stock: 1,
   },
   {
@@ -175,7 +181,7 @@ const dataArray = [
     offerPrice: 15,
     description: "Cuenco de cuarzo de 20 cm de diámetro",
     price: 66000,
-    image: cardIndumentaria,
+    image: cuencoCuarzoMeditacion,
     stock: 2,
   },
   {
@@ -187,7 +193,7 @@ const dataArray = [
     description:
       "Sahumerios Magistrales Aromanza. Cantidad: 10 Unidades que contiene 8 Varillas Cada uno",
     price: 2735,
-    image: cardIndumentaria,
+    image: sahumerios,
     stock: 2,
   },
   {

@@ -1,7 +1,7 @@
-import cuenco from "../images/cuenco.jpg";
-import velas from "../images/velas.jpg";
-import sahumerios from "../images/sahumerio.jpg";
-import portavela from "../images/portavela.jpg";
+import cuenco from "../images/ImagesProducts/cuenco.jpg";
+import velas from "../images/ImagesProducts/velas.jpg";
+import sahumerios from "../images/ImagesProducts/sahumerio.jpg";
+import portavela from "../images/ImagesProducts/portavela.jpg";
 import mats from "../images/mats.jpg";
 import mats_de_yoga from "../images/mats_de_yoga.jpg";
 

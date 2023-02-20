@@ -7,7 +7,7 @@ import dataArray from "../ejemplo";
 import Spinner from "../Spinner";
 import ItemList from "./ItemList";
 import categoryMats from "../images/category-mats.jpg";
-import categoryYoga from "../images/velas.jpg";
+import categoryYoga from "../images/ImagesProducts/velas.jpg";
 import categoryMeditacion from "../images/mujer-que-medita-relaja-montanas.jpg";
 import Show from "../Show";
 

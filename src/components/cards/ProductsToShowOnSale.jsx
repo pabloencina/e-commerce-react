@@ -9,8 +9,7 @@ import ofertas from "../images/ofertas.jpg";
 const ProductsToShowOnSale = () => {
   const productsToShow = dataArray.filter((card) => card.sale);
 
-  const { increase, stock } = useAccountant(0);
-  console.log(stock);
+  const { increase } = useAccountant(0);
 
   //const [productInStock, setProductInStock] = useState(stock);
 
