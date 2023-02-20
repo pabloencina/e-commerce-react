@@ -42,10 +42,11 @@ const ProductCardById = ({ product, onProductAdded }) => {
               display: "flex",
               //backgroundColor: "#EDF67D",
               flexDirection: "row",
+              boxSizing: "border-box",
             }}
           >
             <CardMedia
-              sx={{ height: 340, width: "500px" }}
+              sx={{ height: 340, width: "500px", boxSizing: "border-box" }}
               image={image}
               title="card indumentaria"
             >

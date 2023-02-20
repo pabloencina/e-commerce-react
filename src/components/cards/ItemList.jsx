@@ -30,30 +30,35 @@ export default function ItemList({ product }) {
   };
 
   return (
-    <Grid container spacing={2}>
-      <Box>
+    <Grid container spacing={3}>
+      <Box sx={{ boxSizing: "border-box", width: "100%", height: "100%" }}>
         <Card
           sx={{
-            maxWidth: 450,
+            maxWidth: 500,
             m: 3,
             display: "flex",
             flexDirection: "column",
+            boxSizing: "border-box",
+            // width: "100",
+            height: "100%",
           }}
         >
           <CardMedia
-            sx={{ height: 140 }}
+            sx={{ height: 400, boxSizing: "border-box", width: "100%" }}
             image={image}
             title="card indumentaria"
           >
             {sale ? (
               <Box
                 style={{
-                  marginTop: "110px",
+                  marginTop: "350px",
                   marginLeft: "70%",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
                   backgroundColor: "#EDF67D",
+                  //boxSizing: "border-box",
+                  // width: "100%",
                 }}
               >
                 <p>{"- " + offerPrice + " %"}</p>
@@ -64,7 +69,9 @@ export default function ItemList({ product }) {
             )}
           </CardMedia>
 
-          <CardContent sx={{ flexGrow: 1 }}>
+          <CardContent
+            sx={{ flexGrow: 1, boxSizing: "border-box", width: "100%" }}
+          >
             <Typography
               gutterBottom
               variant="h5"
@@ -81,14 +88,27 @@ export default function ItemList({ product }) {
               variant="body2"
               sx={{
                 justifyContent: "center",
+                alignItems: "center",
+
                 display: "flex",
                 fontFamily: "montserrat",
+                boxSizing: "content-box",
+                width: "100%",
+                height: "150px",
               }}
             >
               {description}
             </Typography>
           </CardContent>
-          <Box m={4} style={{ display: "flex", justifyContent: "center" }}>
+          <Box
+            m={4}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              // boxSizing: "border-box",
+              // width: "100%",
+            }}
+          >
             <Button
               sx={{ width: "300px", height: "45px" }}
               style={buttonVerDetalle}
