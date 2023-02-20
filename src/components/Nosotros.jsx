@@ -137,7 +137,7 @@ const Nosotros = () => {
         <Grid m={3} style={{ display: "flex", justifyContent: "center" }}>
           <img
             src={yogaRio}
-            alt="Yoga en el río"
+            alt="Yoga en la laguna"
             //style={{ width: "90%" }}
           />
         </Grid>
