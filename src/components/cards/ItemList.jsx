@@ -105,8 +105,6 @@ export default function ItemList({ product }) {
             style={{
               display: "flex",
               justifyContent: "center",
-              // boxSizing: "border-box",
-              // width: "100%",
             }}
           >
             <Button

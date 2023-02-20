@@ -7,7 +7,7 @@ import { Alert, Typography } from "@mui/material";
 
 const ProductCardPrice = ({ onProductAdded, product }) => {
   const { increase, decrease, count } = useAccountant(1);
-  const { price, offerPrice, stock, name } = product;
+  const { price, offerPrice, stock, name, sale } = product;
   console.log(stock === count);
 
   return (
@@ -21,28 +21,53 @@ const ProductCardPrice = ({ onProductAdded, product }) => {
           ""
         )}
       </Box>
+
       <Box sx={{ justifyContent: "center", display: "flex" }}>
         <Box m={2}>
-          <Typography
-            variant="p"
-            sx={{
-              justifyContent: "center",
-              display: "flex",
-              textDecoration: "line-through",
-            }}
-          >
-            {price}
-          </Typography>
+          {sale ? (
+            <Typography
+              variant="p"
+              sx={{
+                justifyContent: "center",
+                display: "flex",
+                textDecoration: "line-through",
+              }}
+            >
+              {`$  ${price}`}
+            </Typography>
+          ) : (
+            <Typography
+              variant="p"
+              sx={{
+                justifyContent: "center",
+                display: "flex",
+                color: "#724cf9",
+                fontWeight: "bold",
+              }}
+            >
+              {`$  ${price}`}
+            </Typography>
+          )}
         </Box>
-        <Box m={2}>
-          <Typography
-            variant="p"
-            //color="text.secondary"
-            sx={{ justifyContent: "center", display: "flex", color: "red" }}
-          >
-            {`$${(price - (price * offerPrice) / 100) * count}`}
-          </Typography>
-        </Box>
+
+        {sale ? (
+          <Box m={2}>
+            <Typography
+              variant="p"
+              color="text.secondary"
+              sx={{
+                justifyContent: "center",
+                display: "flex",
+                color: "red",
+                fontWeight: "bold",
+              }}
+            >
+              {`$  ${(price - (price * offerPrice) / 100) * count}`}
+            </Typography>
+          </Box>
+        ) : (
+          ""
+        )}
       </Box>
 
       <Box m={2} sx={{ justifyContent: "center", display: "flex" }}>

@@ -46,14 +46,14 @@ const ProductCardById = ({ product, onProductAdded }) => {
             }}
           >
             <CardMedia
-              sx={{ height: 340, width: "500px", boxSizing: "border-box" }}
+              sx={{ height: "450px", width: "100%", boxSizing: "border-box" }}
               image={image}
               title="card indumentaria"
             >
               {sale ? (
                 <Box
                   style={{
-                    marginTop: "280px",
+                    marginTop: "400px",
                     marginLeft: "70%",
                     display: "flex",
                     justifyContent: "center",
@@ -94,12 +94,13 @@ const ProductCardById = ({ product, onProductAdded }) => {
                     display: "flex",
                     alignItems: "center",
                     fontFamily: "Montserrat",
+                    color: "#724cf9",
                   }}
                 >
                   {name}
                 </Typography>
                 <Typography
-                  //variant="body2"
+                  variant="body2"
                   sx={{
                     justifyContent: "center",
                     display: "flex",
@@ -138,7 +139,6 @@ const ProductCardById = ({ product, onProductAdded }) => {
               sx={{
                 width: "300px",
                 height: "45px",
-
                 backgroundColor: "#564592",
               }}
               style={buttonVerDetalle}
