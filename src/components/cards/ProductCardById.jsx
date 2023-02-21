@@ -19,6 +19,7 @@ import { Link } from "react-router-dom";
 
 const ProductCardById = ({ product, onProductAdded }) => {
   const { name, image, description, sale, offerPrice } = product;
+
   const {
     handleMouseEnterVerDetalle,
     handleMouseLeaveVerDetalle,
@@ -132,6 +133,14 @@ const ProductCardById = ({ product, onProductAdded }) => {
             </Box>
           </Card>
         </Box>
+        {/* {stock <= 1 ? (
+          <Alert severity="warning" style={{ fontFamily: "Montserrat" }}>
+            Solo queda disponible {count} {name}
+          </Alert>
+        ) : (
+          ""
+        )} */}
+
         <Divider />
         <Box m={2} style={{ display: "flex", justifyContent: "center" }}>
           <Link to={"/products"} style={{ textDecoration: "none" }}>

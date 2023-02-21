@@ -7,15 +7,29 @@ import { Alert, Typography } from "@mui/material";
 
 const ProductCardPrice = ({ onProductAdded, product }) => {
   const { increase, decrease, count } = useAccountant(1);
-  const { price, offerPrice, stock, name, sale } = product;
+  const { price, offerPrice, stock, sale, name } = product;
   console.log(stock === count);
 
   return (
     <>
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          boxSizing: "border-box",
+          marginTop: "-50px",
+          height: "100px",
+        }}
+      >
         {stock === count ? (
-          <Alert severity="error" style={{ fontFamily: "Montserrat" }}>
-            No hay más stock de {name}s
+          <Alert
+            severity="error"
+            style={{
+              fontFamily: "Montserrat",
+              height: 60,
+            }}
+          >
+            No hay más stock de {name}
           </Alert>
         ) : (
           ""
@@ -45,7 +59,7 @@ const ProductCardPrice = ({ onProductAdded, product }) => {
                 fontWeight: "bold",
               }}
             >
-              {`$  ${price}`}
+              {`$  ${price * count}`}
             </Typography>
           )}
         </Box>
@@ -69,7 +83,19 @@ const ProductCardPrice = ({ onProductAdded, product }) => {
           ""
         )}
       </Box>
-
+      {/* {stock === count ? (
+        <Alert
+          severity="error"
+          style={{
+            fontFamily: "Montserrat",
+            backgroundColor: "red",
+          }}
+        >
+          No hay más stock de {name}s
+        </Alert>
+      ) : (
+        ""
+      )} */}
       <Box m={2} sx={{ justifyContent: "center", display: "flex" }}>
         <ItemCount
           increase={() => {
@@ -87,13 +113,6 @@ const ProductCardPrice = ({ onProductAdded, product }) => {
         {" "}
         <AddToCart count={count} onProductAdded={onProductAdded} />
       </Box>
-      {stock <= 1 ? (
-        <Alert severity="warning" style={{ fontFamily: "Montserrat" }}>
-          Solo queda disponible {count} {name}
-        </Alert>
-      ) : (
-        ""
-      )}
     </>
   );
 };
