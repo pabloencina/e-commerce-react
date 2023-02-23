@@ -19,6 +19,7 @@ const Información = () => {
           fontFamily: "oooh baby",
           backgroundColor: "white",
           fontSize: "30px",
+          fontWeight: "bold",
         }}
       >
         Consulte por clases de yoga, meditación guiada y coaching nutricional.

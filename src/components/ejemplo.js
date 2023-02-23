@@ -27,19 +27,18 @@ const dataArray = [
     sale: false,
     offerPrice: 15,
     description:
-      "MAT DE YOGA PILATES 5MM CORCHO + CAUCHO TPE ADHERENTE ECOLÓGICO CON GUÍA DE POSICIONES",
+      "Mat de yoga pilates 5mm de corcho y caucho TPE adherente ecológico con guía de posiciones.",
     price: 12390.0,
     image: matVerdeAgua,
     stock: 2,
   },
   {
     id: uuidv4(),
-    name: "Yoga Mat Colchoneta ",
+    name: "Yoga Mat ",
     category: "mats",
     sale: false,
     offerPrice: 15,
-    description:
-      "MAT YOGA UNNIC PVC 6mm Antideslizante,Pilates Fitness Gym 6mm .",
+    description: "Mat yoga PVC 6mm Antideslizante,Pilates Fitness Gym 6mm .",
     price: 3399.0,
     image: matNaranja,
     stock: 2,
@@ -84,7 +83,7 @@ const dataArray = [
     category: "yoga",
     sale: false,
     description:
-      " sus puntas son redondeadas y además cuentan con una terminación en barniz no tóxicos (según el fabricante). Sus medidas son 7cm X 14cm X 24.5cm.",
+      " Sus puntas son redondeadas y además cuentan con una terminación en barniz no tóxicos (según el fabricante). Sus medidas son 7cm X 14cm X 24.5cm.",
     price: 1120.0,
     offerPrice: 15,
     image: tacoYoga,

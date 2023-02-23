@@ -80,6 +80,7 @@ export default function ItemList({ product }) {
                 justifyContent: "center",
                 display: "flex",
                 fontFamily: "montserrat",
+                color: "#724cf9",
               }}
             >
               {name}

@@ -34,6 +34,7 @@ const Error404 = () => {
             color: "white",
             fontFamily: "oooh baby",
             fontSize: "36px",
+            fontWeight: "bold",
           }}
         >
           No encontramos la página que estás buscando. Disculpá las molestias.
