@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import useAccountant from "../hooks/useAccountant";
 import ItemCount from "./ItemCount";
 import AddToCart from "./AddToCart";
 import { Box } from "@mui/system";
 import { Alert, Typography } from "@mui/material";
+import { CardContext } from "../../context/CardContext";
 
-const ProductCardPrice = ({ onProductAdded, product }) => {
+const ProductCardPrice = ({ product }) => {
   const { increase, decrease, count } = useAccountant(1);
   const { price, offerPrice, stock, sale, name } = product;
-  console.log(stock === count);
+
+  const { onProductAdded } = useContext(CardContext);
+  console.log(onProductAdded);
 
   return (
     <>
@@ -26,7 +29,7 @@ const ProductCardPrice = ({ onProductAdded, product }) => {
             severity="error"
             style={{
               fontFamily: "Montserrat",
-              height: 60,
+              height: 80,
             }}
           >
             No hay más stock de {name}
@@ -83,19 +86,7 @@ const ProductCardPrice = ({ onProductAdded, product }) => {
           ""
         )}
       </Box>
-      {/* {stock === count ? (
-        <Alert
-          severity="error"
-          style={{
-            fontFamily: "Montserrat",
-            backgroundColor: "red",
-          }}
-        >
-          No hay más stock de {name}s
-        </Alert>
-      ) : (
-        ""
-      )} */}
+
       <Box m={2} sx={{ justifyContent: "center", display: "flex" }}>
         <ItemCount
           increase={() => {

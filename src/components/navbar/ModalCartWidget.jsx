@@ -4,6 +4,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { useContext } from "react";
+import { CardContext } from "../../context/CardContext";
 //import ProductCardById from "../cards/ProductCardById";
 
 const style = {
@@ -18,10 +20,12 @@ const style = {
   p: 4,
 };
 
-export default function ModalCartWidget({ count }) {
+export default function ModalCartWidget() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const { count } = useContext(CardContext);
 
   return (
     <div>

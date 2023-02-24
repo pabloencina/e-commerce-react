@@ -15,6 +15,8 @@ import logo from "../images/logo-color.svg";
 import useHoverButtons from "../hooks/useHoverButtons";
 import { Link, NavLink } from "react-router-dom";
 import ModalCartWidget from "./ModalCartWidget";
+import { useContext } from "react";
+import { CardContext } from "../../context/CardContext";
 
 //const pages = ["NOSOTROS", "MATS", "ELEMENTOS YOGA", "ELEMENTOS MEDITACION"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -28,6 +30,8 @@ function NavBar({ count }) {
 
   const { isHover, handleMouseEnter, handleMouseLeave, buttonLogo } =
     useHoverButtons(false);
+
+  const { onProductAdded } = useContext(CardContext);
 
   // const handleOpenNavMenu = (event) => {
   //   setAnchorElNav(event.currentTarget);
@@ -189,7 +193,7 @@ function NavBar({ count }) {
               width: "40%",
             }}
           >
-            <ModalCartWidget count={count} />
+            <ModalCartWidget onProductAdded={onProductAdded} />
             <Button
               style={{
                 backgroundColor: "#564592",

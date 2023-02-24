@@ -2,24 +2,24 @@ import { Grid } from "@mui/material";
 import { Box } from "@mui/system";
 //import React, { useState } from "react";
 import dataArray from "../ejemplo";
-import useAccountant from "../hooks/useAccountant";
+//import useAccountant from "../hooks/useAccountant";
 import ItemList from "./ItemList";
 import ofertas from "../images/ofertas.jpg";
+import { CardContext } from "../../context/CardContext";
+import { useContext } from "react";
 
 const ProductsToShowOnSale = () => {
   const productsToShow = dataArray.filter((card) => card.sale);
 
-  const { increase } = useAccountant(0);
+  const { onProductAdded } = useContext(CardContext);
+  console.log(onProductAdded);
 
-  //const [productInStock, setProductInStock] = useState(stock);
+  // const { increase } = useAccountant(0);
 
-  const onProductAdded = (quantity) => {
-    increase(quantity);
-    // if (productInStock >= count) {
-    //   setProductInStock(productInStock - count);
-    //   setCount(1);
-    // }
-  };
+  // const onProductAdded = (quantity) => {
+  //   increase(quantity);
+
+  // };
   return (
     <Box m={5}>
       <Box

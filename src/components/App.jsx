@@ -19,6 +19,7 @@ import Home from "./Home";
 import ProductCardByIdItem from "./cards/ProductCardByIdItem";
 import ItemsListContainerCategory from "./cards/ItemsListContainerCategory";
 import Error404 from "./Error404";
+import CardContextProvider from "../context/CardContext";
 
 //import { collection, getDocs } from "firebase/firestore";
 //import { useEffect } from "react";
@@ -37,36 +38,38 @@ function App() {
   //   getUsuarios();
   // }, []);
 
-  const { count, onProductAdded } = useAccountant(0);
+  const { count } = useAccountant(0);
 
   //const { name } = product;
 
   return (
-    <BrowserRouter>
-      <Box>
-        <Información />
-        <NavBar count={count} />
+    <CardContextProvider>
+      <BrowserRouter>
+        <Box>
+          <Información />
+          <NavBar count={count} />
 
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="nosotros" element={<Nosotros />} />
-          <Route path="/" element={<Home />} />
-          <Route path="*" element={<Error404 />}></Route>
-          <Route
-            path="/products"
-            element={<ItemListContainer onProductAdded={onProductAdded} />}
-          />
-          <Route
-            path="/category/:categoryId"
-            element={<ItemsListContainerCategory />}
-          />
-          <Route path="/product/:productId" element={<ProductCardByIdItem />} />
-        </Routes>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="nosotros" element={<Nosotros />} />
+            <Route path="/" element={<Home />} />
+            <Route path="*" element={<Error404 />}></Route>
+            <Route path="/products" element={<ItemListContainer />} />
+            <Route
+              path="/category/:categoryId"
+              element={<ItemsListContainerCategory />}
+            />
+            <Route
+              path="/product/:productId"
+              element={<ProductCardByIdItem />}
+            />
+          </Routes>
 
-        <Footer />
-      </Box>
-    </BrowserRouter>
+          <Footer />
+        </Box>
+      </BrowserRouter>
+    </CardContextProvider>
   );
 }
 
