@@ -14,9 +14,9 @@ import logo from "../images/logo-color.svg";
 //import CartWidget from "../navbar/CartWidget";
 import useHoverButtons from "../hooks/useHoverButtons";
 import { Link, NavLink } from "react-router-dom";
-import ModalCartWidget from "./ModalCartWidget";
 import { useContext } from "react";
 import { CardContext } from "../../context/CardContext";
+import ContainerOfSelectedProducts from "./ContainerOfSelectedProducts";
 
 //const pages = ["NOSOTROS", "MATS", "ELEMENTOS YOGA", "ELEMENTOS MEDITACION"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -193,7 +193,7 @@ function NavBar({ count }) {
               width: "40%",
             }}
           >
-            <ModalCartWidget onProductAdded={onProductAdded} />
+            <ContainerOfSelectedProducts onProductAdded={onProductAdded} />
             <Button
               style={{
                 backgroundColor: "#564592",

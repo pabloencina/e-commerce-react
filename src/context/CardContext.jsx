@@ -1,5 +1,6 @@
 import React from "react";
 import { createContext } from "react";
+//import dataArray from "../components/ejemplo";
 import useAccountant from "../components/hooks/useAccountant";
 
 export const CardContext = createContext();

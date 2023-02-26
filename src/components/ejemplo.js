@@ -34,7 +34,7 @@ const dataArray = [
   },
   {
     id: uuidv4(),
-    name: "Yoga Mat ",
+    name: "Yoga Mat",
     category: "mats",
     sale: false,
     offerPrice: 15,
@@ -68,7 +68,7 @@ const dataArray = [
   },
   {
     id: uuidv4(),
-    name: "Banda de yoga ",
+    name: "Banda de yoga",
     category: "yoga",
     sale: false,
     description: "Medidas 70cm, banda de lienzo.",
