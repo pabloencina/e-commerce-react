@@ -1,9 +1,9 @@
 import { Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
-import americanExpress from "../../images/americanExpress.png";
-import masterCard from "../../images/masterCard.png";
-import visa from "../../images/visa.png";
+import americanExpress from "../images/americanExpress.png";
+import masterCard from "../images/masterCard.png";
+import visa from "../images/visa.png";
 
 const CreditCardBox = () => {
   return (

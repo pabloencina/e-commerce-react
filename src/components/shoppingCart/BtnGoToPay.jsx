@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
-import useHoverButtons from "../../hooks/useHoverButtons";
+import useHoverButtons from "../hooks/useHoverButtons";
 
 const BtnGoToPay = () => {
   const {

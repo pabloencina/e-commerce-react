@@ -5,37 +5,21 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import { useContext } from "react";
-import { CardContext } from "../../../context/CardContext";
+import { CardContext } from "../../context/CardContext";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Grid } from "@mui/material";
 import { Box } from "@mui/system";
-import CreditCardBox from "./CreditCardBox";
-import DeleteBtnOfSelectedProduct from "./DeleteBtnOfSelectedProduct";
-import TotalPriceOfProducts from "./TotalPriceOfProducts";
-import BtnGoToPay from "./BtnGoToPay";
-import useCart from "../../hooks/useCart";
+import CreditCardBox from "../shoppingCart/CreditCardBox";
+import DeleteBtnOfSelectedProduct from "../shoppingCart/DeleteBtnOfSelectedProduct";
+import TotalPriceOfProducts from "../shoppingCart/TotalPriceOfProducts";
+import BtnGoToPay from "../shoppingCart/BtnGoToPay";
 
 export default function ContainerOfSelectedProducts() {
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState("paper");
 
   const { count } = useContext(CardContext);
-  // const [items, setItems] = useState([]);
 
-  // const getAllCard = () => {
-  //   const promise = new Promise((resolve) => {
-  //     setTimeout(() => {
-  //       resolve(dataArray);
-  //     }, 2000);
-  //   });
-  //   promise.then((request) => {
-  //     setItems(request);
-  //   });
-  // };
-
-  // React.useEffect(() => {
-  //   getAllCard();
-  // }, []);
   const { cartDetails } = useContext(CardContext);
 
   const handleClickOpen = (scrollType) => () => {

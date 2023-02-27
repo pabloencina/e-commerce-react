@@ -16,7 +16,7 @@ import useHoverButtons from "../hooks/useHoverButtons";
 import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { CardContext } from "../../context/CardContext";
-import ContainerOfSelectedProducts from "./CartContainer/ContainerOfSelectedProducts";
+import ContainerOfSelectedProducts from "../shoppingCart/ContainerOfSelectedProducts";
 
 //const pages = ["NOSOTROS", "MATS", "ELEMENTOS YOGA", "ELEMENTOS MEDITACION"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];

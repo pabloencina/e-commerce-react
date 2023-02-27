@@ -5,9 +5,6 @@ import { Close } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import { Box } from "@mui/system";
 import useHoverButtons from "../hooks/useHoverButtons";
-import { useContext } from "react";
-import { CardContext } from "../../context/CardContext";
-import useCart from "../hooks/useCart";
 
 export default function AddToCart({ count, stock, handleProductAdded }) {
   const [open, setOpen] = React.useState(false);
