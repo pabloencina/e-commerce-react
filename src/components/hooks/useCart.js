@@ -8,7 +8,11 @@ const useCart = () => {
     setCartDetails([...cartDetails, detail]);
   };
   const getTotal = () => {
-    return;
+    let total = 0;
+    cartDetails.forEach((detail) => {
+      total = total + detail.product.price * detail.qty;
+    });
+    return total;
   };
 
   const onProductRemove = () => {};
@@ -18,9 +22,9 @@ const useCart = () => {
   return {
     cartDetails,
     onProductAdded,
+    getTotal,
     onProductRemove,
     onProductChange,
-    getTotal,
   };
 };
 

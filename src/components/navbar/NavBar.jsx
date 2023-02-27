@@ -14,9 +14,9 @@ import logo from "../images/logo-color.svg";
 //import CartWidget from "../navbar/CartWidget";
 import useHoverButtons from "../hooks/useHoverButtons";
 import { Link, NavLink } from "react-router-dom";
-import { useContext } from "react";
-import { CardContext } from "../../context/CardContext";
-import ContainerOfSelectedProducts from "../shoppingCart/ContainerOfSelectedProducts";
+// import { useContext } from "react";
+// import { CardContext } from "../../context/CardContext";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 //const pages = ["NOSOTROS", "MATS", "ELEMENTOS YOGA", "ELEMENTOS MEDITACION"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -31,7 +31,7 @@ function NavBar({ count }) {
   const { isHover, handleMouseEnter, handleMouseLeave, buttonLogo } =
     useHoverButtons(false);
 
-  const { onProductAdded } = useContext(CardContext);
+  //const { onProductAdded } = useContext(CardContext);
 
   // const handleOpenNavMenu = (event) => {
   //   setAnchorElNav(event.currentTarget);
@@ -203,7 +203,7 @@ function NavBar({ count }) {
                 textDecoration: "none",
               }}
             >
-              <ContainerOfSelectedProducts onProductAdded={onProductAdded} />
+              <ShoppingCartOutlinedIcon />
             </NavLink>
             <Button
               style={{

@@ -2,7 +2,7 @@ import { Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 
-const TotalPriceOfProducts = () => {
+const TotalPriceOfProducts = ({ getTotal }) => {
   return (
     <Box
       style={{
@@ -53,7 +53,7 @@ const TotalPriceOfProducts = () => {
               fontFamily: "Montserrat",
             }}
           >
-            $ 10000
+            $ {getTotal()}
           </p>
         </Box>
       </Grid>

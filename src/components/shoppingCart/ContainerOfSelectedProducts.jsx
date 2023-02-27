@@ -1,13 +1,8 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
 import { useContext } from "react";
 import { CardContext } from "../../context/CardContext";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import { Grid } from "@mui/material";
+
+import { Card, CardMedia, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import CreditCardBox from "../shoppingCart/CreditCardBox";
 import DeleteBtnOfSelectedProduct from "../shoppingCart/DeleteBtnOfSelectedProduct";
@@ -15,178 +10,171 @@ import TotalPriceOfProducts from "../shoppingCart/TotalPriceOfProducts";
 import BtnGoToPay from "../shoppingCart/BtnGoToPay";
 
 export default function ContainerOfSelectedProducts() {
-  const [open, setOpen] = React.useState(false);
-  const [scroll, setScroll] = React.useState("paper");
-
-  const { cartDetails } = useContext(CardContext);
-
-  const handleClickOpen = (scrollType) => () => {
-    setOpen(true);
-    setScroll(scrollType);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const descriptionElementRef = React.useRef(null);
-  React.useEffect(() => {
-    if (open) {
-      const { current: descriptionElement } = descriptionElementRef;
-      if (descriptionElement !== null) {
-        descriptionElement.focus();
-      }
-    }
-  }, [open]);
+  const { cartDetails, getTotal } = useContext(CardContext);
 
   return (
-    <div>
-      <Button
-        onClick={handleClickOpen("body")}
+    <Box m={5} style={{}}>
+      <Box
         style={{
-          backgroundColor: "#564592",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "80px",
         }}
-        variant="contaitextned"
       >
-        <ShoppingCartOutlinedIcon />
-      </Button>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        scroll={scroll}
-        aria-labelledby="scroll-dialog-title"
-        aria-describedby="scroll-dialog-description"
+        <p
+          style={{
+            color: "#564592",
+            fontSize: "30PX",
+            fontWeight: "bold",
+            fontFamily: "Montserrat",
+          }}
+        >
+          TU CARRITO
+        </p>
+      </Box>
+      <Box
+        m={5}
+        style={{
+          display: "flex",
+          justifyContent: "start",
+          alignItems: "center",
+          height: "80px",
+        }}
       >
-        {/* <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle> */}
-        <DialogContent dividers={scroll === "paper"}>
-          <DialogContentText
-            id="scroll-dialog-description"
-            ref={descriptionElementRef}
-            tabIndex={-1}
-          >
-            <Box
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: "80px",
-              }}
-            >
-              <p
+        <p
+          style={{
+            color: "#564592",
+            fontSize: "20PX",
+            fontWeight: "bold",
+            fontFamily: "Montserrat",
+          }}
+        >
+          Resumen del pedido
+        </p>
+      </Box>
+      <Card
+        sx={{
+          width: "80%",
+          m: 5,
+          display: "flex",
+          justifyContent: "center",
+          //backgroundColor: "#EDF67D",
+          flexDirection: "column",
+          //SboxSizing: "border-box",
+          //height: "200px",
+        }}
+      >
+        {cartDetails.map((detail) => {
+          return (
+            <Box m={3}>
+              <Card
                 style={{
-                  color: "#564592",
-                  fontSize: "30PX",
-                  fontWeight: "bold",
-                  fontFamily: "Montserrat",
+                  m: 5,
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "row",
+                  height: "200px",
+                  //height: "80px",
                 }}
               >
-                TU CARRITO
-              </p>
-            </Box>
-            <Box
-              style={{
-                display: "flex",
-                justifyContent: "start",
-                alignItems: "center",
-                height: "80px",
-              }}
-            >
-              <p
-                style={{
-                  color: "#564592",
-                  fontSize: "20PX",
-                  fontWeight: "bold",
-                  fontFamily: "Montserrat",
-                }}
-              >
-                Resumen del pedido
-              </p>
-            </Box>
-            {cartDetails.map((detail) => {
-              return (
-                <Box
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    height: "80px",
+                <CardMedia
+                  sx={{
+                    height: "200px",
+                    width: "300px",
+                    boxSizing: "border-box",
                   }}
+                  image={detail.product.image}
+                  title="card indumentaria"
                 >
-                  <Grid
-                    item
-                    xs={12}
-                    sm={6}
-                    md={4}
-                    sx={{ flexDirection: "row" }}
-                  >
+                  {detail.product.sale ? (
                     <Box
-                      sx={{
-                        width: "100px",
+                      style={{
+                        marginTop: "400px",
+                        marginLeft: "70%",
                         display: "flex",
-                        justifyContent: "start",
-                        boxSizing: "border-box",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        backgroundColor: "#EDF67D",
+                        fontFamily: "Montserrat",
                       }}
                     >
-                      <p style={{ fontFamily: "Montserrat" }}>
-                        {detail.qty} producto
-                      </p>
+                      <p>{"- " + detail.product.offerPrice + " %"}</p>
                     </Box>
-                  </Grid>
+                  ) : (
+                    ""
+                  )}
+                </CardMedia>
 
-                  <Grid
-                    item
-                    xs={12}
-                    sm={6}
-                    md={4}
-                    sx={{ flexDirection: "row" }}
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  sx={{ flexDirection: "column" }}
+                >
+                  <Box
+                    m={3}
+                    sx={{
+                      width: "100px",
+                      display: "flex",
+                      justifyContent: "center",
+                      boxSizing: "border-box",
+                      alignItems: "center",
+                      //backgroundColor: "red",
+                    }}
                   >
-                    <Box
-                      sx={{
-                        width: "100px",
-                        display: "flex",
-                        justifyContent: "start",
-                        boxSizing: "border-box",
+                    <p style={{ fontFamily: "Montserrat" }}>
+                      {detail.qty}
+                      {detail.qty === 1 ? " producto" : " productos"}
+                    </p>
+                  </Box>
+                </Grid>
+
+                <Grid item xs={12} sm={6} md={4} sx={{ flexDirection: "row" }}>
+                  <Box
+                    m={3}
+                    sx={{
+                      width: "200px",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontFamily: "Montserrat",
                       }}
                     >
-                      <p style={{ fontFamily: "Montserrat" }}>
-                        {detail.product.name}
-                      </p>
-                    </Box>
-                  </Grid>
-                  <Grid
-                    item
-                    xs={12}
-                    sm={6}
-                    md={4}
-                    sx={{ flexDirection: "row" }}
+                      {detail.product.name}
+                    </p>
+                  </Box>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4} sx={{ flexDirection: "row" }}>
+                  <Box
+                    sx={{
+                      width: "100px",
+                      display: "flex",
+                      justifyContent: "end",
+                      flexDirection: "row",
+                      boxSizing: "border-box",
+                    }}
                   >
-                    <Box
-                      sx={{
-                        width: "100px",
-                        display: "flex",
-                        justifyContent: "end",
-                        flexDirection: "row",
-                        boxSizing: "border-box",
-                      }}
-                    >
-                      <p
-                        style={{ fontWeight: "bold", fontFamily: "Montserrat" }}
-                      >
-                        $ {detail.product.price}
-                      </p>
-                    </Box>
-                  </Grid>
-                  <DeleteBtnOfSelectedProduct />
-                </Box>
-              );
-            })}
-            <TotalPriceOfProducts />
-            <CreditCardBox />
-            <BtnGoToPay />
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions></DialogActions>
-      </Dialog>
-    </div>
+                    <p style={{ fontWeight: "bold", fontFamily: "Montserrat" }}>
+                      {detail.product.price * detail.qty}
+                    </p>
+                  </Box>
+                </Grid>
+                <DeleteBtnOfSelectedProduct />
+              </Card>
+            </Box>
+          );
+        })}
+      </Card>
+      <TotalPriceOfProducts getTotal={getTotal} />
+      <CreditCardBox />
+      <BtnGoToPay />
+    </Box>
   );
 }

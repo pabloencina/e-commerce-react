@@ -30,7 +30,7 @@ const dataArray = [
       "Mat de yoga pilates 5mm de corcho y caucho TPE adherente ecológico con guía de posiciones.",
     price: 12390.0,
     image: matVerdeAgua,
-    stock: 2,
+    stock: 10,
   },
   {
     id: uuidv4(),
@@ -41,7 +41,7 @@ const dataArray = [
     description: "Mat yoga PVC 6mm Antideslizante,Pilates Fitness Gym 6mm .",
     price: 3399.0,
     image: matNaranja,
-    stock: 2,
+    stock: 4,
   },
   {
     id: uuidv4(),
@@ -52,7 +52,7 @@ const dataArray = [
     offerPrice: 10,
     description: " Fitness Gym,MAT YOGA NBR BALBOAFIT 10 MM",
     image: matVioleta,
-    stock: 3,
+    stock: 8,
   },
   {
     id: uuidv4(),
@@ -75,7 +75,7 @@ const dataArray = [
     price: 4099.0,
     offerPrice: 15,
     image: bandaYoga,
-    stock: 2,
+    stock: 40,
   },
   {
     id: uuidv4(),
@@ -87,7 +87,7 @@ const dataArray = [
     price: 1120.0,
     offerPrice: 15,
     image: tacoYoga,
-    stock: 2,
+    stock: 7,
   },
   {
     id: uuidv4(),
@@ -98,7 +98,7 @@ const dataArray = [
     price: 1450.0,
     offerPrice: 15,
     image: cintoYoga,
-    stock: 2,
+    stock: 5,
   },
   {
     id: uuidv4(),
@@ -110,7 +110,7 @@ const dataArray = [
     price: 6588.0,
     offerPrice: 15,
     image: bolsoYoga,
-    stock: 2,
+    stock: 4,
   },
   {
     id: uuidv4(),
@@ -122,7 +122,7 @@ const dataArray = [
     price: 1990.0,
     offerPrice: 15,
     image: velas,
-    stock: 2,
+    stock: 8,
   },
   {
     id: uuidv4(),
@@ -134,7 +134,7 @@ const dataArray = [
     price: 7500.0,
     offerPrice: 15,
     image: portavela,
-    stock: 2,
+    stock: 12,
   },
   {
     id: uuidv4(),
@@ -146,7 +146,7 @@ const dataArray = [
     price: 5400.0,
     offerPrice: 15,
     image: jardinZen,
-    stock: 2,
+    stock: 22,
   },
   {
     id: uuidv4(),
@@ -158,7 +158,7 @@ const dataArray = [
     price: 29870.0,
     offerPrice: 10,
     image: cuenco,
-    stock: 1,
+    stock: 51,
   },
   {
     id: uuidv4(),
@@ -170,7 +170,7 @@ const dataArray = [
       "Tamaño mediano-6 com de diámetro-material de bronce-labrada con dibujos y escrituras sagradas.",
     price: 10500.0,
     image: cardIndumentaria,
-    stock: 2,
+    stock: 4,
   },
   {
     id: uuidv4(),
@@ -181,7 +181,7 @@ const dataArray = [
     description: "Cuenco de cuarzo de 20 cm de diámetro",
     price: 66000.0,
     image: cuencoCuarzoMeditacion,
-    stock: 2,
+    stock: 22,
   },
   {
     id: uuidv4(),
@@ -193,7 +193,7 @@ const dataArray = [
       "Sahumerios Magistrales Aromanza. Cantidad: 10 Unidades que contiene 8 Varillas Cada uno",
     price: 2735.0,
     image: sahumerios,
-    stock: 2,
+    stock: 22,
   },
   {
     id: uuidv4(),
@@ -204,7 +204,7 @@ const dataArray = [
     description: "PVC Suave, 173 x 61 cm (largo x ancho), 6 mm de espesor",
     price: 2990.0,
     image: matsColores,
-    stock: 2,
+    stock: 22,
   },
   {
     id: uuidv4(),
@@ -215,7 +215,7 @@ const dataArray = [
     description: "Kit yoga set mat- ladrillo- correa",
     price: 5200.0,
     image: kitMats,
-    stock: 2,
+    stock: 7,
   },
   {
     id: uuidv4(),
@@ -227,7 +227,7 @@ const dataArray = [
       "Mat de yoga pilates 5mm corcho + caucho tpe adherente ecologico.",
     price: 12500.0,
     image: matNegro,
-    stock: 2,
+    stock: 27,
   },
   {
     id: uuidv4(),
@@ -239,7 +239,7 @@ const dataArray = [
       "Mat de yoga impreso / Hecho con materiales ecológicos sin ftalatos peligrosos, más saludable para el usuario y el planeta / Libre de látex / Antideslizante",
     price: 14650.0,
     image: matRosado,
-    stock: 2,
+    stock: 5,
   },
 ];
 

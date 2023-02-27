@@ -8,16 +8,15 @@ import visa from "../images/visa.png";
 const CreditCardBox = () => {
   return (
     <Box>
-      <Box>
+      <Box m={5}>
         <p style={{ color: "black" }}>OPCIONES DE PAGO</p>
       </Box>
       <Box
         style={{
           display: "flex",
-          justifyContent: "start",
+          justifyContent: "center",
           alignItems: "center",
           height: "180px",
-          //backgroundColor: "red",
         }}
       >
         <Grid item xs={12} sm={6} md={4} sx={{ flexDirection: "row" }}>
