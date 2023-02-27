@@ -2,6 +2,7 @@ import React from "react";
 import { createContext } from "react";
 //import dataArray from "../components/ejemplo";
 import useAccountant from "../components/hooks/useAccountant";
+import useCart from "../components/hooks/useCart";
 
 export const CardContext = createContext();
 // export const CardContext = createContext({
@@ -10,14 +11,11 @@ export const CardContext = createContext();
 // });
 
 const CardContextProvider = ({ children }) => {
-  const { increase, count } = useAccountant(0);
-
-  const onProductAdded = (quantity) => {
-    increase(quantity);
-  };
+  const { count } = useAccountant(0);
+  const { onProductAdded, cartDetails } = useCart();
 
   return (
-    <CardContext.Provider value={{ count, onProductAdded }}>
+    <CardContext.Provider value={{ count, onProductAdded, cartDetails }}>
       {children}
     </CardContext.Provider>
   );

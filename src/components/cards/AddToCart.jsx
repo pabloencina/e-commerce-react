@@ -7,12 +7,13 @@ import { Box } from "@mui/system";
 import useHoverButtons from "../hooks/useHoverButtons";
 import { useContext } from "react";
 import { CardContext } from "../../context/CardContext";
+import useCart from "../hooks/useCart";
 
-export default function AddToCart({ count, stock }) {
+export default function AddToCart({ count, stock, handleProductAdded }) {
   const [open, setOpen] = React.useState(false);
 
-  const { onProductAdded } = useContext(CardContext);
-  console.log(onProductAdded);
+  // const { onProductAdded } = useContext(CardContext);
+  // console.log(onProductAdded);
 
   const messageProducto = `Se agrego ${count} producto al carrito`;
   const messageProductos = `Se agregaron ${count} productos al carrito`;
@@ -25,7 +26,7 @@ export default function AddToCart({ count, stock }) {
 
   const handleClick = () => {
     setOpen(true);
-    onProductAdded(count);
+    handleProductAdded();
     console.log(count);
   };
 

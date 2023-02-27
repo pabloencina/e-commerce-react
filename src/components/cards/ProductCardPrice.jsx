@@ -11,7 +11,11 @@ const ProductCardPrice = ({ product }) => {
   const { price, offerPrice, stock, sale, name } = product;
 
   const { onProductAdded } = useContext(CardContext);
-  console.log(onProductAdded);
+  // console.log(onProductAdded);
+
+  const handleProductAdded = () => {
+    onProductAdded(product, count);
+  };
 
   return (
     <>
@@ -102,7 +106,7 @@ const ProductCardPrice = ({ product }) => {
 
       <Box m={2} sx={{ justifyContent: "center", display: "flex" }}>
         {" "}
-        <AddToCart count={count} onProductAdded={onProductAdded} />
+        <AddToCart count={count} handleProductAdded={handleProductAdded} />
       </Box>
     </>
   );

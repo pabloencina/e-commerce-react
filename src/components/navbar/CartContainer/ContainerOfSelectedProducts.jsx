@@ -1,65 +1,3 @@
-// import * as React from "react";
-// import Box from "@mui/material/Box";
-// import Button from "@mui/material/Button";
-// import Typography from "@mui/material/Typography";
-// import Modal from "@mui/material/Modal";
-// import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-// import { useContext } from "react";
-// import { CardContext } from "../../context/CardContext";
-// import ShoppingCartCard from "../cards/ShoppingCartCard";
-
-// const style = {
-//   position: "absolute",
-//   top: "40%",
-//   left: "80%",
-//   transform: "translate(-50%, -50%)",
-//   width: 400,
-//   bgcolor: "background.paper",
-//   border: "3px solid #564592",
-//   boxShadow: 24,
-//   p: 4,
-// };
-
-// export default function ModalCartWidget() {
-//   const [open, setOpen] = React.useState(false);
-//   const handleOpen = () => setOpen(true);
-//   const handleClose = () => setOpen(false);
-
-//   const { count } = useContext(CardContext);
-
-//   return (
-//     <div>
-//       <Button
-//         onClick={handleOpen}
-//         style={{
-//           backgroundColor: "#564592",
-//         }}
-//         variant="contaitextned"
-//       >
-//         <ShoppingCartOutlinedIcon />
-//         <span>{count}</span>
-//       </Button>
-//       <Modal
-//         open={open}
-//         onClose={handleClose}
-//         aria-labelledby="modal-modal-title"
-//         aria-describedby="modal-modal-description"
-//       >
-//         <Box sx={{ style }}>
-//           <Typography
-//             id="modal-modal-title"
-//             variant="h6"
-//             component="h2"
-//             sx={{ fontFamily: "Montserrat" }}
-//           >
-//             <ShoppingCartCard />
-//           </Typography>
-//         </Box>
-//       </Modal>
-//     </div>
-//   );
-// }
-
 import * as React from "react";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
@@ -67,34 +5,38 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import { useContext } from "react";
-import { CardContext } from "../../context/CardContext";
+import { CardContext } from "../../../context/CardContext";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Grid } from "@mui/material";
-import { useState } from "react";
-import dataArray from "../ejemplo";
 import { Box } from "@mui/system";
+import CreditCardBox from "./CreditCardBox";
+import DeleteBtnOfSelectedProduct from "./DeleteBtnOfSelectedProduct";
+import TotalPriceOfProducts from "./TotalPriceOfProducts";
+import BtnGoToPay from "./BtnGoToPay";
+import useCart from "../../hooks/useCart";
 
 export default function ContainerOfSelectedProducts() {
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState("paper");
 
   const { count } = useContext(CardContext);
-  const [items, setItems] = useState([]);
+  // const [items, setItems] = useState([]);
 
-  const getAllCard = () => {
-    const promise = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(dataArray);
-      }, 2000);
-    });
-    promise.then((request) => {
-      setItems(request);
-    });
-  };
+  // const getAllCard = () => {
+  //   const promise = new Promise((resolve) => {
+  //     setTimeout(() => {
+  //       resolve(dataArray);
+  //     }, 2000);
+  //   });
+  //   promise.then((request) => {
+  //     setItems(request);
+  //   });
+  // };
 
-  React.useEffect(() => {
-    getAllCard();
-  }, []);
+  // React.useEffect(() => {
+  //   getAllCard();
+  // }, []);
+  const { cartDetails } = useContext(CardContext);
 
   const handleClickOpen = (scrollType) => () => {
     setOpen(true);
@@ -149,7 +91,16 @@ export default function ContainerOfSelectedProducts() {
                 height: "80px",
               }}
             >
-              <p>Tu Carrito</p>
+              <p
+                style={{
+                  color: "#564592",
+                  fontSize: "30PX",
+                  fontWeight: "bold",
+                  fontFamily: "Montserrat",
+                }}
+              >
+                TU CARRITO
+              </p>
             </Box>
             <Box
               style={{
@@ -159,9 +110,18 @@ export default function ContainerOfSelectedProducts() {
                 height: "80px",
               }}
             >
-              <p>Resumen del pedido</p>
+              <p
+                style={{
+                  color: "#564592",
+                  fontSize: "20PX",
+                  fontWeight: "bold",
+                  fontFamily: "Montserrat",
+                }}
+              >
+                Resumen del pedido
+              </p>
             </Box>
-            {items.map((product) => {
+            {cartDetails.map((detail) => {
               return (
                 <Box
                   style={{
@@ -186,7 +146,9 @@ export default function ContainerOfSelectedProducts() {
                         boxSizing: "border-box",
                       }}
                     >
-                      {count} producto
+                      <p style={{ fontFamily: "Montserrat" }}>
+                        {detail.qty} producto
+                      </p>
                     </Box>
                   </Grid>
 
@@ -205,7 +167,9 @@ export default function ContainerOfSelectedProducts() {
                         boxSizing: "border-box",
                       }}
                     >
-                      {product.name}
+                      <p style={{ fontFamily: "Montserrat" }}>
+                        {detail.product.name}
+                      </p>
                     </Box>
                   </Grid>
                   <Grid
@@ -224,49 +188,20 @@ export default function ContainerOfSelectedProducts() {
                         boxSizing: "border-box",
                       }}
                     >
-                      $ {product.price}
+                      <p
+                        style={{ fontWeight: "bold", fontFamily: "Montserrat" }}
+                      >
+                        $ {detail.product.price}
+                      </p>
                     </Box>
                   </Grid>
+                  <DeleteBtnOfSelectedProduct />
                 </Box>
               );
             })}
-
-            <Box
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <Grid item xs={12} sm={6} md={4} sx={{ flexDirection: "row" }}>
-                {" "}
-                <Box
-                  sx={{
-                    width: "200px",
-                    display: "flex",
-                    justifyContent: "start",
-                    alignItems: "center",
-                  }}
-                >
-                  <p>Total</p>
-                </Box>
-              </Grid>
-
-              <Grid item xs={12} sm={6} md={4} sx={{ flexDirection: "row" }}>
-                {" "}
-                <Box
-                  sx={{
-                    width: "100px",
-                    display: "flex",
-                    justifyContent: "end",
-                    alignItems: "center",
-                    //boxSizing: "border-box",
-                  }}
-                >
-                  <p>$ 10000</p>
-                </Box>
-              </Grid>
-            </Box>
+            <TotalPriceOfProducts />
+            <CreditCardBox />
+            <BtnGoToPay />
           </DialogContentText>
         </DialogContent>
         <DialogActions></DialogActions>
