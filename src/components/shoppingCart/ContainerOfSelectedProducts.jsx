@@ -18,8 +18,6 @@ export default function ContainerOfSelectedProducts() {
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState("paper");
 
-  const { count } = useContext(CardContext);
-
   const { cartDetails } = useContext(CardContext);
 
   const handleClickOpen = (scrollType) => () => {
@@ -51,7 +49,6 @@ export default function ContainerOfSelectedProducts() {
         variant="contaitextned"
       >
         <ShoppingCartOutlinedIcon />
-        <span>{count}</span>
       </Button>
       <Dialog
         open={open}

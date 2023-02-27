@@ -20,6 +20,7 @@ import ProductCardByIdItem from "./cards/ProductCardByIdItem";
 import ItemsListContainerCategory from "./cards/ItemsListContainerCategory";
 import Error404 from "./Error404";
 import CardContextProvider from "../context/CardContext";
+import ContainerOfSelectedProducts from "./shoppingCart/ContainerOfSelectedProducts";
 
 //import { collection, getDocs } from "firebase/firestore";
 //import { useEffect } from "react";
@@ -63,6 +64,10 @@ function App() {
             <Route
               path="/product/:productId"
               element={<ProductCardByIdItem />}
+            />
+            <Route
+              path="/shoppingCart"
+              element={<ContainerOfSelectedProducts />}
             />
           </Routes>
 

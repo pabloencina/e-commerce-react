@@ -193,7 +193,18 @@ function NavBar({ count }) {
               width: "40%",
             }}
           >
-            <ContainerOfSelectedProducts onProductAdded={onProductAdded} />
+            <NavLink
+              to={"/shoppingCart"}
+              style={{
+                backgroundColor: "#564592",
+                color: "white",
+                marginLeft: "10Px",
+                fontFamily: "Montserrat",
+                textDecoration: "none",
+              }}
+            >
+              <ContainerOfSelectedProducts onProductAdded={onProductAdded} />
+            </NavLink>
             <Button
               style={{
                 backgroundColor: "#564592",
