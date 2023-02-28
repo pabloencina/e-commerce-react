@@ -7,7 +7,7 @@ import Spinner from "../Spinner";
 import ItemList from "./ItemList";
 import imgProductos from "../images/imgProductos.jpg";
 
-const ItemListContainer = () => {
+const ItemListContainer = ({ darkMode }) => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -55,7 +55,7 @@ const ItemListContainer = () => {
         <h1
           style={{
             fontFamily: "oooh baby",
-            color: "#724cf9",
+            color: darkMode ? "#724cf9" : "white",
           }}
         >
           TODOS LOS PRODUCTOS
@@ -65,7 +65,7 @@ const ItemListContainer = () => {
         {items.map((product) => {
           return (
             <Grid item xs={12} sm={6} md={4}>
-              <ItemList product={product} items={items} />
+              <ItemList product={product} items={items} darkMode={darkMode} />
             </Grid>
           );
         })}

@@ -15,7 +15,7 @@ import React from "react";
 import useHoverButtons from "../hooks/useHoverButtons";
 import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 
-const Register = () => {
+const Register = ({ darkMode }) => {
   const {
     buttonVerDetalle,
     handleMouseEnterVerDetalle,
@@ -40,6 +40,7 @@ const Register = () => {
           <form>
             <Box sx={{ my: 3 }}>
               <Typography
+                sx={{ color: darkMode ? "#564592" : "white" }}
                 color="#564592"
                 variant="h5"
                 style={{
@@ -52,6 +53,10 @@ const Register = () => {
               </Typography>
             </Box>
             <TextField
+              style={{
+                backgroundColor: darkMode ? "white" : "#564592",
+                color: darkMode ? "black" : "white",
+              }}
               // error={Boolean(formik.touched.email && formik.errors.email)}
               fullWidth
               // helperText={formik.touched.email && formik.errors.email}
@@ -66,6 +71,10 @@ const Register = () => {
               variant="outlined"
             />
             <TextField
+              style={{
+                backgroundColor: darkMode ? "white" : "#564592",
+                color: darkMode ? "black" : "white",
+              }}
               // error={Boolean(formik.touched.password && formik.errors.password)}
               fullWidth
               // helperText={formik.touched.password && formik.errors.password}

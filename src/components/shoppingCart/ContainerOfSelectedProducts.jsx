@@ -9,7 +9,7 @@ import DeleteBtnOfSelectedProduct from "../shoppingCart/DeleteBtnOfSelectedProdu
 import TotalPriceOfProducts from "../shoppingCart/TotalPriceOfProducts";
 import BtnGoToPay from "../shoppingCart/BtnGoToPay";
 
-export default function ContainerOfSelectedProducts() {
+export default function ContainerOfSelectedProducts({ darkMode }) {
   const { cartDetails, getTotal } = useContext(CardContext);
 
   return (
@@ -24,7 +24,7 @@ export default function ContainerOfSelectedProducts() {
       >
         <p
           style={{
-            color: "#564592",
+            color: darkMode ? "#564592" : "white",
             fontSize: "30PX",
             fontWeight: "bold",
             fontFamily: "Montserrat",
@@ -44,7 +44,7 @@ export default function ContainerOfSelectedProducts() {
       >
         <p
           style={{
-            color: "#564592",
+            color: darkMode ? "#564592" : "white",
             fontSize: "20PX",
             fontWeight: "bold",
             fontFamily: "Montserrat",
@@ -98,7 +98,7 @@ export default function ContainerOfSelectedProducts() {
                     alignItems: "center",
                     flexDirection: "row",
                     height: "250px",
-                    backgroundColor: "#EDF67D",
+                    backgroundColor: darkMode ? "#EDF67D" : "564592",
                   }}
                 >
                   <CardMedia
@@ -224,15 +224,17 @@ export default function ContainerOfSelectedProducts() {
                       )}
                     </Box>
                   </Grid>
-                  <DeleteBtnOfSelectedProduct productId={detail.product.id} />
+                  <DeleteBtnOfSelectedProduct
+                    productId={detail.product.id}
+                    darkMode={darkMode}
+                  />
                 </Card>
               </Box>
             );
           })}
         </Card>
       )}
-
-      <TotalPriceOfProducts getTotal={getTotal} />
+      <TotalPriceOfProducts getTotal={getTotal} darkMode={darkMode} />
       <CreditCardBox />
       <BtnGoToPay />
     </Box>

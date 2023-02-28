@@ -5,9 +5,15 @@ import logo from "../components/images/logo-color.svg";
 import yogaPlaya from "../components/images/yoga-en-la-playa.jpg";
 import yogaRio from "../components/images/yoga-en-el-rio.jpg";
 
-const Nosotros = () => {
+const Nosotros = ({ darkMode }) => {
   return (
-    <Box m={3} style={{ backgroundColor: "#EDF67D", height: "1800px" }}>
+    <Box
+      m={3}
+      style={{
+        backgroundColor: darkMode ? "#EDF67D" : "#564592",
+        height: "1800px",
+      }}
+    >
       <Box
         m={5}
         style={{
@@ -46,7 +52,7 @@ const Nosotros = () => {
             <h1
               style={{
                 marginLeft: "40%",
-                //color: "white",
+                color: darkMode ? "black" : "white",
                 fontFamily: "Montserrat",
               }}
             >
@@ -55,7 +61,7 @@ const Nosotros = () => {
             <p
               style={{
                 marginTop: "5%",
-                //color: "white",
+                color: darkMode ? "black" : "white",
                 letterSpacing: "1px",
                 textAlign: "center",
                 lineHeight: "30px",
@@ -100,13 +106,21 @@ const Nosotros = () => {
             alignItems: "center",
           }}
         >
-          <h1 style={{ fontFamily: "Montserrat" }}>Valores</h1>
+          <h1
+            style={{
+              fontFamily: "Montserrat",
+              color: darkMode ? "black" : "white",
+            }}
+          >
+            Valores
+          </h1>
           <Box
             m={1}
             style={{
               fontFamily: "Montserrat",
               fontSize: "16px",
               fontWeight: "300",
+              color: darkMode ? "black" : "white",
             }}
           >
             <ul>Responsabilidad.</ul>
@@ -151,7 +165,7 @@ const Nosotros = () => {
           <Grid m={3} style={{ height: "600px" }}>
             <h1
               style={{
-                //color: "white",
+                color: darkMode ? "black" : "white",
                 fontFamily: "Montserrat",
                 textAlign: "center",
               }}
@@ -160,6 +174,7 @@ const Nosotros = () => {
             </h1>
             <p
               style={{
+                color: darkMode ? "black" : "white",
                 marginTop: "5%",
                 letterSpacing: "1px",
                 textAlign: "center",

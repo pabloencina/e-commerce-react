@@ -9,7 +9,7 @@ import {
 import useHoverButtons from "../hooks/useHoverButtons";
 import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 
-const Login = () => {
+const Login = ({ darkMode }) => {
   const {
     buttonVerDetalle,
     handleMouseEnterVerDetalle,
@@ -47,7 +47,8 @@ const Login = () => {
           <form>
             <Box sx={{ my: 3 }}>
               <Typography
-                color="#564592"
+                //color="#564592"
+                sx={{ color: darkMode ? "#564592" : "white" }}
                 variant="h5"
                 style={{
                   fontFamily: "Montserrat",
@@ -59,6 +60,10 @@ const Login = () => {
               </Typography>
             </Box>
             <TextField
+              style={{
+                backgroundColor: darkMode ? "white" : "#564592",
+                color: darkMode ? "black" : "white",
+              }}
               // error={Boolean(formik.touched.email && formik.errors.email)}
               fullWidth
               // helperText={formik.touched.email && formik.errors.email}
@@ -72,6 +77,10 @@ const Login = () => {
               variant="outlined"
             />
             <TextField
+              style={{
+                backgroundColor: darkMode ? "white" : "#564592",
+                color: darkMode ? "black" : "white",
+              }}
               // error={Boolean(formik.touched.password && formik.errors.password)}
               fullWidth
               // helperText={formik.touched.password && formik.errors.password}
@@ -89,9 +98,6 @@ const Login = () => {
               style={{ display: "flex", justifyContent: "center" }}
             >
               <Button
-                //color="primary"
-                //disabled={formik.isSubmitting}
-                //fullWidth
                 size="large"
                 type="submit"
                 variant="contained"
@@ -99,7 +105,7 @@ const Login = () => {
                 onMouseEnter={handleMouseEnterVerDetalle}
                 onMouseLeave={handleMouseLeaveVerDetalle}
               >
-                iNICIAR SESIÓN
+                INICIAR SESIÓN
               </Button>
             </Box>
             {/* {state.formError ? (

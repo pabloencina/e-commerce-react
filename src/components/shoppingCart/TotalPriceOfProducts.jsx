@@ -2,7 +2,7 @@ import { Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 
-const TotalPriceOfProducts = ({ getTotal }) => {
+const TotalPriceOfProducts = ({ getTotal, darkMode }) => {
   return (
     <Box
       style={{
@@ -23,7 +23,7 @@ const TotalPriceOfProducts = ({ getTotal }) => {
         >
           <p
             style={{
-              color: "#724cf9",
+              color: darkMode ? "#724cf9" : "white",
               fontWeight: "bold",
               fontSize: "20px",
               fontFamily: "Montserrat",
@@ -47,7 +47,7 @@ const TotalPriceOfProducts = ({ getTotal }) => {
         >
           <p
             style={{
-              color: "#724cf9",
+              color: darkMode ? "#724cf9" : "white",
               fontWeight: "bold",
               fontSize: "20px",
               fontFamily: "Montserrat",

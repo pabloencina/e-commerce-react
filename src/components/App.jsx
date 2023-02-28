@@ -21,7 +21,8 @@ import ItemsListContainerCategory from "./cards/ItemsListContainerCategory";
 import Error404 from "./Error404";
 import CardContextProvider from "../context/CardContext";
 import ContainerOfSelectedProducts from "./shoppingCart/ContainerOfSelectedProducts";
-
+import { useState } from "react";
+import "../cssStyles/switchMode.css";
 //import { collection, getDocs } from "firebase/firestore";
 //import { useEffect } from "react";
 //import db from "./firebase-config";
@@ -38,7 +39,7 @@ function App() {
   //   };
   //   getUsuarios();
   // }, []);
-
+  const [darkMode, setDarkMode] = useState(false);
   const { count } = useAccountant(0);
 
   //const { name } = product;
@@ -46,20 +47,26 @@ function App() {
   return (
     <CardContextProvider>
       <BrowserRouter>
-        <Box>
+        <Box className={darkMode ? "light-mode" : "dark-mode"}>
           <Información />
-          <NavBar count={count} />
+          <NavBar count={count} setDarkMode={setDarkMode} darkMode={darkMode} />
 
           <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="nosotros" element={<Nosotros />} />
+            <Route path="/login" element={<Login darkMode={darkMode} />} />
+            <Route
+              path="/register"
+              element={<Register darkMode={darkMode} />}
+            />
+            <Route path="nosotros" element={<Nosotros darkMode={darkMode} />} />
             <Route path="/" element={<Home />} />
             <Route path="*" element={<Error404 />}></Route>
-            <Route path="/products" element={<ItemListContainer />} />
+            <Route
+              path="/products"
+              element={<ItemListContainer darkMode={darkMode} />}
+            />
             <Route
               path="/category/:categoryId"
-              element={<ItemsListContainerCategory />}
+              element={<ItemsListContainerCategory darkMode={darkMode} />}
             />
             <Route
               path="/product/:productId"
@@ -67,7 +74,7 @@ function App() {
             />
             <Route
               path="/shoppingCart"
-              element={<ContainerOfSelectedProducts />}
+              element={<ContainerOfSelectedProducts darkMode={darkMode} />}
             />
           </Routes>
 

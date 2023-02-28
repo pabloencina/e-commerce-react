@@ -11,7 +11,7 @@ import categoryYoga from "../images/ImagesProducts/velas.jpg";
 import categoryMeditacion from "../images/mujer-que-medita-relaja-montanas.jpg";
 import Show from "../Show";
 
-const ItemsListContainerCategory = () => {
+const ItemsListContainerCategory = ({ darkMode }) => {
   const [products, setProducts] = useState([]);
 
   const [isLoading, setIsLoading] = useState(false);
@@ -87,7 +87,7 @@ const ItemsListContainerCategory = () => {
           <h1
             style={{
               fontFamily: "oooh baby",
-              color: "#724cf9",
+              color: darkMode ? "#724cf9" : "white",
             }}
           >
             {categoryId.toUpperCase()}
@@ -98,7 +98,7 @@ const ItemsListContainerCategory = () => {
         {products.map((product) => {
           return (
             <Grid item xs={12} sm={6} md={4}>
-              <ItemList product={product} />
+              <ItemList product={product} darkMode={darkMode} />
             </Grid>
           );
         })}

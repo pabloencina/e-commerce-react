@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 // https://www.freepik.es/search?format=search&query=comida&type=photo
 // https://storyset.com/food
 //https://www.youtube.com/watch?v=s_Txhh-clVk&t=999s
-export default function ItemList({ product }) {
+export default function ItemList({ product, darkMode }) {
   const { name, image, description, sale, offerPrice } = product;
 
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ export default function ItemList({ product }) {
             display: "flex",
             flexDirection: "column",
             boxSizing: "border-box",
-            // width: "100",
+            backgroundColor: darkMode ? "white" : "#564592",
             height: "100%",
           }}
         >
@@ -80,7 +80,7 @@ export default function ItemList({ product }) {
                 justifyContent: "center",
                 display: "flex",
                 fontFamily: "montserrat",
-                color: "#724cf9",
+                color: darkMode ? "#724cf9" : "white",
               }}
             >
               {name}
@@ -90,7 +90,7 @@ export default function ItemList({ product }) {
               sx={{
                 justifyContent: "center",
                 alignItems: "center",
-
+                color: darkMode ? "black" : "white",
                 display: "flex",
                 fontFamily: "montserrat",
                 boxSizing: "content-box",

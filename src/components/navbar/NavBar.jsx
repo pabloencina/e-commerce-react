@@ -17,6 +17,7 @@ import { Link, NavLink } from "react-router-dom";
 // import { useContext } from "react";
 // import { CardContext } from "../../context/CardContext";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import SwitchBtn from "../SwitchBtn";
 
 //const pages = ["NOSOTROS", "MATS", "ELEMENTOS YOGA", "ELEMENTOS MEDITACION"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -24,7 +25,7 @@ const settings = ["Profile", "Account", "Dashboard", "Logout"];
 //const objectPages = Object.assign({}, pages);
 //console.log(objectPages[0]);
 
-function NavBar({ count }) {
+function NavBar({ setDarkMode, darkMode }) {
   //const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -190,15 +191,18 @@ function NavBar({ count }) {
             style={{
               display: "flex",
               justifyContent: "end",
+              textAlign: "center",
               width: "40%",
             }}
           >
             <NavLink
+              title="Carrito de compras"
               to={"/shoppingCart"}
               style={{
                 backgroundColor: "#564592",
                 color: "white",
                 marginLeft: "10Px",
+                marginTop: "20px",
                 fontFamily: "Montserrat",
                 textDecoration: "none",
               }}
@@ -248,6 +252,17 @@ function NavBar({ count }) {
               >
                 Iniciar sesión
               </Link>
+            </Button>
+
+            <Button
+              style={{
+                backgroundColor: "#564592",
+                marginLeft: "10Px",
+                fontFamily: "Montserrat",
+              }}
+              variant="text"
+            >
+              <SwitchBtn setDarkMode={setDarkMode} darkMode={darkMode} />
             </Button>
 
             <MenuComponent
