@@ -38,7 +38,7 @@ const TotalPriceOfProducts = ({ getTotal }) => {
         {" "}
         <Box
           sx={{
-            width: "170px",
+            width: "500px",
             display: "flex",
             justifyContent: "end",
             alignItems: "center",

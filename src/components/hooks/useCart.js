@@ -9,8 +9,17 @@ const useCart = () => {
   };
   const getTotal = () => {
     let total = 0;
+
     cartDetails.forEach((detail) => {
-      total = total + detail.product.price * detail.qty;
+      if (detail.product.sale) {
+        total =
+          total +
+          (detail.product.price -
+            (detail.product.price * detail.product.offerPrice) / 100) *
+            detail.qty;
+      } else {
+        total = total + detail.product.price * detail.qty;
+      }
     });
     return total;
   };

@@ -2,7 +2,7 @@ import * as React from "react";
 import { useContext } from "react";
 import { CardContext } from "../../context/CardContext";
 
-import { Card, CardMedia, Grid } from "@mui/material";
+import { Card, CardMedia, Divider, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import CreditCardBox from "../shoppingCart/CreditCardBox";
 import DeleteBtnOfSelectedProduct from "../shoppingCart/DeleteBtnOfSelectedProduct";
@@ -59,10 +59,8 @@ export default function ContainerOfSelectedProducts() {
           m: 5,
           display: "flex",
           justifyContent: "center",
-          //backgroundColor: "#EDF67D",
           flexDirection: "column",
-          //SboxSizing: "border-box",
-          //height: "200px",
+          backgroundColor: "",
         }}
       >
         {cartDetails.map((detail) => {
@@ -75,13 +73,13 @@ export default function ContainerOfSelectedProducts() {
                   justifyContent: "center",
                   alignItems: "center",
                   flexDirection: "row",
-                  height: "200px",
-                  //height: "80px",
+                  height: "250px",
+                  backgroundColor: "#EDF67D",
                 }}
               >
                 <CardMedia
                   sx={{
-                    height: "200px",
+                    height: "250px",
                     width: "300px",
                     boxSizing: "border-box",
                   }}
@@ -100,7 +98,9 @@ export default function ContainerOfSelectedProducts() {
                         fontFamily: "Montserrat",
                       }}
                     >
-                      <p>{"- " + detail.product.offerPrice + " %"}</p>
+                      <p style={{ fontFamily: "Montserrat" }}>
+                        {"- " + detail.product.offerPrice + " %"}
+                      </p>
                     </Box>
                   ) : (
                     ""
@@ -167,7 +167,6 @@ export default function ContainerOfSelectedProducts() {
                         style={{
                           fontWeight: "bold",
                           fontFamily: "Montserrat",
-                          color: "red",
                         }}
                       >
                         ${" "}
@@ -175,6 +174,7 @@ export default function ContainerOfSelectedProducts() {
                           (detail.product.price * detail.product.offerPrice) /
                             100) *
                           detail.qty}
+                        <Divider />- {detail.product.offerPrice} %
                       </p>
                     ) : (
                       <p
