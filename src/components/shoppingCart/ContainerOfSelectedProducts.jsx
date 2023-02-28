@@ -161,9 +161,28 @@ export default function ContainerOfSelectedProducts() {
                       boxSizing: "border-box",
                     }}
                   >
-                    <p style={{ fontWeight: "bold", fontFamily: "Montserrat" }}>
-                      {detail.product.price * detail.qty}
-                    </p>
+                    {console.log(detail.product.sale)}
+                    {detail.product.sale ? (
+                      <p
+                        style={{
+                          fontWeight: "bold",
+                          fontFamily: "Montserrat",
+                          color: "red",
+                        }}
+                      >
+                        ${" "}
+                        {(detail.product.price -
+                          (detail.product.price * detail.product.offerPrice) /
+                            100) *
+                          detail.qty}
+                      </p>
+                    ) : (
+                      <p
+                        style={{ fontWeight: "bold", fontFamily: "Montserrat" }}
+                      >
+                        $ {detail.product.price * detail.qty}
+                      </p>
+                    )}
                   </Box>
                 </Grid>
                 <DeleteBtnOfSelectedProduct />
