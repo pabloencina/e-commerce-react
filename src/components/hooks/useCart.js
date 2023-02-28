@@ -24,7 +24,14 @@ const useCart = () => {
     return total;
   };
 
-  const onProductRemove = () => {};
+  const onProductRemove = (productId) => {
+    const productDeleted = cartDetails.filter(
+      (product) => product.product.id !== productId
+      //console.log(product.product.id, "productId: " + productId)
+    );
+
+    setCartDetails(productDeleted);
+  };
 
   const onProductChange = () => {};
 

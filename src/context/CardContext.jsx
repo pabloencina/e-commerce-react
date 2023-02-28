@@ -12,11 +12,11 @@ export const CardContext = createContext();
 
 const CardContextProvider = ({ children }) => {
   const { count } = useAccountant(0);
-  const { onProductAdded, cartDetails, getTotal } = useCart();
+  const { onProductAdded, cartDetails, getTotal, onProductRemove } = useCart();
 
   return (
     <CardContext.Provider
-      value={{ count, onProductAdded, cartDetails, getTotal }}
+      value={{ count, onProductAdded, cartDetails, getTotal, onProductRemove }}
     >
       {children}
     </CardContext.Provider>

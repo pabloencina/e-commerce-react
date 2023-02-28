@@ -224,7 +224,7 @@ export default function ContainerOfSelectedProducts() {
                       )}
                     </Box>
                   </Grid>
-                  <DeleteBtnOfSelectedProduct />
+                  <DeleteBtnOfSelectedProduct productId={detail.product.id} />
                 </Card>
               </Box>
             );
