@@ -17,7 +17,7 @@ import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 import useHoverButtons from "../hooks/useHoverButtons";
 import { Link } from "react-router-dom";
 
-const ProductCardById = ({ product, onProductAdded }) => {
+const ProductCardById = ({ product, onProductAdded, darkMode }) => {
   const { name, image, description, sale, offerPrice } = product;
 
   const {
@@ -41,7 +41,7 @@ const ProductCardById = ({ product, onProductAdded }) => {
               width: "70%",
               m: 5,
               display: "flex",
-              //backgroundColor: "#EDF67D",
+              backgroundColor: darkMode ? "white" : "#564592",
               flexDirection: "row",
               boxSizing: "border-box",
             }}
@@ -59,7 +59,7 @@ const ProductCardById = ({ product, onProductAdded }) => {
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    backgroundColor: "#EDF67D",
+                    backgroundColor: darkMode ? "#EDF67D" : "white",
                     fontFamily: "Montserrat",
                   }}
                 >
@@ -95,7 +95,7 @@ const ProductCardById = ({ product, onProductAdded }) => {
                     display: "flex",
                     alignItems: "center",
                     fontFamily: "Montserrat",
-                    color: "#724cf9",
+                    color: darkMode ? "#724cf9" : "white",
                   }}
                 >
                   {name}
@@ -107,6 +107,7 @@ const ProductCardById = ({ product, onProductAdded }) => {
                     display: "flex",
                     alignItems: "center",
                     fontFamily: "Montserrat",
+                    color: darkMode ? "black" : "white",
                   }}
                 >
                   {description}
@@ -128,6 +129,7 @@ const ProductCardById = ({ product, onProductAdded }) => {
                 <ProductCardPrice
                   onProductAdded={onProductAdded}
                   product={product}
+                  darkMode={darkMode}
                 />
               </Box>
             </Box>

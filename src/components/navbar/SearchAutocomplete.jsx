@@ -8,7 +8,7 @@ import { useRef } from "react";
 import "../../cssStyles/btnSearch.css";
 import dataArray from "../ejemplo";
 
-export default function SearchAutocomplete() {
+export default function SearchAutocomplete({ darkMode }) {
   const options = dataArray.map((option) => option.name);
 
   const textFieldRef = useRef(null);
@@ -37,7 +37,7 @@ export default function SearchAutocomplete() {
         sx={{
           width: 400,
           display: "flex",
-          //backgroundColor: "#EDF67D",
+          backgroundColor: "white",
           //border: "2px solid #564592",
           //borderRadius: "10% 10% 10% 10%",
         }}

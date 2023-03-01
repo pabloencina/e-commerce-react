@@ -58,7 +58,7 @@ function App() {
               element={<Register darkMode={darkMode} />}
             />
             <Route path="nosotros" element={<Nosotros darkMode={darkMode} />} />
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home darkMode={darkMode} />} />
             <Route path="*" element={<Error404 />}></Route>
             <Route
               path="/products"
@@ -70,7 +70,7 @@ function App() {
             />
             <Route
               path="/product/:productId"
-              element={<ProductCardByIdItem />}
+              element={<ProductCardByIdItem darkMode={darkMode} />}
             />
             <Route
               path="/shoppingCart"

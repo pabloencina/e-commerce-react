@@ -8,7 +8,7 @@ import ofertas from "../images/ofertas.jpg";
 import { CardContext } from "../../context/CardContext";
 import { useContext } from "react";
 
-const ProductsToShowOnSale = () => {
+const ProductsToShowOnSale = ({ darkMode }) => {
   const productsToShow = dataArray.filter((card) => card.sale);
 
   const { onProductAdded } = useContext(CardContext);
@@ -61,6 +61,7 @@ const ProductsToShowOnSale = () => {
                   product={product}
                   key={product.id}
                   onProductAdded={onProductAdded}
+                  darkMode={darkMode}
                 />
               </Grid>
             );

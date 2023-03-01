@@ -6,7 +6,7 @@ import { Box } from "@mui/system";
 import { Alert, Typography } from "@mui/material";
 import { CardContext } from "../../context/CardContext";
 
-const ProductCardPrice = ({ product }) => {
+const ProductCardPrice = ({ product, darkMode }) => {
   const { increase, decrease, count } = useAccountant(1);
   const { price, offerPrice, stock, sale, name } = product;
 
@@ -62,7 +62,7 @@ const ProductCardPrice = ({ product }) => {
               sx={{
                 justifyContent: "center",
                 display: "flex",
-                color: "#724cf9",
+                color: darkMode ? "#724cf9" : "white",
                 fontWeight: "bold",
               }}
             >
@@ -79,7 +79,7 @@ const ProductCardPrice = ({ product }) => {
               sx={{
                 justifyContent: "center",
                 display: "flex",
-                color: "red",
+                color: darkMode ? "red" : "white",
                 fontWeight: "bold",
               }}
             >
@@ -101,6 +101,7 @@ const ProductCardPrice = ({ product }) => {
           }}
           count={count}
           stock={stock}
+          darkMode={darkMode}
         />
       </Box>
 

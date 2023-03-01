@@ -5,11 +5,11 @@ import americanExpress from "../images/americanExpress.png";
 import masterCard from "../images/masterCard.png";
 import visa from "../images/visa.png";
 
-const CreditCardBox = () => {
+const CreditCardBox = ({ darkMode }) => {
   return (
     <Box>
       <Box m={5}>
-        <p style={{ color: "black" }}>OPCIONES DE PAGO</p>
+        <p style={{ color: darkMode ? "black" : "white" }}>OPCIONES DE PAGO</p>
       </Box>
       <Box
         style={{

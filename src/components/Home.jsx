@@ -5,14 +5,17 @@ import ProductsToShowOnSale from "./cards/ProductsToShowOnSale";
 import CarouselImages from "./carousel/CarouselImages";
 import SearchAutocomplete from "./navbar/SearchAutocomplete";
 
-const Home = () => {
+const Home = ({ darkMode }) => {
   const { onProductAdded } = useContext(CardContext);
   console.log(onProductAdded);
   return (
     <>
-      <SearchAutocomplete />
-      <CarouselImages />
-      <ProductsToShowOnSale onProductAdded={onProductAdded} />
+      <SearchAutocomplete darkMode={darkMode} />
+      <CarouselImages darkMode={darkMode} />
+      <ProductsToShowOnSale
+        onProductAdded={onProductAdded}
+        darkMode={darkMode}
+      />
     </>
   );
 };

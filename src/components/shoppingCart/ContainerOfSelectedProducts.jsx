@@ -84,7 +84,7 @@ export default function ContainerOfSelectedProducts({ darkMode }) {
             display: "flex",
             justifyContent: "center",
             flexDirection: "column",
-            backgroundColor: "",
+            backgroundColor: darkMode ? "white" : "#301E67",
           }}
         >
           {cartDetails.map((detail) => {
@@ -98,7 +98,7 @@ export default function ContainerOfSelectedProducts({ darkMode }) {
                     alignItems: "center",
                     flexDirection: "row",
                     height: "250px",
-                    backgroundColor: darkMode ? "#EDF67D" : "564592",
+                    backgroundColor: darkMode ? "#EDF67D" : "#564592",
                   }}
                 >
                   <CardMedia
@@ -149,7 +149,12 @@ export default function ContainerOfSelectedProducts({ darkMode }) {
                         //backgroundColor: "red",
                       }}
                     >
-                      <p style={{ fontFamily: "Montserrat" }}>
+                      <p
+                        style={{
+                          fontFamily: "Montserrat",
+                          color: darkMode ? "black" : "white",
+                        }}
+                      >
                         {detail.qty}
                         {detail.qty === 1 ? " producto" : " productos"}
                       </p>
@@ -175,6 +180,7 @@ export default function ContainerOfSelectedProducts({ darkMode }) {
                       <p
                         style={{
                           fontFamily: "Montserrat",
+                          color: darkMode ? "black" : "white",
                         }}
                       >
                         {detail.product.name}
@@ -203,6 +209,7 @@ export default function ContainerOfSelectedProducts({ darkMode }) {
                           style={{
                             fontWeight: "bold",
                             fontFamily: "Montserrat",
+                            color: darkMode ? "black" : "white",
                           }}
                         >
                           ${" "}
@@ -210,13 +217,17 @@ export default function ContainerOfSelectedProducts({ darkMode }) {
                             (detail.product.price * detail.product.offerPrice) /
                               100) *
                             detail.qty}
-                          <Divider />- {detail.product.offerPrice} %
+                          <Divider
+                            sx={{ color: darkMode ? "black" : "white" }}
+                          />
+                          - {detail.product.offerPrice} %
                         </p>
                       ) : (
                         <p
                           style={{
                             fontWeight: "bold",
                             fontFamily: "Montserrat",
+                            color: darkMode ? "black" : "white",
                           }}
                         >
                           $ {detail.product.price * detail.qty}
@@ -235,7 +246,7 @@ export default function ContainerOfSelectedProducts({ darkMode }) {
         </Card>
       )}
       <TotalPriceOfProducts getTotal={getTotal} darkMode={darkMode} />
-      <CreditCardBox />
+      <CreditCardBox darkMode={darkMode} />
       <BtnGoToPay />
     </Box>
   );

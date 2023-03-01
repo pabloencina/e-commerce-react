@@ -5,7 +5,7 @@ import dataArray from "../ejemplo";
 import Spinner from "../Spinner";
 import ProductCardById from "./ProductCardById";
 
-const ProductCardByIdItem = () => {
+const ProductCardByIdItem = ({ darkMode }) => {
   const [product, setProduct] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const { productId } = useParams();
@@ -36,7 +36,7 @@ const ProductCardByIdItem = () => {
     <Spinner />
   ) : (
     <Grid>
-      <ProductCardById product={product} />
+      <ProductCardById product={product} darkMode={darkMode} />
     </Grid>
   );
 };

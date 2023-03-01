@@ -1,13 +1,13 @@
 import { Paper } from "@mui/material";
 import React from "react";
 
-const Item = ({ item }) => {
+const Item = ({ item, darkMode }) => {
   return (
     <Paper
       style={{
         display: "flex",
         justifyContent: "center",
-        backgroundColor: "#EDF67D ",
+        backgroundColor: darkMode ? "#EDF67D" : "#564592",
       }}
     >
       <img
@@ -20,14 +20,6 @@ const Item = ({ item }) => {
           justifyContent: "center",
         }}
       />
-      {/* <div
-        className="description"
-        style={{ display: "flex", justifyContent: "center" }}
-      >
-        <p>{item.title}</p>
-      </div> */}
-
-      {/* <Button variant="contained"> Check it out</Button> */}
     </Paper>
   );
 };
