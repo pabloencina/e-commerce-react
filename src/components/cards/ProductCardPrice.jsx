@@ -107,7 +107,11 @@ const ProductCardPrice = ({ product, darkMode }) => {
 
       <Box m={2} sx={{ justifyContent: "center", display: "flex" }}>
         {" "}
-        <AddToCart count={count} handleProductAdded={handleProductAdded} />
+        <AddToCart
+          count={count}
+          handleProductAdded={handleProductAdded}
+          stock={stock}
+        />
       </Box>
     </>
   );

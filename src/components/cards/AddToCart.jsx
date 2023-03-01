@@ -24,7 +24,7 @@ export default function AddToCart({ count, stock, handleProductAdded }) {
   const handleClick = () => {
     setOpen(true);
     handleProductAdded();
-    console.log(count);
+    console.log(stock - count);
   };
 
   const handleClose = (event, reason) => {
@@ -54,7 +54,6 @@ export default function AddToCart({ count, stock, handleProductAdded }) {
   return (
     <>
       <Box style={{ display: "flex", justifyContent: "center" }}>
-        {" "}
         <Button
           sx={{ width: "200px", height: "45px" }}
           disabled={stock <= 0}
