@@ -3,13 +3,15 @@ import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 //import { useParams } from "react-router-dom";
-import dataArray from "../ejemplo";
+//import dataArray from "../ejemplo";
 import Spinner from "../Spinner";
 import ItemList from "./ItemList";
 import categoryMats from "../images/category-mats.jpg";
 import categoryYoga from "../images/ImagesProducts/velas.jpg";
 import categoryMeditacion from "../images/mujer-que-medita-relaja-montanas.jpg";
 import Show from "../Show";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase";
 
 const ItemsListContainerCategory = ({ darkMode }) => {
   const [products, setProducts] = useState([]);
@@ -17,27 +19,52 @@ const ItemsListContainerCategory = ({ darkMode }) => {
   const [isLoading, setIsLoading] = useState(false);
   const { categoryId } = useParams();
 
-  const getProductsByCategory = () => {
-    const promise = new Promise((resolve) => {
-      setIsLoading(true);
-      setTimeout(() => {
-        resolve(
-          dataArray.filter((product) => {
-            return product.category === categoryId; //url[param].id
-            // como obtener el query param de la url
-          })
-        );
-        setIsLoading(false);
-      }, 2000);
-    });
-    promise.then((request) => {
-      setProducts(request);
-    });
-  };
+  // const getProductsByCategory = () => {
+  //   const promise = new Promise((resolve) => {
+  //     setIsLoading(true);
+  //     setTimeout(() => {
+  //       resolve(
+  //         dataArray.filter((product) => {
+  //           return product.category === categoryId; //url[param].id
+  //           // como obtener el query param de la url
+  //         })
+  //       );
+  //       setIsLoading(false);
+  //     }, 2000);
+  //   });
+  //   promise.then((request) => {
+  //     setProducts(request);
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   getProductsByCategory();
+  // }, [categoryId]);
 
   useEffect(() => {
-    getProductsByCategory();
-  }, [categoryId]);
+    //Document
+    // const ref = doc(db, "Productos", "FPFHYIKF00MD5iOaDO3N");
+
+    // getDoc(ref)
+    //   .then((snapshot) => {
+    //     if (snapshot.exists()) {
+    //       setProducts([{ id: snapshot.id, ...snapshot.data() }]);
+    //     }
+    //   })
+    //   .catch((err) => console.log(err.msg));
+
+    //Collections
+    const productCollection = collection(db, "Productos");
+
+    getDocs(productCollection)
+      .then((snapshot) => {
+        setProducts(
+          snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+        );
+      })
+      .catch((error) => console.log(error.msg));
+  }, []);
+  console.log(products);
 
   return isLoading ? (
     <Spinner />

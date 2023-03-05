@@ -1,8 +1,6 @@
 import { Grid } from "@mui/material";
 import { Box } from "@mui/system";
-//import React, { useState } from "react";
 import dataArray from "../ejemplo";
-//import useAccountant from "../hooks/useAccountant";
 import ItemList from "./ItemList";
 import ofertas from "../images/ofertas.jpg";
 import { CardContext } from "../../context/CardContext";
@@ -12,14 +10,7 @@ const ProductsToShowOnSale = ({ darkMode }) => {
   const productsToShow = dataArray.filter((card) => card.sale);
 
   const { onProductAdded } = useContext(CardContext);
-  console.log(onProductAdded);
 
-  // const { increase } = useAccountant(0);
-
-  // const onProductAdded = (quantity) => {
-  //   increase(quantity);
-
-  // };
   return (
     <Box m={5}>
       <Box

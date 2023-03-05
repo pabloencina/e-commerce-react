@@ -1,22 +1,14 @@
-import { Alert } from "@mui/material";
 import { useState } from "react";
-import MessageCard from "../shoppingCart/MessageCard";
 
 const useCart = () => {
   const [cartDetails, setCartDetails] = useState([]);
 
-  const [isInCard, setInCard] = useState(false);
-
-  const onProductAdded = (product, qty) => {
-    if (!isInCard) {
-      console.log("producto agregado");
-      const detail = { product, qty };
-      setCartDetails([...cartDetails, detail]);
-    } else {
-      console.log("Usted ya agrego el producto al carrito");
-      <MessageCard />;
-    }
-    setInCard(true);
+  const onProductAdded = (product, qty, productId) => {
+    cartDetails.find((product) =>
+      console.log(product.product.id !== productId)
+    );
+    const detail = { product, qty };
+    setCartDetails([...cartDetails, detail]);
   };
   const getTotal = () => {
     let total = 0;

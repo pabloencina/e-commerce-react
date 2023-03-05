@@ -7,7 +7,6 @@ import SearchAutocomplete from "./navbar/SearchAutocomplete";
 
 const Home = ({ darkMode }) => {
   const { onProductAdded } = useContext(CardContext);
-  console.log(onProductAdded);
   return (
     <>
       <SearchAutocomplete darkMode={darkMode} />
