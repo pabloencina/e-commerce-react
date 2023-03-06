@@ -94,7 +94,7 @@ const dataArray = [
     name: "Cinto de yoga",
     category: "yoga",
     sale: false,
-    description: "Medidas 30cm . Fibra vegetal color morado",
+    description: "Medidas 30cm. Fibra vegetal color morado",
     price: 1450.0,
     offerPrice: 15,
     image: cintoYoga,
