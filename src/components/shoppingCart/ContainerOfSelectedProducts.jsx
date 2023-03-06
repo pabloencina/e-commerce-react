@@ -203,7 +203,6 @@ export default function ContainerOfSelectedProducts({ darkMode }) {
                         boxSizing: "border-box",
                       }}
                     >
-                      {console.log(detail.product.sale)}
                       {detail.product.sale ? (
                         <p
                           style={{
@@ -220,7 +219,15 @@ export default function ContainerOfSelectedProducts({ darkMode }) {
                           <Divider
                             sx={{ color: darkMode ? "black" : "white" }}
                           />
-                          - {detail.product.offerPrice} %
+                          <p
+                            style={{
+                              color: darkMode ? "black" : "white",
+                              fontSize: "10px",
+                            }}
+                          >
+                            aplicado el {detail.product.offerPrice} % de
+                            descuento
+                          </p>
                         </p>
                       ) : (
                         <p
