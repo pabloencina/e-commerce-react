@@ -1,7 +1,15 @@
 import { Grid } from "@mui/material";
+import {
+  //collection,
+  doc,
+  getDoc,
+  //getDocs,
+  // query,
+  // where,
+} from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import dataArray from "../ejemplo";
+import { db } from "../../firebase";
 import Spinner from "../Spinner";
 import ProductCardById from "./ProductCardById";
 
@@ -9,29 +17,33 @@ const ProductCardByIdItem = ({ darkMode }) => {
   const [product, setProduct] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const { productId } = useParams();
+  console.log(productId);
+  const getProductById = () => {
+    // const productCollection = collection(db, "Productos");
+    // const q = query(productCollection, where("id", "==", productId));
+    // getDocs(q).then((snapshot) => {
+    //   if (snapshot.size === 0) {
+    //     console.log("No results");
+    //   }
+    //   setProduct(snapshot.docs.map((doc) => ({ id: doc.id })));
+    // });
 
-  const getCardById = () => {
-    const promise = new Promise((resolve) => {
-      setIsLoading(true);
-      setTimeout(() => {
-        resolve(
-          dataArray.find((product) => {
-            return product.id === productId; //url[param].id
-            // como obtener el query param de la url
-          })
-        );
-        setIsLoading(false);
-      }, 2000);
-    });
-    promise.then((request) => {
-      setProduct(request);
-    });
+    const ref = doc(db, "Productos", productId);
+
+    getDoc(ref)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          setProduct({ id: snapshot.id, ...snapshot.data() });
+        }
+      })
+      .catch((err) => console.log(err.msg));
   };
 
   useEffect(() => {
-    getCardById();
+    getProductById();
   }, []);
 
+  console.log(product);
   return isLoading ? (
     <Spinner />
   ) : (

@@ -10,7 +10,7 @@ import categoryMats from "../images/category-mats.jpg";
 import categoryYoga from "../images/ImagesProducts/velas.jpg";
 import categoryMeditacion from "../images/mujer-que-medita-relaja-montanas.jpg";
 import Show from "../Show";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebase";
 
 const ItemsListContainerCategory = ({ darkMode }) => {
@@ -40,6 +40,16 @@ const ItemsListContainerCategory = ({ darkMode }) => {
   // useEffect(() => {
   //   getProductsByCategory();
   // }, [categoryId]);
+  const getProductsByCategory = () => {
+    const productCollection = collection(db, "Productos");
+    const q = query(productCollection, where("category", "==", categoryId));
+    getDocs(q).then((snapshot) => {
+      if (snapshot.size === 0) {
+        console.log("No results");
+      }
+      setProducts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+    });
+  };
 
   useEffect(() => {
     //Document
@@ -54,16 +64,18 @@ const ItemsListContainerCategory = ({ darkMode }) => {
     //   .catch((err) => console.log(err.msg));
 
     //Collections
-    const productCollection = collection(db, "Productos");
+    // const productCollection = collection(db, "Productos");
 
-    getDocs(productCollection)
-      .then((snapshot) => {
-        setProducts(
-          snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-        );
-      })
-      .catch((error) => console.log(error.msg));
-  }, []);
+    // getDocs(productCollection)
+    //   .then((snapshot) => {
+    //     setProducts(
+    //       snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+    //     );
+    //   })
+    //   .catch((error) => console.log(error.msg));
+
+    getProductsByCategory();
+  }, [categoryId]);
   console.log(products);
 
   return isLoading ? (

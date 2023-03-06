@@ -33,7 +33,6 @@ const ProductsToShowOnSale = ({ darkMode }) => {
     getProductOnSale();
   }, []);
 
-  console.log(productsOnSale);
   return (
     <Box m={5}>
       <Box

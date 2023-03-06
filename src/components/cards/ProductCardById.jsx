@@ -18,8 +18,8 @@ import useHoverButtons from "../hooks/useHoverButtons";
 import { Link } from "react-router-dom";
 
 const ProductCardById = ({ product, onProductAdded, darkMode }) => {
-  const { name, image, description, sale, offerPrice } = product;
-
+  // const { name, image, description, sale, offerPrice } = product;
+  console.log(product);
   const {
     handleMouseEnterVerDetalle,
     handleMouseLeaveVerDetalle,
@@ -48,10 +48,10 @@ const ProductCardById = ({ product, onProductAdded, darkMode }) => {
           >
             <CardMedia
               sx={{ height: "450px", width: "100%", boxSizing: "border-box" }}
-              image={image}
+              image={product.image}
               title="card indumentaria"
             >
-              {sale ? (
+              {product.sale ? (
                 <Box
                   style={{
                     marginTop: "400px",
@@ -63,7 +63,7 @@ const ProductCardById = ({ product, onProductAdded, darkMode }) => {
                     fontFamily: "Montserrat",
                   }}
                 >
-                  <p>{"- " + offerPrice + " %"}</p>
+                  <p>{"- " + product.offerPrice + " %"}</p>
                   {<LoyaltyIcon style={{ color: "red" }} />}
                 </Box>
               ) : (
@@ -98,7 +98,7 @@ const ProductCardById = ({ product, onProductAdded, darkMode }) => {
                     color: darkMode ? "#724cf9" : "white",
                   }}
                 >
-                  {name}
+                  {product.name}
                 </Typography>
                 <Typography
                   variant="body2"
@@ -110,7 +110,7 @@ const ProductCardById = ({ product, onProductAdded, darkMode }) => {
                     color: darkMode ? "black" : "white",
                   }}
                 >
-                  {description}
+                  {product.description}
                 </Typography>
               </CardContent>
             </Box>
@@ -135,13 +135,6 @@ const ProductCardById = ({ product, onProductAdded, darkMode }) => {
             </Box>
           </Card>
         </Box>
-        {/* {stock <= 1 ? (
-          <Alert severity="warning" style={{ fontFamily: "Montserrat" }}>
-            Solo queda disponible {count} {name}
-          </Alert>
-        ) : (
-          ""
-        )} */}
 
         <Divider />
         <Box m={2} style={{ display: "flex", justifyContent: "center" }}>
