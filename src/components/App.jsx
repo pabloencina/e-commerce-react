@@ -23,22 +23,8 @@ import CardContextProvider from "../context/CardContext";
 import ContainerOfSelectedProducts from "./shoppingCart/ContainerOfSelectedProducts";
 import { useState } from "react";
 import "../cssStyles/switchMode.css";
-//import { collection, getDocs } from "firebase/firestore";
-//import { useEffect } from "react";
-//import db from "./firebase-config";
-//import { async } from "@firebase/util";
 
 function App() {
-  // useEffect(() => {
-  //   const getUsuarios = async () => {
-  //     const datos = await getDocs(collection(db, "usuarios"));
-
-  //     datos.forEach((documento) => {
-  //       console.log(documento.data().edad);
-  //     });
-  //   };
-  //   getUsuarios();
-  // }, []);
   const [darkMode, setDarkMode] = useState(false);
   const { count } = useAccountant(0);
 
@@ -86,28 +72,3 @@ function App() {
 }
 
 export default App;
-
-//  {/* <Nosotros /> */}
-//         {/* <Grid container spacing={2}>
-//         {dataArray.map((product) => {
-//           return (
-//             <Grid item xs={12} sm={6} md={4}>
-//               <ProductCard product={product} onProductAdded={onProductAdded} />
-//             </Grid>
-//           );
-//         })}
-//       </Grid> */}
-
-// {/* <Grid>
-//           {productsToShow.map((product) => {
-//             return (
-//               <Grid item>
-//                 <ProductCardById
-//                   product={product}
-//                   key={product.id}
-//                   onProductAdded={onProductAdded}
-//                 />
-//               </Grid>
-//             );
-//           })}
-//         </Grid> */}
