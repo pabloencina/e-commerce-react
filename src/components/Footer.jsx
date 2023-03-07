@@ -7,8 +7,17 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import logo from "../components/images/logo-color.svg";
+import { useState } from "react";
 
 const Footer = () => {
+  const [isHover, setIsHover] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHover(true);
+  };
+  const handleMouseLeave = () => {
+    setIsHover(false);
+  };
   return (
     <Box
       sx={{ flexGrow: 1 }}
@@ -23,30 +32,53 @@ const Footer = () => {
     >
       <Grid container spacing={3} style={{ marginTop: "10px" }}>
         <Grid item xs>
-          <Button>
+          <Button
+            title="Facebook"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             <FacebookOutlinedIcon
-              style={{ color: "white" }}
+              style={{ color: isHover ? "#724cf9" : "white" }}
             ></FacebookOutlinedIcon>
           </Button>
         </Grid>
         <Grid item xs>
-          <Button>
-            <YouTubeIcon style={{ color: "white" }}></YouTubeIcon>
+          <Button
+            title="You Tube"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <YouTubeIcon
+              style={{ color: isHover ? "#724cf9" : "white" }}
+            ></YouTubeIcon>
           </Button>
         </Grid>
         <Grid item xs>
-          <Button>
-            <InstagramIcon style={{ color: "white" }}></InstagramIcon>
+          <Button
+            title="Instagram"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <InstagramIcon
+              style={{ color: isHover ? "#724cf9" : "white" }}
+            ></InstagramIcon>
           </Button>
         </Grid>
         <Grid item xs>
-          <Button>
-            <TwitterIcon style={{ color: "white" }}></TwitterIcon>
+          <Button
+            title="Twitter"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <TwitterIcon
+              style={{ color: isHover ? "#724cf9" : "white" }}
+            ></TwitterIcon>
           </Button>
         </Grid>
         <Grid item xs>
           <Button>
             <img
+              title="Google Play"
               style={{ width: "150px" }}
               src={googlePlay}
               alt="google play"
@@ -55,7 +87,12 @@ const Footer = () => {
         </Grid>
         <Grid item xs>
           <Button>
-            <img style={{ width: "150px" }} src={appStore} alt="app sore" />
+            <img
+              title="App Store"
+              style={{ width: "150px" }}
+              src={appStore}
+              alt="app store"
+            />
           </Button>
         </Grid>
         <Grid
@@ -81,7 +118,8 @@ const Footer = () => {
             </Grid>
             <Grid
               style={{
-                fontFamily: "OooH baby",
+                fontFamily: "Roboto",
+                fontWeight: "200",
                 fontSize: "20px",
                 color: "white",
                 marginRight: "100px",
@@ -91,7 +129,8 @@ const Footer = () => {
             </Grid>
             <Grid
               style={{
-                fontFamily: "OooH baby",
+                fontFamily: "Roboto",
+                fontWeight: "200",
                 fontSize: "20px",
                 color: "white",
               }}

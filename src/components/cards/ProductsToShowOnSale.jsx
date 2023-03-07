@@ -46,12 +46,18 @@ const ProductsToShowOnSale = ({ darkMode }) => {
         }}
       >
         <p
-          style={{ color: "white", fontFamily: "oooh baby", fontSize: "36px" }}
+          style={{
+            color: "white",
+            fontFamily: "Roboto",
+            fontWeight: "400",
+            fontSize: "36px",
+          }}
         >
           DESCUENTOS IMPERDIBLES
         </p>
       </Box>
       <Box
+        m={4}
         style={{
           display: "flex",
           justifyContent: "center",

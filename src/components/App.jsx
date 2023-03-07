@@ -1,19 +1,13 @@
 import NavBar from "./navbar/NavBar";
-//import ProductCard from "./cards/ProductCard";
 import React from "react";
 import useAccountant from "./hooks/useAccountant";
 import Footer from "./Footer";
-//import CarouselImages from "./carousel/CarouselImages";
 import { Box } from "@mui/system";
-//import SearchAutocomplete from "./navbar/SearchAutocomplete";
-//import dataArray from "./ejemplo";
-//import { Grid } from "@mui/material";
 import Información from "./Informacion";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Register from "./register/Register";
 import Login from "./login/Login";
 import ItemListContainer from "./cards/ItemListContainer";
-//import ProductsToShowOnSale from "./cards/ProductsToShowOnSale";
 import Nosotros from "./Nosotros";
 import Home from "./Home";
 import ProductCardByIdItem from "./cards/ProductCardByIdItem";
@@ -27,8 +21,6 @@ import "../cssStyles/switchMode.css";
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const { count } = useAccountant(0);
-
-  //const { name } = product;
 
   return (
     <CardContextProvider>

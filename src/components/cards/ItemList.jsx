@@ -39,7 +39,7 @@ export default function ItemList({ product, darkMode }) {
             display: "flex",
             flexDirection: "column",
             boxSizing: "border-box",
-            backgroundColor: darkMode ? "white" : "#564592",
+            backgroundColor: darkMode ? "white" : "#301E67",
             height: "100%",
           }}
         >
@@ -109,7 +109,10 @@ export default function ItemList({ product, darkMode }) {
             }}
           >
             <Button
-              sx={{ width: "300px", height: "45px" }}
+              sx={{
+                width: "300px",
+                height: "45px",
+              }}
               style={buttonVerDetalle}
               onMouseEnter={handleMouseEnterVerDetalle}
               onMouseLeave={handleMouseLeaveVerDetalle}
