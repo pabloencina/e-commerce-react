@@ -5,15 +5,18 @@ import { Close } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import { Box } from "@mui/system";
 import useHoverButtons from "../hooks/useHoverButtons";
+//import { useContext } from "react";
+//import { CardContext } from "../../context/CardContext";
 
 export default function AddToCart({ count, stock, handleProductAdded }) {
   const [open, setOpen] = React.useState(false);
 
   // const { onProductAdded } = useContext(CardContext);
   // console.log(onProductAdded);
+  // console.log(onProductAdded);
 
-  const messageProducto = `Se agrego ${count} producto al carrito`;
-  const messageProductos = `Se agregaron ${count} productos al carrito`;
+  const messageProduct = `Se agrego ${count} producto al carrito`;
+  const messageProducts = `Se agregaron ${count} productos al carrito`;
 
   const {
     buttonVerDetalle,
@@ -66,11 +69,12 @@ export default function AddToCart({ count, stock, handleProductAdded }) {
         </Button>
       </Box>
 
+      {}
       <Snackbar
         open={open}
         autoHideDuration={6000}
         onClose={handleClose}
-        message={count === 1 ? messageProducto : messageProductos}
+        message={count === 1 ? messageProduct : messageProducts}
         action={action}
       />
     </>

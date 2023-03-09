@@ -5,27 +5,18 @@ const useCart = () => {
 
   const onProductAdded = (product, qty) => {
     if (isInCard(product.id)) {
-      // console.log(product.id);
-      let position = cartDetails.findIndex((p) => p.id === product.id);
-      console.log(position);
-      //cartDetails[position].qty += qty;
-      console.log("Ya fue agregado este producto a tu carrito");
-      setCartDetails([...cartDetails]);
+      const currentDetail = cartDetails.find(
+        (detail) => detail.product.id === product.id
+      );
+      currentDetail.qty += qty;
     } else {
       const detail = { product, qty };
       setCartDetails([...cartDetails, detail]);
     }
-    // cartDetails.find((product) =>
-    //   console.log(product.product.id !== productId)
-    // );
-    // const detail = { product, qty };
-    // setCartDetails([...cartDetails, detail]);
   };
 
   const isInCard = (productId) => {
-    const cardIndex = cartDetails.some((prod) => prod.product.id === productId);
-    console.log(cardIndex);
-    return cardIndex;
+    return cartDetails.some((detail) => detail.product.id === productId);
   };
 
   const getTotal = () => {
