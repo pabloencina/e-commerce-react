@@ -3,13 +3,31 @@ import { useState } from "react";
 const useCart = () => {
   const [cartDetails, setCartDetails] = useState([]);
 
-  const onProductAdded = (product, qty, productId) => {
-    cartDetails.find((product) =>
-      console.log(product.product.id !== productId)
-    );
-    const detail = { product, qty };
-    setCartDetails([...cartDetails, detail]);
+  const onProductAdded = (product, qty) => {
+    if (isInCard(product.id)) {
+      // console.log(product.id);
+      let position = cartDetails.findIndex((p) => p.id === product.id);
+      console.log(position);
+      //cartDetails[position].qty += qty;
+      console.log("Ya fue agregado este producto a tu carrito");
+      setCartDetails([...cartDetails]);
+    } else {
+      const detail = { product, qty };
+      setCartDetails([...cartDetails, detail]);
+    }
+    // cartDetails.find((product) =>
+    //   console.log(product.product.id !== productId)
+    // );
+    // const detail = { product, qty };
+    // setCartDetails([...cartDetails, detail]);
   };
+
+  const isInCard = (productId) => {
+    const cardIndex = cartDetails.some((prod) => prod.product.id === productId);
+    console.log(cardIndex);
+    return cardIndex;
+  };
+
   const getTotal = () => {
     let total = 0;
 

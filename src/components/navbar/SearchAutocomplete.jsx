@@ -3,19 +3,42 @@ import { Button } from "@mui/material";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import { Box } from "@mui/system";
+import { collection, getDocs } from "firebase/firestore";
 import * as React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { useRef } from "react";
 import "../../cssStyles/btnSearch.css";
-import dataArray from "../ejemplo";
+import { db } from "../../firebase";
 
 export default function SearchAutocomplete({ darkMode }) {
-  const options = dataArray.map((option) => option.name);
+  const [productsName, setProductsName] = useState([]);
+
+  const [showProduct, setShowProduct] = useState(false);
+
+  const getAllCard = () => {
+    const productCollection = collection(db, "Productos");
+
+    getDocs(productCollection)
+      .then((snapshot) => {
+        setProductsName(
+          snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+        );
+      })
+      .catch((error) => console.log(error.msg));
+  };
+
+  useEffect(() => {
+    getAllCard();
+  }, []);
+
+  const options = productsName.map((option) => option.name);
 
   const textFieldRef = useRef(null);
 
   const onSearch = () => {
     console.log(textFieldRef.current.children[1].children[0].value);
-    console.log();
+    setShowProduct(true);
   };
 
   const onKeyDown = (e) => {
@@ -38,8 +61,7 @@ export default function SearchAutocomplete({ darkMode }) {
           width: 400,
           display: "flex",
           backgroundColor: "white",
-          //border: "2px solid #564592",
-          //borderRadius: "10% 10% 10% 10%",
+          color: "white",
         }}
         freeSolo
         id="search-autocomplete"
@@ -50,12 +72,20 @@ export default function SearchAutocomplete({ darkMode }) {
             ref={textFieldRef}
             onKeyDown={onKeyDown}
             label="Buscar"
+            style={{ color: "red" }}
           />
         )}
       />
-      <Button className="btnSearch" onClick={onSearch}>
-        <SearchOutlinedIcon />
+      <Button
+        title="Buscador"
+        className={darkMode ? "btnSearchModeLight" : "btnSearchModeDark"}
+        onClick={onSearch}
+      >
+        <SearchOutlinedIcon
+          className={darkMode ? "btnSearchModeLight" : "btnSearchModeDark"}
+        />
       </Button>
+      {/* {showProduct.map((product) => console.log(product))} */}
     </Box>
   );
 }

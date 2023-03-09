@@ -1,8 +1,18 @@
-.btnSearch{
+.btnSearchModeLight{
     /* background-color: #EDF67D; */
     border-radius: 10% 30% 30% 10%;
     color: #564592;
-    border: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 55px;
+}
+
+.btnSearchModeDark{
+    
+    border-radius: 10% 30% 30% 10%;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;

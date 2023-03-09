@@ -17,7 +17,6 @@ const ProductCardByIdItem = ({ darkMode }) => {
   const [product, setProduct] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const { productId } = useParams();
-  console.log(productId);
   const getProductById = () => {
     // const productCollection = collection(db, "Productos");
     // const q = query(productCollection, where("id", "==", productId));
@@ -43,7 +42,6 @@ const ProductCardByIdItem = ({ darkMode }) => {
     getProductById();
   }, []);
 
-  console.log(product);
   return isLoading ? (
     <Spinner />
   ) : (

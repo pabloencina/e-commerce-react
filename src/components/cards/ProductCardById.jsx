@@ -19,7 +19,7 @@ import { Link } from "react-router-dom";
 
 const ProductCardById = ({ product, onProductAdded, darkMode }) => {
   // const { name, image, description, sale, offerPrice } = product;
-  console.log(product);
+
   const {
     handleMouseEnterVerDetalle,
     handleMouseLeaveVerDetalle,
