@@ -17,6 +17,7 @@ import CardContextProvider from "../context/CardContext";
 import ContainerOfSelectedProducts from "./shoppingCart/ContainerOfSelectedProducts";
 import { useState } from "react";
 import "../cssStyles/switchMode.css";
+import CompletedPurchaseForm from "../CompletedPurchaseForm";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -34,6 +35,10 @@ function App() {
             <Route
               path="/register"
               element={<Register darkMode={darkMode} />}
+            />
+            <Route
+              path="/generatePurchase"
+              element={<CompletedPurchaseForm darkMode={darkMode} />}
             />
             <Route path="nosotros" element={<Nosotros darkMode={darkMode} />} />
             <Route path="/" element={<Home darkMode={darkMode} />} />

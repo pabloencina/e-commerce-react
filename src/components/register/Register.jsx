@@ -88,6 +88,10 @@ const Register = ({ darkMode }) => {
               variant="outlined"
             />
             <TextField
+              style={{
+                backgroundColor: darkMode ? "white" : "#564592",
+                color: darkMode ? "black" : "white",
+              }}
               // error={Boolean(formik.touched.password && formik.errors.password)}
               fullWidth
               // helperText={formik.touched.password && formik.errors.password}

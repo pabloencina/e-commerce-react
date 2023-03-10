@@ -35,7 +35,7 @@ export default function ContainerOfSelectedProducts({ darkMode }) {
             fontFamily: "Montserrat",
           }}
         >
-          TU CARRITO
+          TU CARRITO DE COMPRAS
         </p>
       </Box>
       <Box
@@ -269,8 +269,8 @@ export default function ContainerOfSelectedProducts({ darkMode }) {
         </Card>
       )}
       <TotalPriceOfProducts getTotal={getTotal} darkMode={darkMode} />
-      <CreditCardBox darkMode={darkMode} />
-      <BtnGoToPay />
+      {getTotal() !== 0 ? <CreditCardBox darkMode={darkMode} /> : ""}
+      {getTotal() !== 0 ? <BtnGoToPay /> : ""}
     </Box>
   );
 }

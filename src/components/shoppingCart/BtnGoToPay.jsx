@@ -26,7 +26,7 @@ const BtnGoToPay = () => {
         onMouseEnter={handleMouseEnterVerDetalle}
         onMouseLeave={handleMouseLeaveVerDetalle}
       >
-        ir a pagar
+        Finalizar Compra
         <ArrowRightAltIcon />
       </Button>
     </Box>
