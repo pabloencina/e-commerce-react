@@ -33,7 +33,6 @@ const Register = ({ darkMode }) => {
           flexGrow: 1,
           minHeight: "100%",
           justifyContent: "center",
-          //backgroundColor: "#EDF67D",
         }}
       >
         <Container maxWidth="sm">

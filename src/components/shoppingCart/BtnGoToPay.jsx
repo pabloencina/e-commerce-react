@@ -3,6 +3,7 @@ import { Box } from "@mui/system";
 import React from "react";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import useHoverButtons from "../hooks/useHoverButtons";
+import { Link } from "react-router-dom";
 
 const BtnGoToPay = () => {
   const {
@@ -20,15 +21,17 @@ const BtnGoToPay = () => {
         alignItems: "center",
       }}
     >
-      <Button
-        sx={{ width: "200px", height: "45px", fontFamily: "Montserrat" }}
-        style={buttonVerDetalle}
-        onMouseEnter={handleMouseEnterVerDetalle}
-        onMouseLeave={handleMouseLeaveVerDetalle}
-      >
-        Finalizar Compra
-        <ArrowRightAltIcon />
-      </Button>
+      <Link to={"/checkout"} style={{ textDecoration: "none" }}>
+        <Button
+          sx={{ width: "200px", height: "45px", fontFamily: "Montserrat" }}
+          style={buttonVerDetalle}
+          onMouseEnter={handleMouseEnterVerDetalle}
+          onMouseLeave={handleMouseLeaveVerDetalle}
+        >
+          Finalizar Compra
+          <ArrowRightAltIcon />
+        </Button>
+      </Link>
     </Box>
   );
 };

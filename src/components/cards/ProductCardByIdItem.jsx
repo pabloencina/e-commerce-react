@@ -15,7 +15,7 @@ import ProductCardById from "./ProductCardById";
 
 const ProductCardByIdItem = ({ darkMode }) => {
   const [product, setProduct] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const { productId } = useParams();
   const getProductById = () => {
     // const productCollection = collection(db, "Productos");
@@ -33,6 +33,7 @@ const ProductCardByIdItem = ({ darkMode }) => {
       .then((snapshot) => {
         if (snapshot.exists()) {
           setProduct({ id: snapshot.id, ...snapshot.data() });
+          setIsLoading(false);
         }
       })
       .catch((err) => console.log(err.msg));
