@@ -2,16 +2,21 @@ import * as React from "react";
 import { useContext } from "react";
 import { CardContext } from "../../context/CardContext";
 
-import { Card, CardMedia, Divider, Grid } from "@mui/material";
+import { Button, Card, CardMedia, Divider, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import CreditCardBox from "../shoppingCart/CreditCardBox";
 import DeleteBtnOfSelectedProduct from "../shoppingCart/DeleteBtnOfSelectedProduct";
 import TotalPriceOfProducts from "../shoppingCart/TotalPriceOfProducts";
 import BtnGoToPay from "../shoppingCart/BtnGoToPay";
+import useHoverButtons from "../hooks/useHoverButtons";
 
 export default function ContainerOfSelectedProducts({ darkMode }) {
-  const { cartDetails, getTotal } = useContext(CardContext);
-
+  const { cartDetails, getTotal, onClearCart } = useContext(CardContext);
+  const {
+    buttonVerDetalle,
+    handleMouseEnterVerDetalle,
+    handleMouseLeaveVerDetalle,
+  } = useHoverButtons(false);
   return (
     <Box m={5} style={{}}>
       <Box
@@ -87,6 +92,17 @@ export default function ContainerOfSelectedProducts({ darkMode }) {
             backgroundColor: darkMode ? "white" : "#301E67",
           }}
         >
+          <Box style={{ display: "flex", justifyContent: "end" }} m={3}>
+            <Button
+              style={buttonVerDetalle}
+              sx={{ width: "200px", height: "45px" }}
+              onMouseEnter={handleMouseEnterVerDetalle}
+              onMouseLeave={handleMouseLeaveVerDetalle}
+              onClick={onClearCart}
+            >
+              Vaciar carrito
+            </Button>
+          </Box>
           {cartDetails.map((detail) => {
             return (
               <Box m={3}>

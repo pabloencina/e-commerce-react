@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const useAccountant = (initial) => {
   const [count, setCount] = useState(initial);
+  //const [itemStock, setItemStock] = useState(stock)
 
   const increase = (quantity = 1) => {
     return setCount(count + quantity);

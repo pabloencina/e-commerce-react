@@ -16,7 +16,7 @@ import { db } from "../../firebase";
 const ItemsListContainerCategory = ({ darkMode }) => {
   const [products, setProducts] = useState([]);
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const { categoryId } = useParams();
 
   // const getProductsByCategory = () => {
@@ -48,6 +48,7 @@ const ItemsListContainerCategory = ({ darkMode }) => {
         console.log("No results");
       }
       setProducts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      setIsLoading(false);
     });
   };
 

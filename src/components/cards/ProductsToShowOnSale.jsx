@@ -9,10 +9,12 @@ import { useState } from "react";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebase";
 import { useEffect } from "react";
+import Spinner from "../Spinner";
 
 const ProductsToShowOnSale = ({ darkMode }) => {
   //const productsToShow = dataArray.filter((card) => card.sale);
   const [productsOnSale, setProductsOnSale] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const { onProductAdded } = useContext(CardContext);
 
@@ -26,6 +28,7 @@ const ProductsToShowOnSale = ({ darkMode }) => {
       setProductsOnSale(
         snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
       );
+      setIsLoading(false);
     });
   };
 
@@ -33,7 +36,9 @@ const ProductsToShowOnSale = ({ darkMode }) => {
     getProductOnSale();
   }, []);
 
-  return (
+  return isLoading ? (
+    <Spinner />
+  ) : (
     <Box m={5}>
       <Box
         style={{

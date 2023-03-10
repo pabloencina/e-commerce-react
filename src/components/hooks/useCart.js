@@ -2,9 +2,10 @@ import { useState } from "react";
 
 const useCart = () => {
   const [cartDetails, setCartDetails] = useState([]);
+  //const [itemStock, setItemStock] = useState(stock)
 
-  const onProductAdded = (product, qty) => {
-    if (isInCard(product.id)) {
+  const onProductAdded = (product, qty, stock) => {
+    if (isInCart(product.id)) {
       const currentDetail = cartDetails.find(
         (detail) => detail.product.id === product.id
       );
@@ -15,7 +16,7 @@ const useCart = () => {
     }
   };
 
-  const isInCard = (productId) => {
+  const isInCart = (productId) => {
     return cartDetails.some((detail) => detail.product.id === productId);
   };
 
@@ -46,12 +47,17 @@ const useCart = () => {
 
   const onProductChange = () => {};
 
+  const onClearCart = () => {
+    setCartDetails([]);
+  };
+
   return {
     cartDetails,
     onProductAdded,
     getTotal,
     onProductRemove,
     onProductChange,
+    onClearCart,
   };
 };
 
