@@ -18,6 +18,7 @@ import ContainerOfSelectedProducts from "./shoppingCart/ContainerOfSelectedProdu
 import { useState } from "react";
 import "../cssStyles/switchMode.css";
 import CompletedCheckout from "./checkout/CompletedCheckout";
+import SuccessfulPurchase from "./checkout/SuccessfulPurchase";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -39,6 +40,10 @@ function App() {
             <Route
               path="/checkout"
               element={<CompletedCheckout darkMode={darkMode} />}
+            />
+            <Route
+              path="/successful-purchase/:orderId"
+              element={<SuccessfulPurchase darkMode={darkMode} />}
             />
             <Route path="nosotros" element={<Nosotros darkMode={darkMode} />} />
             <Route path="/" element={<Home darkMode={darkMode} />} />

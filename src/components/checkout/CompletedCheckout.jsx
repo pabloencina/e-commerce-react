@@ -24,7 +24,9 @@ const CompletedCheckout = ({ darkMode }) => {
       </Box>
 
       <Box style={{ width: "60%" }}>
-        <ProductsCheckout darkMode={darkMode} />
+        <Box>
+          <ProductsCheckout darkMode={darkMode} />
+        </Box>
       </Box>
     </Box>
   );

@@ -14,6 +14,7 @@ const CardContextProvider = ({ children }) => {
     getTotal,
     onProductRemove,
     onClearCart,
+    getCartDetailToSave,
   } = useCart();
 
   const { setProducts, decrementStock, getStock } = useStock();
@@ -31,6 +32,7 @@ const CardContextProvider = ({ children }) => {
         onClearCart,
         getStock,
         setProducts,
+        getCartDetailToSave,
       }}
     >
       {children}

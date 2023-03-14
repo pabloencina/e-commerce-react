@@ -3,8 +3,48 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { TextField, Typography } from "@mui/material";
 import { Box, Container } from "@mui/system";
+import { useState } from "react";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
+import BtnGeneratePurchase from "./BtnGeneratePurchase";
+import { useContext } from "react";
+import { CardContext } from "../../context/CardContext";
+import { useNavigate } from "react-router-dom";
+//import Spinner from "../Spinner";
 
 const FormCheckout = ({ darkMode }) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+
+  const [orderId, setOrderId] = useState("");
+
+  const { getCartDetailToSave } = useContext(CardContext);
+
+  const navigate = useNavigate();
+  // const [isLoading, setIsLoading] = useState(true);
+
+  const generateOrder = async () => {
+    const buyer = { name: name, email: email, phone: phone, address: address };
+    const date = new Date();
+    console.log(getCartDetailToSave());
+    const order = {
+      buyer: buyer,
+      dateComplete: date,
+      cartDetails: getCartDetailToSave(),
+    };
+
+    const db = getFirestore();
+    const ordersCollection = collection(db, "Orders");
+    const result = await addDoc(ordersCollection, order);
+
+    setOrderId(result.id);
+
+    // setIsLoading(false);
+
+    return navigate(`/successful-purchase/${result.id}`);
+  };
+
   const formik = useFormik({
     initialValues: {
       nombre: "",
@@ -22,9 +62,7 @@ const FormCheckout = ({ darkMode }) => {
         .min(10)
         .required("El campo Email es requerido"),
       phone: Yup.string().required("Teléfono es requerido"),
-      address: Yup.mixed()
-        //.oneOf(options, "Address must be one of the options")
-        .required("El campo Dirección es requerida"),
+      address: Yup.mixed().required("El campo Dirección es requerida"),
       city: Yup.string().required("El campo Ciudad es requerida"),
     }),
   });
@@ -42,7 +80,7 @@ const FormCheckout = ({ darkMode }) => {
               justifyContent: "center",
             }}
           >
-            REGISTRO
+            REGISTRO DE COMPRA
           </Typography>
         </Box>
         <TextField
@@ -61,6 +99,9 @@ const FormCheckout = ({ darkMode }) => {
           variant="outlined"
           error={Boolean(formik.touched.name && formik.errors.name)}
           helperText={formik.touched.name && formik.errors.name}
+          onInput={(e) => {
+            setName(e.target.value);
+          }}
         />
         <TextField
           style={{
@@ -79,6 +120,9 @@ const FormCheckout = ({ darkMode }) => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.email}
+          onInput={(e) => {
+            setEmail(e.target.value);
+          }}
         />
         <TextField
           style={{
@@ -95,6 +139,9 @@ const FormCheckout = ({ darkMode }) => {
           variant="outlined"
           error={Boolean(formik.touched.address && formik.errors.address)}
           helperText={formik.touched.address && formik.errors.address}
+          onInput={(e) => {
+            setAddress(e.target.value);
+          }}
         />
         <TextField
           style={{
@@ -112,6 +159,9 @@ const FormCheckout = ({ darkMode }) => {
           value={formik.values.phone}
           error={Boolean(formik.touched.phone && formik.errors.phone)}
           helperText={formik.touched.phone && formik.errors.phone}
+          onInput={(e) => {
+            setPhone(e.target.value);
+          }}
         />
 
         <Box
@@ -119,6 +169,7 @@ const FormCheckout = ({ darkMode }) => {
           style={{ display: "flex", justifyContent: "center" }}
         ></Box>
       </form>
+      <BtnGeneratePurchase generateOrder={generateOrder} orderId={orderId} />
     </Container>
   );
 };

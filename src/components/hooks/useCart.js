@@ -37,6 +37,14 @@ const useCart = () => {
     return total;
   };
 
+  const getCartDetailToSave = () => {
+    return cartDetails.map((cartDetail) => {
+      return {
+        productId: cartDetail.product.id,
+        qty: cartDetail.qty,
+      };
+    });
+  };
   const onProductRemove = (productId) => {
     const productDeleted = cartDetails.filter(
       (product) => product.product.id !== productId
@@ -58,6 +66,7 @@ const useCart = () => {
     onProductRemove,
     onProductChange,
     onClearCart,
+    getCartDetailToSave,
   };
 };
 
