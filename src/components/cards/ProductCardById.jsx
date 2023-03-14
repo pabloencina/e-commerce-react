@@ -41,7 +41,7 @@ const ProductCardById = ({ product, onProductAdded, darkMode }) => {
               width: "70%",
               m: 5,
               display: "flex",
-              backgroundColor: darkMode ? "white" : "#564592",
+              backgroundColor: darkMode ? "white" : "#301E67",
               flexDirection: "row",
               boxSizing: "border-box",
             }}

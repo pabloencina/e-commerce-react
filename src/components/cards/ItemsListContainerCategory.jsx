@@ -19,27 +19,6 @@ const ItemsListContainerCategory = ({ darkMode }) => {
   const [isLoading, setIsLoading] = useState(true);
   const { categoryId } = useParams();
 
-  // const getProductsByCategory = () => {
-  //   const promise = new Promise((resolve) => {
-  //     setIsLoading(true);
-  //     setTimeout(() => {
-  //       resolve(
-  //         dataArray.filter((product) => {
-  //           return product.category === categoryId; //url[param].id
-  //           // como obtener el query param de la url
-  //         })
-  //       );
-  //       setIsLoading(false);
-  //     }, 2000);
-  //   });
-  //   promise.then((request) => {
-  //     setProducts(request);
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   getProductsByCategory();
-  // }, [categoryId]);
   const getProductsByCategory = () => {
     const productCollection = collection(db, "Productos");
     const q = query(productCollection, where("category", "==", categoryId));

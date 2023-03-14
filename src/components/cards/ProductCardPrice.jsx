@@ -52,6 +52,7 @@ const ProductCardPrice = ({ product, darkMode }) => {
                 justifyContent: "center",
                 display: "flex",
                 textDecoration: "line-through",
+                color: darkMode ? "black" : "white",
               }}
             >
               {`$  ${price}`}

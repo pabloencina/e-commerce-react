@@ -18,15 +18,6 @@ const ProductCardByIdItem = ({ darkMode }) => {
   const [isLoading, setIsLoading] = useState(true);
   const { productId } = useParams();
   const getProductById = () => {
-    // const productCollection = collection(db, "Productos");
-    // const q = query(productCollection, where("id", "==", productId));
-    // getDocs(q).then((snapshot) => {
-    //   if (snapshot.size === 0) {
-    //     console.log("No results");
-    //   }
-    //   setProduct(snapshot.docs.map((doc) => ({ id: doc.id })));
-    // });
-
     const ref = doc(db, "Productos", productId);
 
     getDoc(ref)
@@ -41,7 +32,7 @@ const ProductCardByIdItem = ({ darkMode }) => {
 
   useEffect(() => {
     getProductById();
-  }, []);
+  }, [productId]);
 
   return isLoading ? (
     <Spinner />
