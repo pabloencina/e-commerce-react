@@ -1,14 +1,7 @@
 import { Button } from "@mui/material";
 import React from "react";
-//import { useState } from "react";
 
 const ItemCount = ({ increase, decrease, count, stock, darkMode }) => {
-  // const incrementStock = () =>{
-  //   if(count < itemStock){
-  //     setItemStock(count + 1)
-  //   }
-  // }
-
   return (
     <>
       <Button

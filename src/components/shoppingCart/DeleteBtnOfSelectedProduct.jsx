@@ -1,11 +1,8 @@
-import { Button, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useContext } from "react";
-import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-import { CardContext } from "../../context/CardContext";
+import AlertDeleteProduct from "./AlertDeleteProduct";
 
 const DeleteBtnOfSelectedProduct = ({ productId, darkMode }) => {
-  const { onProductRemove } = useContext(CardContext);
   return (
     <Grid item xs={12} sm={6} md={4} sx={{ flexDirection: "row" }}>
       <Box
@@ -17,15 +14,7 @@ const DeleteBtnOfSelectedProduct = ({ productId, darkMode }) => {
           boxSizing: "border-box",
         }}
       >
-        <Button
-          title="Eliminar producto"
-          onClick={() => {
-            onProductRemove(productId);
-          }}
-          sx={{ color: darkMode ? "#724cf9" : "white" }}
-        >
-          <DeleteForeverIcon sx={{ width: "40px", height: "40px" }} />
-        </Button>
+        <AlertDeleteProduct darkMode={darkMode} productId={productId} />
       </Box>
     </Grid>
   );

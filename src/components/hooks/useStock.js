@@ -9,10 +9,15 @@ const useStock = () => {
     });
     setStockDetail(details);
   };
-  const decrementStock = (product, qty) => {};
+
+  console.log();
+
+  const decrementStock = (product, qty) => {
+    return qty;
+  };
 
   const getStock = (product) => {
-    // return currentDetail.qty;
+    //return currentDetail.qty;
   };
   return { setProducts, decrementStock, getStock };
 };

@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
+import React, { useContext } from "react";
 import LoyaltyIcon from "@mui/icons-material/Loyalty";
 //import useHoverButtons from "../hooks/useHoverButtons";
 //import ItemCount from "./ItemCount";
@@ -16,9 +16,11 @@ import ProductCardPrice from "./ProductCardPrice";
 import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 import useHoverButtons from "../hooks/useHoverButtons";
 import { Link } from "react-router-dom";
+import { CardContext } from "../../context/CardContext";
 
 const ProductCardById = ({ product, onProductAdded, darkMode }) => {
-  // const { name, image, description, sale, offerPrice } = product;
+  const { setProducts } = useContext(CardContext);
+  console.log(setProducts);
 
   const {
     handleMouseEnterVerDetalle,
