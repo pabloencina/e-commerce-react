@@ -8,6 +8,9 @@ import {
 } from "@mui/material";
 import useHoverButtons from "../hooks/useHoverButtons";
 import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
+import { Link } from "react-router-dom";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const Login = ({ darkMode }) => {
   const {
@@ -15,6 +18,22 @@ const Login = ({ darkMode }) => {
     handleMouseEnterVerDetalle,
     handleMouseLeaveVerDetalle,
   } = useHoverButtons(false);
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .email("Debe agregar un email válido")
+        .max(40)
+        .min(10)
+        .required("El campo Email es requerido"),
+      password: Yup.string().required("Password es requerido"),
+    }),
+  });
 
   return (
     <Box>
@@ -26,28 +45,13 @@ const Login = ({ darkMode }) => {
           display: "flex",
           flexGrow: 1,
           minHeight: "100%",
-          //backgroundColor: "#EDF67D",
           justifyContent: "center",
         }}
       >
         <Container maxWidth="sm">
-          {/* <Box sx={{ my: 3 }}>
-          <Typography
-            color="textPrimary"
-            variant="h3"
-            style={{
-              fontFamily: " Hind Madurai",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            TIENDA ONLINE
-          </Typography>
-        </Box> */}
           <form>
             <Box sx={{ my: 3 }}>
               <Typography
-                //color="#564592"
                 sx={{ color: darkMode ? "#564592" : "white" }}
                 variant="h5"
                 style={{
@@ -64,16 +68,16 @@ const Login = ({ darkMode }) => {
                 backgroundColor: darkMode ? "white" : "#564592",
                 color: darkMode ? "black" : "white",
               }}
-              // error={Boolean(formik.touched.email && formik.errors.email)}
+              error={Boolean(formik.touched.email && formik.errors.email)}
               fullWidth
-              // helperText={formik.touched.email && formik.errors.email}
-              label="Email Address"
+              helperText={formik.touched.email && formik.errors.email}
+              label="Email"
               margin="normal"
               name="email"
-              // onBlur={formik.handleBlur}
-              // onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              onChange={formik.handleChange}
               type="email"
-              // value={formik.values.email}
+              value={formik.values.email}
               variant="outlined"
             />
             <TextField
@@ -81,16 +85,16 @@ const Login = ({ darkMode }) => {
                 backgroundColor: darkMode ? "white" : "#564592",
                 color: darkMode ? "black" : "white",
               }}
-              // error={Boolean(formik.touched.password && formik.errors.password)}
+              error={Boolean(formik.touched.password && formik.errors.password)}
               fullWidth
-              // helperText={formik.touched.password && formik.errors.password}
+              helperText={formik.touched.password && formik.errors.password}
               label="Password"
               margin="normal"
               name="password"
-              // onBlur={formik.handleBlur}
-              // onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              onChange={formik.handleChange}
               type="password"
-              // value={formik.values.password}
+              value={formik.values.password}
               variant="outlined"
             />
             <Box
@@ -108,26 +112,25 @@ const Login = ({ darkMode }) => {
                 INICIAR SESIÓN
               </Button>
             </Box>
-            {/* {state.formError ? (
-            <Alert severity="error">{state.errorMessage}</Alert>
-          ) : null} */}
           </form>
         </Container>
       </Box>
       <Divider />
       <Box m={2} style={{ display: "flex", justifyContent: "center" }}>
-        <Button
-          sx={{
-            width: "300px",
-            height: "45px",
-            fontFamily: "Montserrat",
-            backgroundColor: "#564592",
-            color: "white",
-          }}
-        >
-          <ReplyOutlinedIcon />
-          Volver
-        </Button>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <Button
+            sx={{
+              width: "300px",
+              height: "45px",
+              fontFamily: "Montserrat",
+              backgroundColor: "#564592",
+              color: "white",
+            }}
+          >
+            <ReplyOutlinedIcon />
+            Volver
+          </Button>
+        </Link>
       </Box>
     </Box>
   );
