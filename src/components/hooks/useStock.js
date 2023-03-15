@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const useStock = () => {
   const [stockDetail, setStockDetail] = useState();
+
   const setProducts = (products) => {
     const details = products.map((product) => {
       return { product, qty: product.stock };
@@ -9,6 +10,7 @@ const useStock = () => {
     setStockDetail(details);
   };
   const decrementStock = (product, qty) => {};
+
   const getStock = (product) => {
     // return currentDetail.qty;
   };

@@ -32,12 +32,12 @@ const Error404 = () => {
         <p
           style={{
             color: "white",
-            fontFamily: "oooh baby",
+            fontFamily: "Roboto",
             fontSize: "36px",
-            fontWeight: "bold",
+            //fontWeight: "bold",
           }}
         >
-          No encontramos la página que estás buscando. Disculpá las molestias.
+          No encontramos la página que estás buscando. Disculpa las molestias.
         </p>
       </Box>
     </Box>

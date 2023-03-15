@@ -21,7 +21,7 @@ import CompletedCheckout from "./checkout/CompletedCheckout";
 import SuccessfulPurchase from "./checkout/SuccessfulPurchase";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const { count } = useAccountant(0);
 
   return (
