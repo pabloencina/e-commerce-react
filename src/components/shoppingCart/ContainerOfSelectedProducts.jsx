@@ -2,29 +2,25 @@ import * as React from "react";
 import { useContext } from "react";
 import { CardContext } from "../../context/CardContext";
 
-import { Button, Card, CardMedia, Divider, Grid } from "@mui/material";
+import { Card, CardMedia, Divider, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 import CreditCardBox from "../shoppingCart/CreditCardBox";
 import DeleteBtnOfSelectedProduct from "../shoppingCart/DeleteBtnOfSelectedProduct";
 import TotalPriceOfProducts from "../shoppingCart/TotalPriceOfProducts";
 import BtnGoToPay from "../shoppingCart/BtnGoToPay";
-import useHoverButtons from "../hooks/useHoverButtons";
+import AlertDeleteAllProducts from "./AlertDeleteAllProducts";
 
 export default function ContainerOfSelectedProducts({ darkMode }) {
-  const { cartDetails, getTotal, onClearCart } = useContext(CardContext);
-  const {
-    buttonVerDetalle,
-    handleMouseEnterVerDetalle,
-    handleMouseLeaveVerDetalle,
-  } = useHoverButtons(false);
+  const { cartDetails, getTotal } = useContext(CardContext);
+
   return (
-    <Box m={5} style={{}}>
+    <Box m={5}>
       <Box
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "80px",
+          //height: "80px",
         }}
       >
         <p
@@ -93,7 +89,8 @@ export default function ContainerOfSelectedProducts({ darkMode }) {
           }}
         >
           <Box style={{ display: "flex", justifyContent: "end" }} m={3}>
-            <Button
+            {/* <Button
+              title="Eliminar todos los productos"
               style={buttonVerDetalle}
               sx={{ width: "200px", height: "45px" }}
               onMouseEnter={handleMouseEnterVerDetalle}
@@ -101,7 +98,8 @@ export default function ContainerOfSelectedProducts({ darkMode }) {
               onClick={onClearCart}
             >
               Vaciar carrito
-            </Button>
+            </Button> */}
+            <AlertDeleteAllProducts />
           </Box>
           {cartDetails.map((detail) => {
             return (

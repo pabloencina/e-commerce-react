@@ -5,13 +5,18 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import { CardContext } from "../../context/CardContext";
-import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import useHoverButtons from "../hooks/useHoverButtons";
 
-const AlertDeleteProduct = ({ productId, darkMode }) => {
+const AlertDeleteAllProducts = () => {
   const [open, setOpen] = React.useState(false);
+  const {
+    buttonVerDetalle,
+    handleMouseEnterVerDetalle,
+    handleMouseLeaveVerDetalle,
+  } = useHoverButtons(false);
 
-  const { onProductRemove, cartDetails } = React.useContext(CardContext);
-  console.log(cartDetails);
+  const { onClearCart } = React.useContext(CardContext);
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -23,11 +28,14 @@ const AlertDeleteProduct = ({ productId, darkMode }) => {
   return (
     <div>
       <Button
-        title="Eliminar producto"
+        title="Eliminar todos los productos"
+        style={buttonVerDetalle}
+        sx={{ width: "200px", height: "45px" }}
+        onMouseEnter={handleMouseEnterVerDetalle}
+        onMouseLeave={handleMouseLeaveVerDetalle}
         onClick={handleClickOpen}
-        sx={{ color: darkMode ? "#724cf9" : "white" }}
       >
-        <DeleteForeverIcon sx={{ width: "40px", height: "40px" }} />
+        Vaciar carrito
       </Button>
       <Dialog
         open={open}
@@ -37,23 +45,19 @@ const AlertDeleteProduct = ({ productId, darkMode }) => {
       >
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Está seguro que desea eliminar este producto del carrito de compras?
+            Está seguro que desea eliminar todos los productos del carrito de
+            compra?
           </DialogContentText>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancelar</Button>
-          <Button
-            onClick={() => {
-              onProductRemove(productId);
-            }}
-          >
+          <Button onClick={onClearCart} autoFocus>
             Ok
           </Button>
         </DialogActions>
       </Dialog>
-      ;
     </div>
   );
 };
 
-export default AlertDeleteProduct;
+export default AlertDeleteAllProducts;
