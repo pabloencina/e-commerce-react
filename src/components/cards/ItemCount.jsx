@@ -1,13 +1,25 @@
 import { Button } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
+import { useEffect } from "react";
+import { CardContext } from "../../context/CardContext";
 
-const ItemCount = ({ increase, decrease, count, stock, darkMode }) => {
+const ItemCount = ({ increase, decrease, count, stock, product, darkMode }) => {
+  const { getStock, decrementStock } = useContext(CardContext);
+  console.log(getStock(product));
+
+  useEffect(() => {
+    decrementStock(product, 1);
+  }, []);
+
   return (
     <>
       <Button
         title="Disminuir cantidad"
         disabled={count <= 1}
-        onClick={decrease}
+        onClick={() => {
+          decrease();
+          decrementStock(product, -1);
+        }}
         style={{
           color: darkMode ? "#564592" : "white",
         }}
@@ -23,13 +35,16 @@ const ItemCount = ({ increase, decrease, count, stock, darkMode }) => {
       </p>
       <Button
         title="Aumentar cantidad"
-        disabled={stock <= count}
-        onClick={increase}
+        disabled={getStock(product) === 0}
+        onClick={() => {
+          increase();
+          decrementStock(product, 1);
+        }}
         style={{
           color: darkMode ? "#564592" : "white",
         }}
       >
-        +{" "}
+        +
       </Button>
     </>
   );

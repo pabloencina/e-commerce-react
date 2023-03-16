@@ -5,15 +5,21 @@ import { Close } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import { Box } from "@mui/system";
 import useHoverButtons from "../hooks/useHoverButtons";
-import useStock from "../hooks/useStock";
+import { CardContext } from "../../context/CardContext";
+//import useStock from "../hooks/useStock";
 //import { useContext } from "react";
 //import { CardContext } from "../../context/CardContext";
 
-export default function AddToCart({ count, stock, handleProductAdded }) {
+export default function AddToCart({
+  count,
+  stock,
+  product,
+  handleProductAdded,
+}) {
   const [open, setOpen] = React.useState(false);
-  const { decrementCounter } = useStock();
   const messageProduct = `Se agrego ${count} producto al carrito`;
   const messageProducts = `Se agregaron ${count} productos al carrito`;
+  const { getStock } = React.useContext(CardContext);
   const {
     buttonVerDetalle,
     handleMouseEnterVerDetalle,
@@ -22,8 +28,12 @@ export default function AddToCart({ count, stock, handleProductAdded }) {
 
   const handleClick = () => {
     setOpen(true);
-    handleProductAdded();
-    decrementCounter();
+    if (getStock(product) >= 0) {
+      handleProductAdded();
+    } else {
+      console.log("no se pueden agregar los productos, falta stock");
+    }
+    //handleProductAdded();
   };
 
   const handleClose = (event, reason) => {
@@ -55,7 +65,7 @@ export default function AddToCart({ count, stock, handleProductAdded }) {
       <Box style={{ display: "flex", justifyContent: "center" }}>
         <Button
           sx={{ width: "200px", height: "45px" }}
-          disabled={stock <= 0}
+          // disabled={getStock(product) <= 0}
           onClick={handleClick}
           style={buttonVerDetalle}
           onMouseEnter={handleMouseEnterVerDetalle}

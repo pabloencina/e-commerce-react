@@ -19,8 +19,7 @@ import { Link } from "react-router-dom";
 import { CardContext } from "../../context/CardContext";
 
 const ProductCardById = ({ product, onProductAdded, darkMode }) => {
-  const { setProducts } = useContext(CardContext);
-  console.log(setProducts);
+  // const { setProducts } = useContext(CardContext);
 
   const {
     handleMouseEnterVerDetalle,

@@ -1,24 +1,38 @@
 import { useState } from "react";
 
 const useStock = () => {
-  const [stockDetail, setStockDetail] = useState();
+  const [stockDetails, setStockDetails] = useState([]);
 
   const setProducts = (products) => {
-    const details = products.map((product) => {
-      return { product, qty: product.stock };
-    });
-    setStockDetail(details);
+    if (stockDetails.length === 0) {
+      const details = products.map((product) => {
+        return { product, qty: product.stock };
+      });
+      setStockDetails(details);
+    }
   };
 
-  console.log();
-
   const decrementStock = (product, qty) => {
-    return qty;
+    const currentDetail = stockDetails.find(
+      (detail) => detail.product.id === product.id
+    );
+    console.log(currentDetail.qty);
+    if (currentDetail.qty - qty >= 0) {
+      currentDetail.qty -= qty;
+    }
   };
 
   const getStock = (product) => {
-    //return currentDetail.qty;
+    console.log(product);
+    const currentDetail = stockDetails.find(
+      (detail) => detail.product.id === product.id
+    );
+    if (currentDetail) {
+      return currentDetail.qty;
+    }
+    return 0;
   };
+
   return { setProducts, decrementStock, getStock };
 };
 

@@ -94,6 +94,7 @@ const ProductCardPrice = ({ product, darkMode }) => {
 
       <Box m={2} sx={{ justifyContent: "center", display: "flex" }}>
         <ItemCount
+          product={product}
           increase={() => {
             increase();
           }}
@@ -112,6 +113,7 @@ const ProductCardPrice = ({ product, darkMode }) => {
           count={count}
           handleProductAdded={handleProductAdded}
           stock={stock}
+          product={product}
         />
       </Box>
     </>

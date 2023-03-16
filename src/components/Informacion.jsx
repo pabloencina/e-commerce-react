@@ -59,7 +59,7 @@ const Información = () => {
           >
             <p
               style={{
-                width: "350px",
+                width: "320px",
                 display: "flex",
                 justifyContent: "center",
               }}

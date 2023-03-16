@@ -1,26 +1,33 @@
 import { Grid } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import Spinner from "../Spinner";
 import ItemList from "./ItemList";
 import imgProductos from "../images/imgProductos.jpg";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
+import { CardContext } from "../../context/CardContext";
 
 const ItemListContainer = ({ darkMode }) => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { setProducts } = useContext(CardContext);
 
-  const getAllCard = () => {
+  const getAllCard = async () => {
     const productCollection = collection(db, "Productos");
 
-    getDocs(productCollection)
-      .then((snapshot) => {
-        setItems(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-        setIsLoading(false);
-      })
-      .catch((error) => console.log(error.msg));
+    const result = await getDocs(productCollection);
+
+    const itemsResult = result.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+
+    setItems(itemsResult);
+    setProducts(itemsResult);
+
+    setIsLoading(false);
   };
 
   useEffect(() => {

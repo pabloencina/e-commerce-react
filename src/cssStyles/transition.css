@@ -12,5 +12,5 @@
  }
  .fade-enter-active,
  .fade-exit-active{
-    transition: opacity 500ms;
+    transition: opacity 600ms;
  }
