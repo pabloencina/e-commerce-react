@@ -63,6 +63,7 @@ function NavBar({ setDarkMode, darkMode }) {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Link
+            title="Página Principal"
             to="/"
             style={buttonLogo}
             onMouseEnter={handleMouseEnter}
@@ -108,6 +109,7 @@ function NavBar({ setDarkMode, darkMode }) {
               variant="text"
             >
               <Link
+                title="Acerca de nuestro proyecto"
                 to={"/nosotros"}
                 variant="contained"
                 style={{
@@ -130,6 +132,7 @@ function NavBar({ setDarkMode, darkMode }) {
               variant="text"
             >
               <Link
+                title="Todos nuestros productos"
                 to={"/products"}
                 style={{ textDecoration: "none", color: "white" }}
               >
@@ -146,6 +149,7 @@ function NavBar({ setDarkMode, darkMode }) {
               variant="text"
             >
               <Link
+                title="Categoría Mats"
                 to={"/category/mats"}
                 variant="contained"
                 style={{ textDecoration: "none", color: "white" }}
@@ -162,6 +166,7 @@ function NavBar({ setDarkMode, darkMode }) {
               variant="text"
             >
               <Link
+                title="Categoría Yoga"
                 to={"/category/yoga"}
                 variant="contained"
                 style={{ textDecoration: "none", color: "white" }}
@@ -178,6 +183,7 @@ function NavBar({ setDarkMode, darkMode }) {
               variant="text"
             >
               <Link
+                title="Categoría Meditación"
                 to={"/category/meditation"}
                 variant="contained"
                 style={{ textDecoration: "none", color: "white" }}
@@ -241,6 +247,7 @@ function NavBar({ setDarkMode, darkMode }) {
               //onClick={}
             >
               <Link
+                title="LogIn"
                 to={"/login"}
                 style={{
                   backgroundColor: "#564592",

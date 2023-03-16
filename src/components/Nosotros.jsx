@@ -10,7 +10,7 @@ const Nosotros = ({ darkMode }) => {
     <Box
       m={3}
       style={{
-        backgroundColor: darkMode ? "#EDF67D" : "#564592",
+        backgroundColor: darkMode ? "#EDF67D" : "#301E67",
         height: "1800px",
       }}
     >
