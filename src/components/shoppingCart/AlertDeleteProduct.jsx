@@ -51,7 +51,6 @@ const AlertDeleteProduct = ({ productId, darkMode }) => {
           </Button>
         </DialogActions>
       </Dialog>
-      ;
     </div>
   );
 };

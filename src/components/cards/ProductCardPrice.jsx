@@ -169,7 +169,6 @@ const ProductCardPrice = ({ product, darkMode }) => {
         message={outOfStockMessage}
         action={action}
       />
-      ;
     </>
   );
 };

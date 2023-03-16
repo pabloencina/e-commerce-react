@@ -25,7 +25,7 @@ const Nosotros = ({ darkMode }) => {
           fontSize: "24px",
         }}
       >
-        <h1 style={{ fontFamily: "OooH baby", color: "white" }}>
+        <h1 style={{ fontFamily: "Roboto", fontWeight: "300", color: "white" }}>
           Abrazar el presente, Tienda online
         </h1>
       </Box>
@@ -129,7 +129,12 @@ const Nosotros = ({ darkMode }) => {
             <ul>Empatía.</ul>
           </Box>
         </Grid>
-        <Grid style={{ display: "flex", justifyContent: "center" }}>
+        <Grid
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
           <img
             src={yogaPlaya}
             alt="Yoga en la playa"
@@ -148,12 +153,15 @@ const Nosotros = ({ darkMode }) => {
           //backgroundColor: "red",
         }}
       >
-        <Grid m={3} style={{ display: "flex", justifyContent: "center" }}>
-          <img
-            src={yogaRio}
-            alt="Yoga en la laguna"
-            //style={{ width: "90%" }}
-          />
+        <Grid
+          m={3}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            backgroundColor: darkMode ? "#564592" : "black",
+          }}
+        >
+          <img src={yogaRio} alt="Yoga en la laguna" />
         </Grid>
         <Box
           m={3}

@@ -1,20 +1,9 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
-import Snackbar from "@mui/material/Snackbar";
-import { Close } from "@mui/icons-material";
-import { IconButton } from "@mui/material";
 import { Box } from "@mui/system";
 import useHoverButtons from "../hooks/useHoverButtons";
 
-export default function AddToCart({
-  count,
-  stock,
-  product,
-  handleProductAdded,
-}) {
-  // const [open, setOpen] = React.useState(false);
-  // const messageProduct = `Se agrego ${count} producto al carrito`;
-  // const messageProducts = `Se agregaron ${count} productos al carrito`;
+export default function AddToCart({ handleProductAdded }) {
   const {
     buttonVerDetalle,
     handleMouseEnterVerDetalle,
@@ -22,34 +11,8 @@ export default function AddToCart({
   } = useHoverButtons(false);
 
   const handleClick = () => {
-    // setOpen(true);
     handleProductAdded();
-    //handleProductAdded();
   };
-
-  // const handleClose = (event, reason) => {
-  //   if (reason === "clickaway") {
-  //     return;
-  //   }
-
-  //   // setOpen(false);
-  // };
-
-  // const action = (
-  //   <React.Fragment>
-  //     <Button color="primary" size="small" onClick={handleClose}>
-  //       CLOSE
-  //     </Button>
-  //     <IconButton
-  //       size="small"
-  //       aria-label="close"
-  //       color="inherit"
-  //       onClick={handleClose}
-  //     >
-  //       <Close fontSize="small" />
-  //     </IconButton>
-  //   </React.Fragment>
-  // );
 
   return (
     <>
@@ -65,15 +28,6 @@ export default function AddToCart({
           <p style={{ fontFamily: "Montserrat" }}>Agregar al carrito</p>
         </Button>
       </Box>
-      {/* 
-      {}
-      <Snackbar
-        open={open}
-        autoHideDuration={6000}
-        onClose={handleClose}
-        message={count === 1 ? messageProduct : messageProducts}
-        action={action}
-      /> */}
     </>
   );
 }

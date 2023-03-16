@@ -1,15 +1,7 @@
 import { Button } from "@mui/material";
-import React, { useContext } from "react";
-import { useEffect } from "react";
-import { CardContext } from "../../context/CardContext";
+import React from "react";
 
 const ItemCount = ({ increase, decrease, count, stock, product, darkMode }) => {
-  const { getStock, decrementStock } = useContext(CardContext);
-
-  // useEffect(() => {
-  //   decrementStock(product, 1);
-  // }, []);
-
   return (
     <>
       <Button

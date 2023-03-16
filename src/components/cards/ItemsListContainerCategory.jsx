@@ -83,7 +83,8 @@ const ItemsListContainerCategory = ({ darkMode }) => {
         >
           <h1
             style={{
-              fontFamily: "oooh baby",
+              fontFamily: "Roboto",
+              fontWeight: "300",
               color: darkMode ? "#724cf9" : "white",
             }}
           >
