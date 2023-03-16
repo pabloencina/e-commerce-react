@@ -5,10 +5,6 @@ import { Close } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import { Box } from "@mui/system";
 import useHoverButtons from "../hooks/useHoverButtons";
-import { CardContext } from "../../context/CardContext";
-//import useStock from "../hooks/useStock";
-//import { useContext } from "react";
-//import { CardContext } from "../../context/CardContext";
 
 export default function AddToCart({
   count,
@@ -16,10 +12,9 @@ export default function AddToCart({
   product,
   handleProductAdded,
 }) {
-  const [open, setOpen] = React.useState(false);
-  const messageProduct = `Se agrego ${count} producto al carrito`;
-  const messageProducts = `Se agregaron ${count} productos al carrito`;
-  const { getStock } = React.useContext(CardContext);
+  // const [open, setOpen] = React.useState(false);
+  // const messageProduct = `Se agrego ${count} producto al carrito`;
+  // const messageProducts = `Se agregaron ${count} productos al carrito`;
   const {
     buttonVerDetalle,
     handleMouseEnterVerDetalle,
@@ -27,38 +22,34 @@ export default function AddToCart({
   } = useHoverButtons(false);
 
   const handleClick = () => {
-    setOpen(true);
-    if (getStock(product) >= 0) {
-      handleProductAdded();
-    } else {
-      console.log("no se pueden agregar los productos, falta stock");
-    }
+    // setOpen(true);
+    handleProductAdded();
     //handleProductAdded();
   };
 
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
+  // const handleClose = (event, reason) => {
+  //   if (reason === "clickaway") {
+  //     return;
+  //   }
 
-    setOpen(false);
-  };
+  //   // setOpen(false);
+  // };
 
-  const action = (
-    <React.Fragment>
-      <Button color="primary" size="small" onClick={handleClose}>
-        CLOSE
-      </Button>
-      <IconButton
-        size="small"
-        aria-label="close"
-        color="inherit"
-        onClick={handleClose}
-      >
-        <Close fontSize="small" />
-      </IconButton>
-    </React.Fragment>
-  );
+  // const action = (
+  //   <React.Fragment>
+  //     <Button color="primary" size="small" onClick={handleClose}>
+  //       CLOSE
+  //     </Button>
+  //     <IconButton
+  //       size="small"
+  //       aria-label="close"
+  //       color="inherit"
+  //       onClick={handleClose}
+  //     >
+  //       <Close fontSize="small" />
+  //     </IconButton>
+  //   </React.Fragment>
+  // );
 
   return (
     <>
@@ -74,7 +65,7 @@ export default function AddToCart({
           <p style={{ fontFamily: "Montserrat" }}>Agregar al carrito</p>
         </Button>
       </Box>
-
+      {/* 
       {}
       <Snackbar
         open={open}
@@ -82,7 +73,7 @@ export default function AddToCart({
         onClose={handleClose}
         message={count === 1 ? messageProduct : messageProducts}
         action={action}
-      />
+      /> */}
     </>
   );
 }

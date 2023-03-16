@@ -5,11 +5,10 @@ import { CardContext } from "../../context/CardContext";
 
 const ItemCount = ({ increase, decrease, count, stock, product, darkMode }) => {
   const { getStock, decrementStock } = useContext(CardContext);
-  console.log(getStock(product));
 
-  useEffect(() => {
-    decrementStock(product, 1);
-  }, []);
+  // useEffect(() => {
+  //   decrementStock(product, 1);
+  // }, []);
 
   return (
     <>
@@ -18,7 +17,7 @@ const ItemCount = ({ increase, decrease, count, stock, product, darkMode }) => {
         disabled={count <= 1}
         onClick={() => {
           decrease();
-          decrementStock(product, -1);
+          //decrementStock(product, -1);
         }}
         style={{
           color: darkMode ? "#564592" : "white",
@@ -35,10 +34,10 @@ const ItemCount = ({ increase, decrease, count, stock, product, darkMode }) => {
       </p>
       <Button
         title="Aumentar cantidad"
-        disabled={getStock(product) === 0}
+        disabled={count >= stock}
         onClick={() => {
           increase();
-          decrementStock(product, 1);
+          //decrementStock(product, 1);
         }}
         style={{
           color: darkMode ? "#564592" : "white",

@@ -1,12 +1,5 @@
 import { Grid } from "@mui/material";
-import {
-  //collection,
-  doc,
-  getDoc,
-  //getDocs,
-  // query,
-  // where,
-} from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebase";

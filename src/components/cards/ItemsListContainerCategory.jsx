@@ -32,28 +32,6 @@ const ItemsListContainerCategory = ({ darkMode }) => {
   };
 
   useEffect(() => {
-    //Document
-    // const ref = doc(db, "Productos", "FPFHYIKF00MD5iOaDO3N");
-
-    // getDoc(ref)
-    //   .then((snapshot) => {
-    //     if (snapshot.exists()) {
-    //       setProducts([{ id: snapshot.id, ...snapshot.data() }]);
-    //     }
-    //   })
-    //   .catch((err) => console.log(err.msg));
-
-    //Collections
-    // const productCollection = collection(db, "Productos");
-
-    // getDocs(productCollection)
-    //   .then((snapshot) => {
-    //     setProducts(
-    //       snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-    //     );
-    //   })
-    //   .catch((error) => console.log(error.msg));
-
     getProductsByCategory();
   }, [categoryId]);
   console.log(products);

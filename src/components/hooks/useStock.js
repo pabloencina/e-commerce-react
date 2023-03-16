@@ -16,14 +16,12 @@ const useStock = () => {
     const currentDetail = stockDetails.find(
       (detail) => detail.product.id === product.id
     );
-    console.log(currentDetail.qty);
     if (currentDetail.qty - qty >= 0) {
       currentDetail.qty -= qty;
     }
   };
 
   const getStock = (product) => {
-    console.log(product);
     const currentDetail = stockDetails.find(
       (detail) => detail.product.id === product.id
     );
