@@ -1,40 +1,38 @@
 import { Divider, Grid } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 //import { useParams } from "react-router-dom";
 //import dataArray from "../ejemplo";
-import Spinner from "../Spinner";
-import ItemList from "./ItemList";
+import { CardContext } from "../../context/CardContext";
 import categoryMats from "../images/category-mats.jpg";
 import categoryYoga from "../images/ImagesProducts/velas.jpg";
 import categoryMeditacion from "../images/mujer-que-medita-relaja-montanas.jpg";
 import Show from "../Show";
-import { collection, getDocs, query, where } from "firebase/firestore";
-import { db } from "../../firebase";
+import Spinner from "../Spinner";
+import ItemList from "./ItemList";
 
 const ItemsListContainerCategory = ({ darkMode }) => {
-  const [products, setProducts] = useState([]);
+  const [productsCategory, setProductsCategory] = useState([]);
+  const { getAllProducts } = useContext(CardContext);
 
   const [isLoading, setIsLoading] = useState(true);
   const { categoryId } = useParams();
 
-  const getProductsByCategory = () => {
-    const productCollection = collection(db, "Productos");
-    const q = query(productCollection, where("category", "==", categoryId));
-    getDocs(q).then((snapshot) => {
-      if (snapshot.size === 0) {
-        console.log("No results");
-      }
-      setProducts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-      setIsLoading(false);
+  const getProductsByCategory = async () => {
+    const allProducts = getAllProducts();
+
+    const productsCategory = allProducts.filter((product) => {
+      return product.category === categoryId;
     });
+
+    setProductsCategory(productsCategory);
+    setIsLoading(false);
   };
 
   useEffect(() => {
     getProductsByCategory();
   }, [categoryId]);
-  console.log(products);
 
   return isLoading ? (
     <Spinner />
@@ -93,7 +91,7 @@ const ItemsListContainerCategory = ({ darkMode }) => {
         </Box>
       </Box>
       <Grid container spacing={2}>
-        {products.map((product) => {
+        {productsCategory.map((product) => {
           return (
             <Grid item xs={12} sm={6} md={4}>
               <ItemList product={product} darkMode={darkMode} />

@@ -1,37 +1,20 @@
 import { Grid } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useContext, useEffect } from "react";
-import { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { CardContext } from "../../context/CardContext";
+import imgProductos from "../images/imgProductos.jpg";
 import Spinner from "../Spinner";
 import ItemList from "./ItemList";
-import imgProductos from "../images/imgProductos.jpg";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../firebase";
-import { CardContext } from "../../context/CardContext";
 
 const ItemListContainer = ({ darkMode }) => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { setProducts } = useContext(CardContext);
-
-  const getAllCard = async () => {
-    const productCollection = collection(db, "Productos");
-
-    const result = await getDocs(productCollection);
-
-    const itemsResult = result.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
-
-    setItems(itemsResult);
-    setProducts(itemsResult);
-
-    setIsLoading(false);
-  };
+  const { getAllProducts } = useContext(CardContext);
 
   useEffect(() => {
-    getAllCard();
+    const products = getAllProducts();
+    setItems(products);
+    setIsLoading(false);
   }, []);
 
   return isLoading ? (
@@ -60,7 +43,8 @@ const ItemListContainer = ({ darkMode }) => {
       >
         <h1
           style={{
-            fontFamily: "oooh baby",
+            fontFamily: "Roboto",
+            fontWeight: "300",
             color: darkMode ? "#724cf9" : "white",
           }}
         >

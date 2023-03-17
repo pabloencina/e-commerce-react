@@ -17,7 +17,7 @@ const CardContextProvider = ({ children }) => {
     getCartDetailToSave,
   } = useCart();
 
-  const { setProducts, decrementStock, getStock } = useStock();
+  const { setProducts, decrementStock, getStock, getAllProducts } = useStock();
 
   return (
     <CardContext.Provider
@@ -33,6 +33,7 @@ const CardContextProvider = ({ children }) => {
         getStock,
         setProducts,
         getCartDetailToSave,
+        getAllProducts,
       }}
     >
       {children}

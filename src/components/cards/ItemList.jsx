@@ -57,8 +57,6 @@ export default function ItemList({ product, darkMode }) {
                   justifyContent: "center",
                   alignItems: "center",
                   backgroundColor: "#EDF67D",
-                  //boxSizing: "border-box",
-                  // width: "100%",
                 }}
               >
                 <p>{"- " + offerPrice + " %"}</p>

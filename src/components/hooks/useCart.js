@@ -47,7 +47,7 @@ const useCart = () => {
   };
   const onProductRemove = (productId) => {
     const productDeleted = cartDetails.filter(
-      (product) => product.product.id !== productId
+      (detail) => detail.product.id !== productId
     );
 
     setCartDetails(productDeleted);

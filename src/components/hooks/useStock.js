@@ -12,6 +12,12 @@ const useStock = () => {
     }
   };
 
+  const getAllProducts = () => {
+    return stockDetails.map((detail) => {
+      return detail.product;
+    });
+  };
+
   const decrementStock = (product, qty) => {
     const currentDetail = stockDetails.find(
       (detail) => detail.product.id === product.id
@@ -31,7 +37,7 @@ const useStock = () => {
     return 0;
   };
 
-  return { setProducts, decrementStock, getStock };
+  return { setProducts, decrementStock, getStock, getAllProducts };
 };
 
 export default useStock;
