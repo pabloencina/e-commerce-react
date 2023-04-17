@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "image": {},
+    "title": "yoga en el mar"
+  },
+  {
+    "id": 2,
+    "image": "https://t4.ftcdn.net/jpg/05/66/80/95/240_F_566809586_uhlbKckgNQpwfAkM9omJTjzP3aGAimOG.jpg",
+    "title": "yoga en casa"
+  },
+  {
+    "id": 3,
+    "image": "https://t3.ftcdn.net/jpg/01/72/76/38/240_F_172763877_UUbmTyaM0l7ewwULYb2ehdwP0iLO6gAR.jpg",
+    "title": "yoga dentro de casa"
+  },
+  {
+    "id": 4,
+    "image": "https://t4.ftcdn.net/jpg/04/96/26/85/240_F_496268507_fZyIWRaZJZpOCqne7GajN1bf4IUHGkQt.jpg",
+    "title": "yoga en el parque"
+  }
+]

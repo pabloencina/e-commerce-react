@@ -2,19 +2,34 @@
   "name": "proyecto-react-coder-house",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "16.18.1",
+    "npm": "9.3.1"
+  },
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-brands-svg-icons": "^6.3.0",
+    "@fortawesome/free-regular-svg-icons": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.6",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "firebase": "^9.16.0",
+    "firebase": "^9.17.2",
+    "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "^2.1.3",
-    "web-vitals": "^2.1.4"
+    "react-material-ui-carousel": "^3.4.2",
+    "react-router-dom": "^6.8.1",
+    "react-scripts": "5.0.1",
+    "react-transition-group": "^4.4.5",
+    "uuidv4": "^6.2.13",
+    "web-vitals": "^2.1.4",
+    "yup": "^1.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
